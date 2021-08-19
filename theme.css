@@ -197,18 +197,18 @@
 
 /* 选择框颜色 */
 .b3-select {
-  background-color: rgb(255 255 255 / 30%);
+  background-color: rgb(0 0 0 / 5%);
 }
 
 /*下拉栏背景*/
 option {
-  background-color: rgb(255 255 255 / 30%);
+  background-color: rgb(0 0 0 / 5%);
 }
 
 /*输入框颜色*/
 .b3-text-filed {
   color:var(--b3-theme-on-surface);
-  background-color: rgb(0 0 0 / 10%);
+  background-color: rgb(0 0 0 / 5%);
   border: transparent;
 }
 
