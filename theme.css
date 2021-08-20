@@ -267,6 +267,7 @@ body{
   
   .fn__flex-1.fn__flex [data-type='wnd']{
     background: transparent; 
+    min-height: 90% !important;
     margin:  5px;
     padding: 5px;
     position: relative;    
@@ -279,7 +280,7 @@ body{
   .layout__center .fn__flex-1.fn__flex [data-type='wnd']{
     margin:  5px auto;
     padding: 5px 0px;
-    max-width: 1125px;
+    max-width: 1040px;
   }
   
   [data-type='wnd']::before{
@@ -597,7 +598,7 @@ backdrop-filter: blur(16px);
   /**** 滚动条 ****/
   /* 通用滚动条 */
   ::-webkit-scrollbar { width: 8px;}
-  ::-webkit-scrollbar-thumb{ background-color:var(--b3-scroll-color); border-radius: 30px; }
+  ::-webkit-scrollbar-thumb{ background-color:transparent; border-radius: 30px; }
   ::-webkit-scrollbar-thumb:hover{  background-color: var(--scrollbar-hover-background);}
   
   /* 边栏滚动条 */
@@ -605,6 +606,10 @@ backdrop-filter: blur(16px);
   #layouts>.fn__flex-1>.fn__flex-column ::-webkit-scrollbar-thumb{  background-color: var(--column-scrollbar-background); }
   #layouts>.fn__flex-1>.fn__flex-column ::-webkit-scrollbar-thumb:hover{ background-color: var(--column-scrollbar-hover-background); }
   
+  /**去除右侧标签滚动条***/
+.fn__flex-1 {
+  min-height: 0px;
+}
   /************** 二、文档编辑区 **************************/
   
   /**** 页签栏 ****/
