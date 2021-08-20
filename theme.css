@@ -598,13 +598,14 @@ backdrop-filter: blur(16px);
   /**** 滚动条 ****/
   /* 通用滚动条 */
   ::-webkit-scrollbar { width: 8px;}
-  ::-webkit-scrollbar-thumb{ background-color:transparent; border-radius: 30px; }
-  ::-webkit-scrollbar-thumb:hover{  background-color: var(--scrollbar-hover-background);}
-  
+  ::-webkit-scrollbar-thumb{ background-color:var(--column-scrollbar-background); border-radius: 30px;}
+  ::-webkit-scrollbar-thumb:hover{  background-color: var(--column-scrollbar-hover-background); }
+
   /* 边栏滚动条 */
   #layouts>.fn__flex-1>.fn__flex-column ::-webkit-scrollbar{ width: 6px;}
   #layouts>.fn__flex-1>.fn__flex-column ::-webkit-scrollbar-thumb{  background-color: var(--column-scrollbar-background); }
   #layouts>.fn__flex-1>.fn__flex-column ::-webkit-scrollbar-thumb:hover{ background-color: var(--column-scrollbar-hover-background); }
+
   
   /**去除右侧标签滚动条***/
 .fn__flex-1 {
