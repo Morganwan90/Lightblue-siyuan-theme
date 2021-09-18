@@ -309,7 +309,7 @@ body{
     border-radius: 3px;
     padding: 1px 8px;
     z-index: 100;
-backdrop-filter: blur(16px);
+    /**backdrop-filter: blur(16px);**/
   }
 
   .layout__empty {
@@ -347,25 +347,34 @@ backdrop-filter: blur(16px);
       background: transparent;
   }
   
-  /***弹出菜单栏****/
+
+
+
+  /**弹出窗口-正常**/
+  .b3-dialog__container {
+    background-color: rgb(255 255 255);
+    transition:all 0.1s linear;
+  }
+  /**弹出窗口-正常结束**/
+
+
+
+  /***弹出菜单栏-毛玻璃or图片样式****
+
   .b3-dialog__container {
     z-index: 2;
-
-  /**使用毛玻璃背景***/
-  background-color: rgb(255 255 255 / 50%);
-  backdrop-filter: blur(--blur-value);
-  transition:all 0.3s linear;
-}
-  /**毛玻璃背景结束**/
+    background-color: rgb(255 255 255 / 50%);
+    transition:all 0.3s linear;
+  }
   
-  /**使用图片背景，使用时关闭类透明背景，会卡一点**
+  /**使用图片背景，使用时关闭透明背景，会卡**
   background-image:var(--background-image);
   border-radius: 6px;
   background-position:center;
 	background-size:cover;
   transition: all 0.3s linear;
 }
-/**图片背景结束**/
+/**图片背景结束**
 
   .b3-dialog__container::before{
       content: '';
@@ -379,7 +388,11 @@ backdrop-filter: blur(16px);
       backdrop-filter: blur(var(--blur-value))!important;
       border-radius: 6px;
   }
-  
+
+  /***弹出菜单栏-特殊样式结束****/
+
+
+
   .b3-dialog__scrim {
     background-color: rgb(0 0 0 / 0%);
 }
@@ -528,6 +541,8 @@ backdrop-filter: blur(16px);
     border: none !important;
     border-radius: 4px !important;
   }
+
+
   /* 菜单中文字描述 */
   .b3-menu__item--readonly{
     line-height: 1.7em;
@@ -682,7 +697,7 @@ backdrop-filter: blur(16px);
 
   /**** 面包屑 ****/
   .protyle-breadcrumb, .protyle-breadcrumb .fn__flex-shrink {
-    background-color: #ffffff00;
+    background-color: transparent;
     border: 1px solid #fff0;
     border-bottom: 1px solid #fff0 !important;
   }
@@ -824,6 +839,7 @@ background-position: -20px 100%;
 .protyle-wysiwyg mark{
   background-color: var(--b3-theme-primary-lighter) ;
   color: transparent;
+  transition: all .2s linear 0ms;
 }
 .protyle-wysiwyg [data-node-id] [spellcheck="false"] mark:hover{
   background-color: transparent;
@@ -1059,7 +1075,7 @@ background-position: -20px 100%;
   text-align: center;
   border-bottom: 0px solid #c5c7ca !important;
   font-size: 1.75em;
-  color: #4dedf5;
+  color: var(--b3-theme-primary);
 }
 .protyle-wysiwyg [data-node-id].h2,.b3-typography h2 {
   position: relative;
