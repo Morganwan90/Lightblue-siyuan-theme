@@ -6,9 +6,9 @@
 :root {
     /* 主色 */
     --b3-theme-primary:       #4285f4; /* 主色调，一般用在按钮等其他需要醒目的地方 */
-    --b3-theme-primary-dark: #0069D3;
-    --b3-theme-primary-darker: #004EB4;
-    --b3-theme-primary-darkest: #003695;
+    --b3-theme-primary-light: #0069D3;
+    --b3-theme-primary-lighter: #004EB4;
+    --b3-theme-primary-lightest: #003695;
     --b3-theme-secondary: #f3a92f;
     --b3-theme-background: #FFFFFF; /* 背景色，主要用于编辑器背景 */
     --b3-theme-surface: rgba(0, 0, 0, 0.20); /* 主要用于分栏背景 */
