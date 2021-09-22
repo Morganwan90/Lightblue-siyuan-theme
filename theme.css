@@ -13,7 +13,7 @@
     --b3-theme-background: #FFFFFF; /* 背景色，主要用于编辑器背景 */
     --b3-theme-surface: rgba(0, 0, 0, 0.20); /* 主要用于分栏背景 */
     --b3-theme-surface-light: rgba(41, 42, 45, .86);
-    --b3-theme-error: #AD0040;
+    --b3-theme-error: #d23f31;
 
     /* 文字颜色 */
     --b3-theme-on-primary:   #fff; /* 主色调上的文字颜色 */
