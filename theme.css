@@ -1202,9 +1202,11 @@ background-position: -20px 100%;
 .b3-typography table tbody tr:nth-child(n),.protyle-wysiwyg table tbody tr:nth-child(n) {
   background: transparent;
 }
-
-
+/* 首行背景色 */
+.protyle table thead tr {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+}
 /* 添加行悬浮时背景色 */
 .b3-typography table tr:hover, .protyle-wysiwyg table tr:hover{
-  background-color: var(--b3-theme-surface) !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
 }
