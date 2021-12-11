@@ -7,8 +7,8 @@
     /* 主色 */
     --b3-theme-primary:       #4285f4; /* 主色调，一般用在按钮等其他需要醒目的地方 */
     --b3-theme-primary-light: rgba(4, 66, 165, 0.87);
-    --b3-theme-primary-lighter: rgba(66, 133, 244, 0.38);
-    --b3-theme-primary-lightest: rgba(66, 133, 244, 0.12);
+    --b3-theme-primary-lighter: rgba(66, 133, 244, 0.5);
+    --b3-theme-primary-lightest: rgba(66, 133, 244, 0.2);
     --b3-theme-secondary: #f3a92f;
     --b3-theme-background: #FFFFFF; /* 背景色，主要用于编辑器背景 */
     --b3-theme-surface: rgba(0, 0, 0, 0.20); /* 主要用于分栏背景 */
@@ -32,7 +32,7 @@
     --b3-border-color: rgba(0, 0, 0, .05);
 
     /* 滚动条 */
-    --b3-scroll-color: rgba(0, 0, 0, .2);
+    --b3-scroll-color: rgba(0,0,0,0.15);
 
     /* 列表 */
     --b3-list-hover:   rgba(0, 0, 0, .05);
@@ -45,7 +45,7 @@
     --b3-menu-background: var(--b3-theme-background);
 
     /* 提示 */
-    --b3-tooltips-color: rgba(0, 0, 0, 0.7);
+    --b3-tooltips-color: var(--b3-theme-primary-lighter);
 
     /* 卡片背景 */
     --b3-card-error-color:       rgb(97, 26, 21);
@@ -158,8 +158,9 @@
     --switch-uncheck-color:         #FFF; /* switch 开关未开启时颜色 */
 
     --scrollbar-hover-background:          #ccc; /* 滚动条悬浮时背景色 */
-    --column-scrollbar-background:         #ccc; /* 边栏内滚动条通用背景色 */
-    --column-scrollbar-hover-background:   #666666; /* 边栏内滚动条悬浮时背景色 */
+    --column-scrollbar-background:         var(--b3-scroll-color); /* 边栏内滚动条通用背景色 */
+    --column-scrollbar-hover-background:   var(--b3-theme-primary-lighter); /* 边栏内滚动条悬浮时背景色 */
+    --dialog-background:           rgb(244, 244, 248); /*弹出窗口背景栏*/
 
     /* 标题颜色 */
     --h1-color: inherit;
@@ -180,7 +181,7 @@
     --block-margin:     var(--margin-top-bottom)  var(--margin-left-right)  !important; /* 块间距 */
     --block-padding:    var(--padding-top-bottom) var(--padding-left-right) !important; /* 块内边距 */
     --background-image: url("img/bg.jpg"); /* 背景图 */
-    --blur-value:       40px; /* 背景图片模糊程度 */
+    --blur-value:       10px; /* 背景图片模糊程度 */
     --glass-editor-background: rgb(255,255,255,10%); /* 毛玻璃效果：背景色 */
     --glass-box-shadow: 0 4px 12px rgba(120,120,120,0.35); /* 毛玻璃效果：阴影 */
 
@@ -189,11 +190,6 @@
     --common-transition:          all 0.3s ease-in-out;   /* 通用动画 */
 }
 
-/**** 特殊样式 ****/
-/* 工具栏选中状态 */
-.protyle-toolbar__item--current{
-    color: (--b3-theme-primary);
-}
 
 /* 选择框颜色 */
 .b3-select {
@@ -225,13 +221,24 @@ option {
   .b3-list-item, .b3-list-item__text{
     color: var(--b3-theme-on-surface);
   }
-  .b3-list--files .b3-list-item--focus:not(.dragover), .b3-list--background .b3-list-item--focus {
+  .b3-list--files .b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) {
+    background-color: var(--b3-theme-primary-lighter) !important;
+    color: red;
+  }
+  
+  .b3-list--background .b3-list-item--focus {
     background-color: var(--b3-theme-primary-lighter) !important;
   }
+
   .b3-list--files .b3-list-item:hover, .b3-list--background .b3-list-item:hover {
     background-color: var(--b3-theme-primary-lightest);
   }
   
+  .b3-list--background .b3-list-item:hover:not(.b3-list-item--focus) {
+    background-color: var(--b3-theme-primary-lightest);
+  
+  }
+
   .file-tree [data-type="navigation-file"] .b3-list-item__text{
     opacity: 1;
   }
@@ -280,7 +287,7 @@ body{
   .layout__center .fn__flex-1.fn__flex [data-type='wnd']{
     margin:  5px auto;
     padding: 5px 0px;
-    max-width: 1100px;
+    max-width: 1300px;
   }
   
   [data-type='wnd']::before{
@@ -352,7 +359,7 @@ body{
 
   /**弹出窗口-正常**/
   .b3-dialog__container {
-    background-color: rgb(255 255 255);
+    background-color: var(--dialog-background)!important;
     transition:all 0.1s linear;
   }
   /**弹出窗口-正常结束**/
@@ -412,7 +419,7 @@ body{
   
   /***搜索栏***/
   .search__header .b3-text-filed--text {
-      background-color: #00000020;
+      background-color: rgba(0,0,0,0.05);
       border: 1px solid #fff0;
       border-bottom: 1px solid #fff0 !important;
   }
@@ -566,7 +573,7 @@ body{
   /**** Switch 开关 ****/
 /* 未开启状态 */
 .b3-switch {
-  background-color: rgb(0 0 0 / 10%); 
+  background-color: var(--b3-theme-primary-lightest); 
 }
 
 /* 开启状态 */
@@ -1073,10 +1080,14 @@ background-position: -20px 100%;
 /****新标题格式****/
 .protyle-wysiwyg [data-node-id].h1,.b3-typography h1{
   text-align: center;
-  border-bottom: 0px solid #c5c7ca !important;
+  padding: 2px 0px 0px 7px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: 4px solid var(--b3-font-color10) !important;
   font-size: 1.75em;
   color: var(--b3-theme-primary);
 }
+
 .protyle-wysiwyg [data-node-id].h2,.b3-typography h2 {
   position: relative;
   font-size: 1.5em;
@@ -1084,10 +1095,11 @@ background-position: -20px 100%;
   border-left: 6px solid var(--b3-font-color10);
   text-align: justify;
   padding: 2px 0px 0px 7px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   padding-left: 7px;
-  border-bottom: 1px solid #596169 !important;
+  border-bottom: 3px double var(--b3-font-color10) !important;
+  color:var(--b3-theme-primary);
   }
 
 .protyle-wysiwyg [data-node-id].h3 ,.b3-typography h3{
@@ -1100,7 +1112,9 @@ background-position: -20px 100%;
   margin-top: 10px;
   margin-bottom: 10px;
   padding-left: 7px;
+  color:var(--b3-theme-primary);
 }
+
 
 .protyle-wysiwyg [data-node-id].h4 ,.b3-typography h4{
   position: relative;
@@ -1109,8 +1123,8 @@ background-position: -20px 100%;
   border-left: 2px solid var(--b3-font-color10);
   text-align: justify;
   padding: 2px 0px 0px 7px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   padding-left: 7px;
 }
 
@@ -1144,7 +1158,7 @@ background-position: -20px 100%;
   .protyle-wysiwyg [data-node-id].li>.protyle-action:hover:after{
     opacity: 0.2; /* 圆点悬浮时外圈透明度 */
   }
-  
+
   /* 大纲折叠时样式 */
   .protyle-wysiwyg [data-node-id].li[fold="1"]>.protyle-action:after{
     background-color: var(--b3-theme-on-surface);
