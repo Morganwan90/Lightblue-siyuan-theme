@@ -193,7 +193,7 @@
 
 /* 选择框颜色 */
 .b3-select {
-  background-color: rgb(0 0 0 / 5%);
+  background-color: rgb(0 0 0 / 5%); /*更改*/
 }
 
 /*下拉栏背景*/
