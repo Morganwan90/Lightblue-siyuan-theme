@@ -243,6 +243,39 @@ option {
     opacity: 1;
   }
 
+/*******************抄了Tsundoku大的代码********************/
+.b3-list--files [data-type="navigation-root"] .b3-list-item__text,
+.b3-list--files [data-type="navigation-root"]{
+    font-weight: 600;
+    color: var(--b3-theme-primary) !important;
+}
+.b3-list--files [data-type="navigation-root"] .b3-list-item__toggle {
+  color: var(--b3-theme-primary);
+}
+
+/* 文档标题 */
+.file-tree ul.b3-list.b3-list--background [data-type="NodeDocument"][data-treetype="outline"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-type="NodeDocument"][data-treetype="outline"]{
+    font-weight: 600;
+}
+
+.file-tree ul.b3-list.b3-list--background [data-subtype="h1"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h1"]{
+    font-weight: 600;
+    color:var(--b3-theme-primary);
+}
+.file-tree ul.b3-list.b3-list--background [data-subtype="h2"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h2"]{
+    font-weight: 600;
+    color:var(--b3-theme-primary);
+}
+.file-tree ul.b3-list.b3-list--background [data-subtype="h3"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h3"] {
+    font-weight: 600;
+}
+/*************Tsundoku大的代码部分结束*********/
+
+
   /* 边栏搜索 */
   .search__label .b3-form__icon-input{
     background-color: var(--b3-theme-surface);
