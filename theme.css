@@ -223,7 +223,7 @@ option {
   }
   .b3-list--files .b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) {
     background-color: var(--b3-theme-primary-lighter) !important;
-    color: red;
+    font-weight: 600;
   }
   
   .b3-list--background .b3-list-item--focus {
