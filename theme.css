@@ -160,7 +160,7 @@
     --scrollbar-hover-background:          #ccc; /* 滚动条悬浮时背景色 */
     --column-scrollbar-background:         var(--b3-scroll-color); /* 边栏内滚动条通用背景色 */
     --column-scrollbar-hover-background:   var(--b3-theme-primary-lighter); /* 边栏内滚动条悬浮时背景色 */
-    --dialog-background:           rgb(244, 244, 248); /*弹出窗口背景栏*/
+    --dialog-background:           #ededed; /*弹出窗口背景栏*/
 
     /* 标题颜色 */
     --h1-color: inherit;
@@ -341,8 +341,6 @@ body{
     margin: 10px;
     border-radius: 8px;
   }
-  
-  /**修改内容**/
  
   .protyle-toolbar {
     background-color: var(--glass-editor-background);
@@ -352,21 +350,10 @@ body{
     /**backdrop-filter: blur(16px);**/
   }
 
-  .layout__empty {
+.layout__empty {
       background-color: #ffffff00;
   }
-  .layout__center .layout-tab-bar{
-      background: transparent;
-      padding: px;
-      border: none;
-  }
-  
-  .layout__center .layout-tab-bar .item{
-      background-color: transparent;
-      border:none;
-      margin: 0 4px;
-      padding-left: 10px;
-  }
+ 
   
   .protyle-preview {
       background-color: #ffffff00;
@@ -387,7 +374,9 @@ body{
       background: transparent;
   }
   
-
+  .fn__loading {
+    background-color: transparent !important;
+  }
 
 
   /**弹出窗口-正常**/
@@ -695,12 +684,32 @@ body{
     margin:  0;
     transition: var(--common-transition);
   }
+
   .layout-tab-bar .item:hover .item__close{
     opacity: 1;
-    width:   8px;
-    height:  8px;
-    margin: 0 4px;;
+    width:   2px;
+    height:  2px;
+    margin: 0 2px;
   }
+
+  .layout__center .layout-tab-bar{
+    background: transparent;
+    padding: 0 4px;
+    border: none;
+}
+
+.layout__center .layout-tab-bar .item{
+    border:none;
+    margin: 0 4px;
+    padding-left: 10px;
+    font-style: normal;
+}
+
+.layout__center .layout-tab-bar .item:hover{
+  background-color: var(--b3-theme-primary-lightest);
+}
+
+
   /** 页签样式，使用时需要注释另一种样式 **/
   /* 样式 1：官方默认 
   需要将页签栏颜色设置为与背景色不同
@@ -1074,6 +1083,17 @@ background-position: -20px 100%;
     padding-bottom: var(--padding-top-bottom) !important;
   }
   
+/*下划线样式*/
+.protyle-wysiwyg [data-node-id].hr>div {
+  border-bottom: 2px solid var(--b3-theme-primary);
+}
+
+/*列表样式*/
+.protyle-wysiwyg [data-node-id].li>[data-node-id]:before {
+  border-left: 1.5px solid var(--b3-theme-primary-lighter);
+}
+
+
   /************** 四、排版 **************************/
   /**** 整体设置 ****/
   .b3-typography, .protyle-wysiwyg [data-node-id]{
