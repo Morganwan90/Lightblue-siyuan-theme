@@ -242,7 +242,7 @@ option {
     opacity: 1;
   }
 
-/*******************抄了Tsundoku大的代码********************/
+/*************大纲代码部分********/
 .b3-list--files [data-type="navigation-root"] .b3-list-item__text,
 .b3-list--files [data-type="navigation-root"]{
     font-weight: 600;
@@ -261,18 +261,35 @@ option {
 .file-tree ul.b3-list.b3-list--background [data-subtype="h1"] .b3-list-item__text,
 .file-tree ul.b3-list.b3-list--background [data-subtype="h1"]{
     font-weight: 600;
-    color:var(--b3-theme-primary);
+    color:var(--b3-font-color8);
 }
 .file-tree ul.b3-list.b3-list--background [data-subtype="h2"] .b3-list-item__text,
 .file-tree ul.b3-list.b3-list--background [data-subtype="h2"]{
     font-weight: 600;
-    color:var(--b3-theme-primary);
+    color:var(--b3-font-color10);
 }
 .file-tree ul.b3-list.b3-list--background [data-subtype="h3"] .b3-list-item__text,
 .file-tree ul.b3-list.b3-list--background [data-subtype="h3"] {
     font-weight: 600;
+    color:var(--b3-font-color12);
 }
-/*************Tsundoku大的代码部分结束*********/
+.file-tree ul.b3-list.b3-list--background [data-subtype="h4"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h4"] {
+    font-weight: 600;
+    color:var(--b3-font-color10);
+}
+.file-tree ul.b3-list.b3-list--background [data-subtype="h5"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h5"] {
+    font-weight: 600;
+    color:var(--b3-font-color13);
+}
+
+
+.file-tree ul.b3-list.b3-list--background  [data-treetype="outline"]{
+  border-bottom: 1px solid var(--b3-border-color);
+}
+/*************大纲的代码部分结束*********/
+
 
 
   /* 边栏搜索 */
