@@ -1,4 +1,4 @@
-/*本人第一次接触CSS，该主题系在langzhou的Winter-mix,以及VIWZ的Room基础及教程上改编，两位主题作者同样细心解答了我很多很弱的问题，万分感谢*/
+/*该主题系在langzhou的Winter-mix,以及VIWZ的Room基础及教程上改编，两位主题作者同样细心解答了我很多很弱的问题，万分感谢*/
 
 
 
@@ -223,7 +223,6 @@ option {
   }
   .b3-list--files .b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) {
     background-color: var(--b3-theme-primary-lighter) !important;
-    font-weight: 600;
   }
   
   .b3-list--background .b3-list-item--focus {
@@ -592,6 +591,10 @@ body{
     border: none;
   }
   
+  /**字体选择边框**/
+.b3-color__square:hover {
+  box-shadow: 0 0 0 1px var(--b3-theme-primary-lighter),0 0 0 1px var(--b3-theme-background) inset;
+}
   /**** Switch 开关 ****/
 /* 未开启状态 */
 .b3-switch {
@@ -676,14 +679,7 @@ body{
     text-overflow:ellipsis;
     padding: 0 2px; 
   }
-  /* 隐藏关闭按钮*/
-  .layout-tab-bar .item__close{
-    opacity: 0;
-    width:   0;
-    height:  0;
-    margin:  0;
-    transition: var(--common-transition);
-  }
+
 
   .layout__center .layout-tab-bar{
     background: transparent;
