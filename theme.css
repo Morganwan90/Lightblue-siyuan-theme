@@ -260,28 +260,23 @@ option {
 
 .file-tree ul.b3-list.b3-list--background [data-subtype="h1"] .b3-list-item__text,
 .file-tree ul.b3-list.b3-list--background [data-subtype="h1"]{
-    font-weight: 600;
     color:var(--b3-font-color8);
 }
 .file-tree ul.b3-list.b3-list--background [data-subtype="h2"] .b3-list-item__text,
 .file-tree ul.b3-list.b3-list--background [data-subtype="h2"]{
-    font-weight: 600;
     color:var(--b3-font-color10);
 }
 .file-tree ul.b3-list.b3-list--background [data-subtype="h3"] .b3-list-item__text,
 .file-tree ul.b3-list.b3-list--background [data-subtype="h3"] {
-    font-weight: 600;
     color:var(--b3-font-color12);
 }
 .file-tree ul.b3-list.b3-list--background [data-subtype="h4"] .b3-list-item__text,
 .file-tree ul.b3-list.b3-list--background [data-subtype="h4"] {
-    font-weight: 600;
-    color:var(--b3-font-color10);
+    color:var(--b3-font-color9);
 }
 .file-tree ul.b3-list.b3-list--background [data-subtype="h5"] .b3-list-item__text,
 .file-tree ul.b3-list.b3-list--background [data-subtype="h5"] {
-    font-weight: 600;
-    color:var(--b3-font-color13);
+    color:var(--b3-font-color3);
 }
 
 
