@@ -272,7 +272,7 @@ option {
 }
 .file-tree ul.b3-list.b3-list--background [data-subtype="h4"] .b3-list-item__text,
 .file-tree ul.b3-list.b3-list--background [data-subtype="h4"] {
-    color:var(--b3-font-color9);
+    color:var(--b3-font-color7);
 }
 .file-tree ul.b3-list.b3-list--background [data-subtype="h5"] .b3-list-item__text,
 .file-tree ul.b3-list.b3-list--background [data-subtype="h5"] {
@@ -358,7 +358,6 @@ body{
     border-radius: 3px;
     padding: 1px 8px;
     z-index: 100;
-    /**backdrop-filter: blur(16px);**/
   }
 
 .layout__empty {
@@ -398,41 +397,6 @@ body{
   /**弹出窗口-正常结束**/
 
 
-
-  /***弹出菜单栏-毛玻璃or图片样式****
-
-  .b3-dialog__container {
-    z-index: 2;
-    background-color: rgb(255 255 255 / 50%);
-    transition:all 0.3s linear;
-  }
-  
-  /**使用图片背景，使用时关闭透明背景，会卡**
-  background-image:var(--background-image);
-  border-radius: 6px;
-  background-position:center;
-	background-size:cover;
-  transition: all 0.3s linear;
-}
-/**图片背景结束**
-
-  .b3-dialog__container::before{
-      content: '';
-      position: absolute!important;
-      top: 0;	left: 0; right: 0;	bottom: 0;
-      z-index: -3;   
-      background-position: center top;
-      background-size: cover;
-      background-attachment: fixed;
-      background:var(--glass-editor-background);
-      backdrop-filter: blur(var(--blur-value))!important;
-      border-radius: 6px;
-  }
-
-  /***弹出菜单栏-特殊样式结束****/
-
-
-
   .b3-dialog__scrim {
     background-color: rgb(0 0 0 / 0%);
 }
@@ -468,16 +432,9 @@ body{
   .block__popover {
   /**使用毛玻璃背景***/
   background-color: rgb(255 255 255 / 10%);
-  backdrop-filter: blur(--blur-value);
   }
     /**毛玻璃背景结束**/
     
-  /**使用图片背景，使用时关闭类透明背景，会卡一点**
-  background-image:var(--background-image);
-  background-position: center;
-  background-size: cover;
-}
-  /**图片背景结束**/
   
   .block__popover.block__popover--move.block__popover--open{
     margin: 0px auto;
@@ -543,8 +500,7 @@ body{
 
   .b3-menu, .protyle-util{
     padding: 10px 0px;
-    background-color: rgb(255 255 255 / 10%);
-    backdrop-filter: blur(33px);
+    background-color: var(--dialog-background);
   }
   
   /* 菜单项 */
@@ -582,7 +538,10 @@ body{
     border-radius: 4px !important;
   }
 
-
+  .b3-menu__item--show .b3-menu__submenu {
+    background-color: var(--dialog-background);
+  }
+  
   /* 菜单中文字描述 */
   .b3-menu__item--readonly{
     line-height: 1.7em;
@@ -745,11 +704,10 @@ body{
   
   /**** 浮出工具栏 ****/
   .protyle-toolbar{
-    background-color:rgb(255 255 255 / 10%);
+    background-color:var(--dialog-background);
         border-radius: 30px;
         padding: 1px 8px;
         z-index: 100;
-      backdrop-filter: blur(20px);
   }
   
   /**** 页面标题 ****/
