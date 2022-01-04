@@ -160,7 +160,8 @@
     --scrollbar-hover-background:          #ccc; /* 滚动条悬浮时背景色 */
     --column-scrollbar-background:         var(--b3-scroll-color); /* 边栏内滚动条通用背景色 */
     --column-scrollbar-hover-background:   var(--b3-theme-primary-lighter); /* 边栏内滚动条悬浮时背景色 */
-    --dialog-background:           #ededed; /*弹出窗口背景栏*/
+    --dialog-background:           rgb(237, 237, 237); /*弹出窗口背景栏*/
+    --new-background-main:         rgba(237, 237, 237,75%); /*主背景栏*/
 
     /* 标题颜色 */
     --h1-color: inherit;
@@ -181,8 +182,8 @@
     --block-margin:     var(--margin-top-bottom)  var(--margin-left-right)  !important; /* 块间距 */
     --block-padding:    var(--padding-top-bottom) var(--padding-left-right) !important; /* 块内边距 */
     --background-image: url("img/bg.jpg"); /* 背景图 */
-    --blur-value:       10px; /* 背景图片模糊程度 */
-    --glass-editor-background: rgb(255,255,255,10%); /* 毛玻璃效果：背景色 */
+    --blur-value:       10px; /* 背景图片模糊程度 因性能原因已暂时取消*/
+    --glass-editor-background: rgb(255,255,255,10%); /* 毛玻璃效果：背景色 因性能原因已暂时取消*/
     --glass-box-shadow: 0 4px 12px rgba(120,120,120,0.35); /* 毛玻璃效果：阴影 */
 
     /**** 动画 ****/
@@ -328,9 +329,9 @@ body{
     padding: 5px;
     position: relative;    
     box-shadow: var(--glass-box-shadow);
-  overflow: hidden;
-  z-index: 2;
-  box-sizing: border-box;
+    overflow: hidden;
+    z-index: 2;
+    box-sizing: border-box;
     border-radius: 6px;
   }
   .layout__center .fn__flex-1.fn__flex [data-type='wnd']{
@@ -344,8 +345,7 @@ body{
   position: absolute;
   top: 0;	left: 0; right: 0;	bottom: 0;
   z-index: -3;   
-  background:var(--glass-editor-background);
-  backdrop-filter: blur(var(--blur-value));
+  background:var(--new-background-main);
   }
   
   .layout__center .fn__flex{
@@ -436,7 +436,7 @@ body{
   /***弹出页面***/
   .block__popover {
   /**使用毛玻璃背景***/
-  background-color: rgb(255 255 255 / 10%);
+  background-color: var(--dialog-background);
   }
     /**毛玻璃背景结束**/
     
@@ -454,12 +454,6 @@ body{
     content: '';
   position: absolute!important;
   top: 0;	left: 0; right: 0;	bottom: 0;
-  z-index: -3;   
-  background-position: center top;
-  background-size: cover;
-  background-attachment: fixed;
-  background: var(--glass-editor-background);
-    backdrop-filter: blur(20px)!important;
   }
   
 .protyle {
@@ -751,8 +745,7 @@ body{
   }
   
   .fullscreen{
-    background-color: var(--glass-editor-background);
-    backdrop-filter: blur(20px);
+    background-color: var(--dialog-background);
   }
 
 
