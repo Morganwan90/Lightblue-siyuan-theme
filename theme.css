@@ -247,6 +247,9 @@ option {
     border-bottom: 0.5px solid var(--b3-font-color10);
   }
 
+  .b3-list-item {
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.15);
+   }
 
 /*************大纲代码部分********/
 .b3-list--files [data-type="navigation-root"] .b3-list-item__text,
