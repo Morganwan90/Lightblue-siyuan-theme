@@ -245,6 +245,7 @@ option {
 
 .file-tree .b3-list--background .b3-list-item--focus .b3-list-item__text,
 .file-tree .b3-list--background .b3-list-item--focus .b3-list-item__toggle,
+.file-tree .b3-list--background .b3-list-item--focus .b3-list-item__icon svg,
 .file-tree .b3-list--background .b3-list-item--focus{
   color:rgb(231, 97, 24) !important;
 }
