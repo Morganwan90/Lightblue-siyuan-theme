@@ -212,12 +212,15 @@ option {
 
 /************** 一、页面框架与控件 ***********************/  
   /**** 停靠栏 dock ****/
-  #dockLeft, #dockRight, #dockTop, #dockBottom{ background-color: var(--dock-background); }
   #dockLeft   { border-right:  var(--dock-border); }
   #dockRight  { border-left:   var(--dock-border); }
   #dockTop    { border-bottom: var(--dock-border); }
   #dockBottom { border-top:    var(--dock-border); }
-  
+
+  .toolbar,#dockLeft, #dockRight, #dockTop, #dockBottom{
+    background: transparent;
+  }
+
  /* 边栏列表项 */
 .b3-list-item, .b3-list-item__text{
   color: var(--b3-theme-on-surface);
@@ -240,7 +243,9 @@ option {
   background-color: var(--b3-theme-primary-lightest);
 }
 
-.file-tree .b3-list--background .b3-list-item--focus .b3-list-item__text{
+.file-tree .b3-list--background .b3-list-item--focus .b3-list-item__text,
+.file-tree .b3-list--background .b3-list-item--focus .b3-list-item__toggle,
+.file-tree .b3-list--background .b3-list-item--focus{
   color:rgb(231, 97, 24) !important;
 }
 
@@ -273,28 +278,32 @@ option {
 .file-tree ul.b3-list.b3-list--background [data-type="NodeDocument"][data-treetype="outline"] .b3-list-item__toggle,
 .file-tree ul.b3-list.b3-list--background [data-type="NodeDocument"][data-treetype="outline"]{
     color: var(--b3-theme-primary) !important;
-    font-weight: 400 !important;
 }
 
 .file-tree ul.b3-list.b3-list--background [data-subtype="h1"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h1"] .b3-list-item__toggle,
 .file-tree ul.b3-list.b3-list--background [data-subtype="h1"]{
-    color:var(--b3-font-color8)!important;
+    color:var(--b3-font-color8);
 }
 .file-tree ul.b3-list.b3-list--background [data-subtype="h2"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h2"] .b3-list-item__toggle,
 .file-tree ul.b3-list.b3-list--background [data-subtype="h2"]{
-    color:var(--b3-font-color12)!important;
+    color:var(--b3-font-color12);
 }
 .file-tree ul.b3-list.b3-list--background [data-subtype="h3"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h3"] .b3-list-item__toggle,
 .file-tree ul.b3-list.b3-list--background [data-subtype="h3"] {
-    color:var(--b3-font-color10)!important;
+    color:var(--b3-font-color10);
 }
 .file-tree ul.b3-list.b3-list--background [data-subtype="h4"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h4"] .b3-list-item__toggle,
 .file-tree ul.b3-list.b3-list--background [data-subtype="h4"] {
-    color:var(--b3-font-color3)!important;
+    color:var(--b3-font-color3);
 }
 .file-tree ul.b3-list.b3-list--background [data-subtype="h5"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h5"] .b3-list-item__toggle,
 .file-tree ul.b3-list.b3-list--background [data-subtype="h5"] {
-    color:var(--b3-font-color9)!important;
+    color:var(--b3-font-color9);
 }
 
 
@@ -310,6 +319,10 @@ option {
     background-color: var(--b3-theme-surface);
   }
   /* 边栏分割线 */
+  .layout__resize--lr {
+    margin: 12px;
+  }
+
   .layout__resize--lr:after{
     background-color: var(--column-border);
   }
@@ -322,12 +335,9 @@ body{
     background-size: cover;
   }
   
-  .toolbar,#dockLeft, #dockRight, #dockTop, #dockBottom{
-    background: transparent;
-  }
-  
+
   .fn__flex-1.fn__flex [data-type='wnd']{
-    background: var(--new-background-main); 
+    background: var(--dialog-background); 
     min-height: 90% !important;
     margin:  5px;
     padding: 5px;
@@ -430,13 +440,8 @@ body{
   }
   
   .block__popover.block__popover--move.block__popover--open{
-    margin: 0px auto;
-    margin: 10px;
-    overflow: hidden;
-    z-index: 2;
-    box-sizing: border-box;
     border-radius: 6px;
-    box-shadow: 0px 0px 50px 10px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 50px 10px rgba(0,0,0,0.2);
   } 
   
 .protyle {
@@ -636,7 +641,6 @@ body{
 }
 
 .layout__center .layout-tab-bar .item{
-    border:none;
     margin: 0 4px;
     padding-left: 10px;
     font-style: normal;
@@ -652,13 +656,9 @@ body{
   .layout-tab-bar .item{
     padding: 0 4px; 
     background-color: transparent; 
+    border-bottom: 1px solid var(--b3-font-color9);
   }
 
-  .layout-tab-bar .item--focus .item__text{
-    opacity: 1;
-    color: var(--b3-font-color10);
-  }
-  
   .layout-tab-bar .item__text{
     border-bottom: 3px solid transparent;
     padding: 2px;
@@ -666,10 +666,17 @@ body{
     opacity: 0.6;
     color: var(--b3-theme-on-background);
   }
+
   .layout-tab-bar .item--focus {
-  border-bottom: 3px solid !important;
-  border-color: var(--b3-theme-primary) !important;
+    border-bottom: 3px solid var(--b3-theme-primary)!important;
   }
+    
+  .layout-tab-bar .item--focus .item__text{
+    opacity: 1;
+    color: var(--b3-font-color10);
+  }
+  
+
   /* 样式代码结束 */
 
 
@@ -818,6 +825,8 @@ background-position: -20px 100%;
   color: transparent;
   transition: all .2s linear 0ms;
 }
+
+
 .protyle-wysiwyg [data-node-id] [spellcheck="false"] mark:hover{
   background-color: transparent;
   color: var(--b3-font-color12);
@@ -1201,12 +1210,9 @@ background-position: -20px 100%;
 }
 /* 首行背景色 */
 .protyle table thead tr {
-  background-color: rgba(66, 133, 244, 0.05) !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
 }
 /* 添加行悬浮时背景色 */
 .b3-typography table tr:hover, .protyle-wysiwyg table tr:hover{
   background-color: rgba(66, 133, 244, 0.2) !important;
-}
-.protyle-wysiwyg table tr th,.protyle-wysiwyg table tr td {
-    border: 1px solid rgba(66, 133, 244, 0.45);
 }
