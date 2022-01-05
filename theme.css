@@ -160,8 +160,8 @@
     --scrollbar-hover-background:          #ccc; /* 滚动条悬浮时背景色 */
     --column-scrollbar-background:         var(--b3-scroll-color); /* 边栏内滚动条通用背景色 */
     --column-scrollbar-hover-background:   var(--b3-theme-primary-lighter); /* 边栏内滚动条悬浮时背景色 */
-    --dialog-background:           rgb(237, 237, 237); /*弹出窗口背景栏*/
-    --new-background-main:         rgba(237, 237, 237,75%); /*主背景栏*/
+    --dialog-background:           rgb(237, 237, 237); /*背景栏*/
+    --background2:           rgba(237, 237, 237,0.94); /*背景栏*/
 
     /* 标题颜色 */
     --h1-color: inherit;
@@ -337,7 +337,7 @@ body{
   
 
   .fn__flex-1.fn__flex [data-type='wnd']{
-    background: var(--dialog-background); 
+    background: var(--background2); 
     min-height: 90% !important;
     margin:  5px;
     padding: 5px;
@@ -436,7 +436,7 @@ body{
   
   /***弹出页面***/
   .block__popover {
-  background-color: var(--dialog-background);
+  background-color: rgb(237, 237, 237);
   }
   
   .block__popover.block__popover--move.block__popover--open{
