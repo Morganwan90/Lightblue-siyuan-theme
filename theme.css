@@ -339,13 +339,8 @@ body{
 
   .layout__center .fn__flex-1.fn__flex [data-type='wnd']{
     margin:  5px auto;
-    padding: 5px 0px;
+    padding: 5px 5px;
     max-width: 1300px;
-  }
-  
-  .layout__center .fn__flex{
-    padding-right: 8px;
-    padding-left: 8px;
   }
   
   .protyle-background{
@@ -618,12 +613,6 @@ body{
 }
   /************** 二、文档编辑区 **************************/
   
-  /**** 页签栏 ****/
-  /* 通用设置 */
-  .layout-tab-bar{
-    border-bottom: var(--dock-border);
-    padding: 0;
-  }
   /*清除页签栏边框对侧边栏的影响*/
   .layout-tab-bar:empty{
     border-bottom: none;
@@ -1211,7 +1200,7 @@ background-position: -20px 100%;
 }
 /* 首行背景色 */
 .protyle table thead tr {
-  background-color: rgba(66, 133, 244,0.1) !important;
+  background-color: rgba(66, 133, 244, 0.05) !important;
 }
 /* 添加行悬浮时背景色 */
 .b3-typography table tr:hover, .protyle-wysiwyg table tr:hover{
