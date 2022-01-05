@@ -223,6 +223,7 @@ option {
   color: var(--b3-theme-on-surface);
 }
 
+/**文档树部分**/
 .b3-list--background .b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) {
   background-color: var(--b3-theme-primary-lighter) !important;
 }
@@ -240,7 +241,7 @@ option {
 }
 
 .file-tree .b3-list--background .b3-list-item--focus .b3-list-item__text{
-  color:var(--b3-font-color10);
+  color:rgb(231, 97, 24) !important;
 }
 
 /**字体清晰**/
