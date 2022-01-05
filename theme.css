@@ -326,29 +326,21 @@ body{
   }
   
   .fn__flex-1.fn__flex [data-type='wnd']{
-    background: transparent; 
+    background: var(--new-background-main); 
     min-height: 90% !important;
     margin:  5px;
     padding: 5px;
     position: relative;    
     box-shadow: var(--glass-box-shadow);
     overflow: hidden;
-    z-index: 2;
     box-sizing: border-box;
     border-radius: 6px;
   }
+
   .layout__center .fn__flex-1.fn__flex [data-type='wnd']{
     margin:  5px auto;
     padding: 5px 0px;
     max-width: 1300px;
-  }
-  
-  [data-type='wnd']::before{
-    content: '';
-  position: absolute;
-  top: 0;	left: 0; right: 0;	bottom: 0;
-  z-index: -3;   
-  background:var(--new-background-main);
   }
   
   .layout__center .fn__flex{
@@ -714,7 +706,7 @@ body{
   /**** 块图标 ****/
   /* 减淡块图标颜色 */
   .protyle-gutters svg {
-    color: rgba(66, 133, 244,0.5);
+    color: rgba(66, 133, 244,0.7);
   }
   /* 增加块图标悬浮时背景色 */
   .protyle-gutters button:hover svg{
@@ -743,7 +735,7 @@ body{
   }
   
   .fullscreen{
-    background-color: var(--dialog-background);
+    background-color: var(--dialog-background) !important;
   }
 
 
