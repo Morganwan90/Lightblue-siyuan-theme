@@ -5,9 +5,9 @@
 /******* 亮色主题配色模板 **********/
 :root {
     /* 主色 */
-    --b3-theme-primary:       #4285f4; /* 主色调，一般用在按钮等其他需要醒目的地方 */
+    --b3-theme-primary:       rgb(66, 133, 244); /* 主色调，一般用在按钮等其他需要醒目的地方 */
     --b3-theme-primary-light: rgba(4, 66, 165, 0.87);
-    --b3-theme-primary-lighter: rgba(66, 133, 244, 0.5);
+    --b3-theme-primary-lighter: rgba(66, 133, 244, 0.35);
     --b3-theme-primary-lightest: rgba(66, 133, 244, 0.2);
     --b3-theme-secondary: #f3a92f;
     --b3-theme-background: #FFFFFF; /* 背景色，主要用于编辑器背景 */
@@ -32,7 +32,7 @@
     --b3-border-color: rgba(0, 0, 0, .05);
 
     /* 滚动条 */
-    --b3-scroll-color: rgba(0,0,0,0.15);
+    --b3-scroll-color: var(--b3-theme-primary-lightest);
 
     /* 列表 */
     --b3-list-hover:   rgba(0, 0, 0, .05);
@@ -218,79 +218,87 @@ option {
   #dockTop    { border-bottom: var(--dock-border); }
   #dockBottom { border-top:    var(--dock-border); }
   
-  /* 边栏列表项 */
-  .b3-list-item, .b3-list-item__text{
-    color: var(--b3-theme-on-surface);
-  }
-  .b3-list--files .b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) {
-    background-color: var(--b3-theme-primary-lighter) !important;
-  }
-  
-  .b3-list--background .b3-list-item--focus {
-    background-color: var(--b3-theme-primary-lighter) !important;
-  }
+ /* 边栏列表项 */
+.b3-list-item, .b3-list-item__text{
+  color: var(--b3-theme-on-surface);
+}
 
-  .b3-list--files .b3-list-item:hover, .b3-list--background .b3-list-item:hover {
-    background-color: var(--b3-theme-primary-lightest);
-  }
-  
-  .b3-list--background .b3-list-item:hover:not(.b3-list-item--focus) {
-    background-color: var(--b3-theme-primary-lightest);
-  
-  }
+.b3-list--background .b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) {
+  background-color: var(--b3-theme-primary-lighter) !important;
+}
 
-  .file-tree [data-type="navigation-file"] .b3-list-item__text{
-    opacity: 1;
-  }
+.b3-list--background .b3-list-item--focus {
+  background-color: var(--b3-theme-primary-lighter) !important;
+}
 
-  .b3-list--background {
-    border-bottom: 0.5px solid var(--b3-font-color10);
-  }
+.b3-list--background .b3-list-item:hover {
+  background-color: var(--b3-theme-primary-lightest);
+}
 
-  .b3-list-item {
-    border-bottom: 0.5px solid rgba(0, 0, 0, 0.15);
-   }
+.b3-list--background .b3-list-item:hover:not(.b3-list-item--focus) {
+  background-color: var(--b3-theme-primary-lightest);
+}
+
+.file-tree .b3-list--background .b3-list-item--focus .b3-list-item__text{
+  color:var(--b3-font-color10);
+}
+
+/**字体清晰**/
+.file-tree [data-type="navigation-file"] .b3-list-item__text{
+  opacity: 1;
+}
+
+/**笔记本下划线**/
+.b3-list--background {
+  border-bottom: 1px solid var(--b3-font-color9);
+}
+
+/**笔记文档下划线**/
+.b3-list-item {
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+}
+
+/**笔记本名称加强**/
+ .b3-list--background [data-type="navigation-root"] .b3-list-item__text{
+     color: var(--b3-theme-primary) !important;
+ }
+ .b3-list--background [data-type="navigation-root"] .b3-list-item__toggle {
+   color: var(--b3-theme-primary);
+ }
+
 
 /*************大纲代码部分********/
-.b3-list--files [data-type="navigation-root"] .b3-list-item__text,
-.b3-list--files [data-type="navigation-root"]{
-    font-weight: 600;
-    color: var(--b3-theme-primary) !important;
-}
-.b3-list--files [data-type="navigation-root"] .b3-list-item__toggle {
-  color: var(--b3-theme-primary);
-}
-
-/* 文档标题 */
 .file-tree ul.b3-list.b3-list--background [data-type="NodeDocument"][data-treetype="outline"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-type="NodeDocument"][data-treetype="outline"] .b3-list-item__toggle,
 .file-tree ul.b3-list.b3-list--background [data-type="NodeDocument"][data-treetype="outline"]{
-    font-weight: 600;
+    color: var(--b3-theme-primary) !important;
+    font-weight: 400 !important;
 }
 
 .file-tree ul.b3-list.b3-list--background [data-subtype="h1"] .b3-list-item__text,
 .file-tree ul.b3-list.b3-list--background [data-subtype="h1"]{
-    color:var(--b3-font-color8);
+    color:var(--b3-font-color8)!important;
 }
 .file-tree ul.b3-list.b3-list--background [data-subtype="h2"] .b3-list-item__text,
 .file-tree ul.b3-list.b3-list--background [data-subtype="h2"]{
-    color:var(--b3-font-color10);
+    color:var(--b3-font-color12)!important;
 }
 .file-tree ul.b3-list.b3-list--background [data-subtype="h3"] .b3-list-item__text,
 .file-tree ul.b3-list.b3-list--background [data-subtype="h3"] {
-    color:var(--b3-font-color12);
+    color:var(--b3-font-color10)!important;
 }
 .file-tree ul.b3-list.b3-list--background [data-subtype="h4"] .b3-list-item__text,
 .file-tree ul.b3-list.b3-list--background [data-subtype="h4"] {
-    color:var(--b3-font-color7);
+    color:var(--b3-font-color3)!important;
 }
 .file-tree ul.b3-list.b3-list--background [data-subtype="h5"] .b3-list-item__text,
 .file-tree ul.b3-list.b3-list--background [data-subtype="h5"] {
-    color:var(--b3-font-color3);
+    color:var(--b3-font-color9)!important;
 }
 
 
 .file-tree ul.b3-list.b3-list--background  [data-treetype="outline"]{
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
 }
 /*************大纲的代码部分结束*********/
 
@@ -305,7 +313,7 @@ option {
     background-color: var(--column-border);
   }
 
-/*********实验功能：毛玻璃效果 代码开始 *********/
+
 body{
     background-color: white;
     background-image: var(--background-image);
@@ -316,14 +324,6 @@ body{
   .toolbar,#dockLeft, #dockRight, #dockTop, #dockBottom{
     background: transparent;
   }
-  /*是否需要隐藏工具栏*
-    border: none;
-    opacity: 0;
-    transition: opacity 400ms ease 0s;
-  }
-  .toolbar:hover,#dockLeft:hover, #dockRight:hover, #dockTop:hover, #dockBottom:hover{
-    opacity: 1;
-  }*/
   
   .fn__flex-1.fn__flex [data-type='wnd']{
     background: transparent; 
@@ -513,6 +513,7 @@ body{
   .b3-menu__separator{
     height: 1px;
     margin: 6px 0;
+    background-color:var(--b3-font-color10);
   }
   
 
@@ -673,13 +674,15 @@ body{
 
   .layout-tab-bar .item--focus .item__text{
     opacity: 1;
+    color: var(--b3-font-color10);
   }
+  
   .layout-tab-bar .item__text{
     border-bottom: 3px solid transparent;
     padding: 2px;
     text-overflow:ellipsis;
     opacity: 0.6;
-      color: var(--b3-theme-on-background);
+    color: var(--b3-theme-on-background);
   }
   .layout-tab-bar .item--focus {
   border-bottom: 3px solid !important;
@@ -711,7 +714,7 @@ body{
   /**** 块图标 ****/
   /* 减淡块图标颜色 */
   .protyle-gutters svg {
-    color: var(--b3-scroll-color);
+    color: rgba(66, 133, 244,0.5);
   }
   /* 增加块图标悬浮时背景色 */
   .protyle-gutters button:hover svg{
@@ -1095,7 +1098,7 @@ background-position: -20px 100%;
   margin-bottom: 15px;
   padding-left: 7px;
   border-bottom: 3px double var(--b3-font-color10) !important;
-  color:var(--b3-theme-primary);
+  color:var(--b3-font-color12);
   }
 
 .protyle-wysiwyg [data-node-id].h3 ,.b3-typography h3{
@@ -1108,7 +1111,7 @@ background-position: -20px 100%;
   margin-top: 10px;
   margin-bottom: 10px;
   padding-left: 7px;
-  color:var(--b3-theme-primary);
+  color:var(--b3-font-color10);
 }
 
 
@@ -1122,10 +1125,12 @@ background-position: -20px 100%;
   margin-top: 5px;
   margin-bottom: 5px;
   padding-left: 7px;
+  color:var(--b3-font-color3);
 }
 
 .protyle-wysiwyg [data-node-id].h5 ,.b3-typography h5{
   font-size: 1.1em;
+  color:var(--b3-font-color9);
 }
 
 .protyle-wysiwyg [data-node-id].h6,.b3-typography h6 {
@@ -1214,7 +1219,7 @@ background-position: -20px 100%;
 }
 /* 首行背景色 */
 .protyle table thead tr {
-  background-color: rgba(66, 133, 244, 0.1) !important;
+  background-color: rgba(66, 133, 244,0.1) !important;
 }
 /* 添加行悬浮时背景色 */
 .b3-typography table tr:hover, .protyle-wysiwyg table tr:hover{
