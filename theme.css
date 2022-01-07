@@ -1026,12 +1026,6 @@ background-position: -20px 100%;
   border-bottom: 2px solid var(--b3-theme-primary);
 }
 
-/*列表样式*/
-.protyle-wysiwyg [data-node-id].li>[data-node-id]:before {
-  border-left: 1.5px solid var(--b3-theme-primary-lighter);
-}
-
-
   /************** 四、排版 **************************/
   /**** 整体设置 ****/
   .b3-typography, .protyle-wysiwyg [data-node-id]{
@@ -1068,7 +1062,7 @@ background-position: -20px 100%;
     border-color: transparent;
   }
 
-/****新标题格式****/
+/****标题格式****/
 .protyle-wysiwyg [data-node-id].h1,.b3-typography h1{
   text-align: center;
   padding: 2px 0px 0px 7px;
@@ -1129,7 +1123,7 @@ background-position: -20px 100%;
   font-size: 1.1em;
 }
 
-/****新标题格式end****/
+/****标题格式end****/
 
 /* 标题加粗不显示 */
 .protyle-wysiwyg [data-type="NodeHeading"] strong{
@@ -1147,26 +1141,48 @@ background-position: -20px 100%;
 }
 
   /**** 大纲、列表 ****/
-  /* 圆点悬浮时外圈样式 */
-  .protyle-wysiwyg [data-node-id].li>.protyle-action:hover:after{
-    opacity: 0.2; /* 圆点悬浮时外圈透明度 */
+
+  /*列表样式*/
+  .protyle-wysiwyg [data-node-id].li>[data-node-id]:before {
+  border-left: 1.5px solid var(--b3-theme-primary-lighter);
   }
 
-  /* 大纲折叠时样式 */
-  .protyle-wysiwyg [data-node-id].li[fold="1"]>.protyle-action:after{
-    background-color: var(--b3-theme-on-surface);
-    opacity: 0.2;
-  }
-  .protyle-wysiwyg [data-node-id].li[fold="1"]>.protyle-action{
-    color: var(--b3-theme-primary);
-    transform: scale(1.1);
-    font-weight: bold;
-  }
-  /* 圆点悬浮时放大效果（折叠时无效果） */
-  .protyle-wysiwyg [data-node-id].li:not([fold="1"])>.protyle-action:hover svg, .protyle-wysiwyg [data-node-id].li:not([fold="1"])>.protyle-action:hover:after{
-    transition: var(--common-transition);
-    transform: scale(1.22);
-  }
+/**光标所在序列-圆点、序号颜色加强**/
+.protyle-wysiwyg [data-node-id].li:focus-within>.protyle-action {
+  color:var(--b3-font-color10) !important;
+  font-weight: bold;
+}
+
+.protyle-wysiwyg [data-node-id].li:focus-within>.protyle-action svg {
+  height: 24px;
+}
+
+/* 圆点悬浮时样式 */
+.protyle-wysiwyg [data-node-id].li>.protyle-action:hover:after{
+  background-color: var(--b3-font-color10) !important;
+  opacity: 0.2; /* 圆点悬浮时外圈透明度 */
+}
+
+.protyle-wysiwyg [data-node-id].li>.protyle-action:hover{
+  color:var(--b3-font-color10);
+}
+
+/* 大纲折叠时样式 */
+.protyle-wysiwyg [data-node-id].li[fold="1"]>.protyle-action:after{
+  background-color: var(--b3-font-color11) !important;
+  opacity: 0.2;
+}
+.protyle-wysiwyg [data-node-id].li[fold="1"]>.protyle-action{
+  color: var(--b3-font-color12)!important;
+  transform: scale(1.1);
+  font-weight: bold; 
+}
+/* 圆点悬浮时放大效果（折叠时无效果） */
+.protyle-wysiwyg [data-node-id].li:not([fold="1"])>.protyle-action:hover svg, .protyle-wysiwyg [data-node-id].li:not([fold="1"])>.protyle-action:hover:after{
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.22);
+}
+
   
   /* 消除待办事项图标背景色 */
   .protyle-wysiwyg [data-node-id].li[fold="1"]>.protyle-action--task:after, .protyle-wysiwyg [data-node-id].li>.protyle-action--task:hover:after{
