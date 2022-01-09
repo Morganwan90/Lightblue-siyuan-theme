@@ -1142,11 +1142,6 @@ background-position: -20px 100%;
 
   /**** 大纲、列表 ****/
 
-  /*列表样式*/
-  .protyle-wysiwyg [data-node-id].li>[data-node-id]:before {
-  border-left: 1.5px solid var(--b3-theme-primary-lighter);
-  }
-
 /**光标所在序列-圆点、序号颜色加强**/
 .protyle-wysiwyg [data-node-id].li:focus-within>.protyle-action {
   color:var(--b3-font-color10) !important;
@@ -1183,7 +1178,84 @@ background-position: -20px 100%;
   transform: scale(1.22);
 }
 
-  
+
+/******子弹流加强，根据logseq的主题作者pengx17的代码改造*******/
+
+
+/**将原先思源笔记的线条取消**/
+.protyle-wysiwyg [data-node-id].li>[data-node-id]:before {
+  content:"";
+  position:absolute;
+  border-left: 1px solid transparent;
+  top: 0px;
+  left: -2px;
+  height: 100%;
+}
+
+/**重新以list区域设定线条**/
+.protyle-wysiwyg [data-node-id].li .list {
+  position:relative;
+  border-left: 1px solid var(--b3-theme-primary-lighter);
+  height:100%;
+  left: -1.5px;
+  top:-2px;
+}
+
+/**以protyle-action区域设定光标聚集时转弯部分线条,白色bottom比黑色多1px**/
+.protyle-wysiwyg [data-node-id].li [data-node-id].li:focus-within > .protyle-action:before {
+  content: "";
+  left: -17.5px;
+  right: 20px;
+  top: -12px;
+  bottom: 16px;
+  position: absolute;
+  border-left: 2px solid var(--b3-font-color12);
+  border-bottom: 2px solid var(--b3-font-color12);
+  border-bottom-left-radius: 10px;
+}
+
+
+/**设定focus时直线部分线条**/
+.protyle-wysiwyg [data-node-id].li [data-node-id].list>[data-node-id]:before {
+  content: "";
+  position: absolute;
+  top: -11px;
+  bottom: 0;
+  border-left: 2px solid transparent;
+  left: -17.5px;
+}
+.protyle-wysiwyg [data-node-id].li [data-node-id].list:focus-within > [data-node-id]:not(:focus-within):before {
+  border-color: var(--b3-font-color12);
+}
+
+.protyle-wysiwyg [data-node-id].li [data-node-id].list:focus-within > [data-node-id]:focus-within ~ [data-node-id]:before {
+  border-color: transparent;
+}
+
+
+/**当同一块存在多行时的左边行**/
+.protyle-wysiwyg [data-node-id].li>div:nth-child(2):before {
+  content: "";
+  top: 34px !important;
+  height: calc(100% - 34px) !important;
+  border-left: 1px solid var(--b3-theme-primary-lighter);
+  left:-17.5px;
+}
+
+.protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2):not(:focus-within):before {
+  top: 20px !important;
+  height: calc(100% - 20px) !important;
+  border-left: 2px solid var(--b3-font-color12);
+  left:-18px;
+}
+
+/****子弹流笔记加强结束***/
+
+
+
+
+
+
   /* 消除待办事项图标背景色 */
   .protyle-wysiwyg [data-node-id].li[fold="1"]>.protyle-action--task:after, .protyle-wysiwyg [data-node-id].li>.protyle-action--task:hover:after{
     background: transparent !important;
@@ -1233,3 +1305,4 @@ background-position: -20px 100%;
 .b3-typography table tr:hover, .protyle-wysiwyg table tr:hover{
   background-color: rgba(66, 133, 244, 0.2) !important;
 }
+
