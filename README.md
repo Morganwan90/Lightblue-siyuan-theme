@@ -13,7 +13,7 @@
 
 根据logseq的主题作者pengx17的代码改造，效果如下：
 
-![image-20220110022647312](C:\Users\Morgan Wan\AppData\Roaming\Typora\typora-user-images\image-20220110022647312.png)
+![截图_20225710125718](https://user-images.githubusercontent.com/61633409/148695633-759aaeb1-bd5e-4042-ac63-722c519349cf.gif)
 
 列表中可以同一块多行<br>可以无序列表和有序列表混搭<br>但不可以列表和文字块混搭（着重线会断...)，如果有好办法github告诉我哈~
 
