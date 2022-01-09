@@ -13,7 +13,7 @@
 
 根据logseq的主题作者pengx17的代码改造，效果如下：
 
-![截图_20221510031556](https://user-images.githubusercontent.com/61633409/148697205-7ee4cad3-adf9-4fc9-9579-970ac0883ea0.gif)
+![截图_20222410032423](https://user-images.githubusercontent.com/61633409/148697503-4e30d537-b1c3-44be-b199-da7fe36f6f96.gif)
 
 列表中可以同一块多行<br>可以无序列表和有序列表混搭<br>但不可以列表和文字块混搭（着重线会断...)，如果有好办法github告诉我哈~
 
