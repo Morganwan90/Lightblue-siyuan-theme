@@ -86,7 +86,7 @@
 }
 
 .protyle-wysiwyg [data-node-id].li>.protyle-action:hover{
-  color:var(--b3-font-color10);
+  color:var(--list-bullet-focus);
 }
 
 /* 大纲折叠时样式 */
