@@ -1,0 +1,106 @@
+/******子弹流加强，根据logseq的主题作者pengx17的代码改造*******/
+
+
+/**将原先思源笔记的线条取消**/
+.protyle-wysiwyg [data-node-id].li>[data-node-id]:before {
+  content:"";
+  position:absolute;
+  border-left: 1px solid transparent;
+  top: 0px;
+  left: -2px;
+  height: 100%;
+}
+
+/**重新以list区域设定线条**/
+.protyle-wysiwyg [data-node-id].li .list {
+  position:relative;
+  border-left: 1px solid var(--list-border-initial);
+  height:100%;
+  left: -1.5px;
+  top:-2px;
+}
+
+/**以protyle-action区域设定光标聚集时转弯部分线条**/
+.protyle-wysiwyg [data-node-id].li [data-node-id].li:focus-within > .protyle-action:before {
+  content: "";
+  left: -18px;
+  right: 20px;
+  top: -12px;
+  bottom: 15px;
+  position: absolute;
+  border-left: 3px solid var(--list-border-focus);
+  border-bottom: 3px solid var(--list-border-focus);
+  border-bottom-left-radius: 10px;
+}
+
+
+/**设定focus时直线部分线条**/
+.protyle-wysiwyg [data-node-id].li [data-node-id].list>[data-node-id]:before {
+  content: "";
+  position: absolute;
+  top: -11px;
+  bottom: 0;
+  border-left: 3px solid transparent;
+  left: -18px;
+}
+.protyle-wysiwyg [data-node-id].li [data-node-id].list:focus-within > [data-node-id]:not(:focus-within):before {
+  border-color: var(--list-border-focus);
+}
+
+.protyle-wysiwyg [data-node-id].li [data-node-id].list:focus-within > [data-node-id]:focus-within ~ [data-node-id]:before {
+  border-color: transparent;
+}
+
+
+/**当同一块存在多行时的左边行**/
+.protyle-wysiwyg [data-node-id].li>div:nth-child(2):before {
+  content: "";
+  top: 34px !important;
+  height: calc(100% - 34px) !important;
+  border-left: 1px solid var(--list-border-initial);
+  left:-17.5px;
+}
+
+.protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2):not(:focus-within):before {
+  top: 20px !important;
+  height: calc(100% - 20px) !important;
+  border-left: 3px solid var(--list-border-focus);
+  left:-18.5px;
+}
+
+
+/**光标所在序列-圆点、序号颜色加强**/
+.protyle-wysiwyg [data-node-id].li:focus-within>.protyle-action {
+  color:var(--list-bullet-focus) !important;
+  font-weight: bold;
+}
+
+.protyle-wysiwyg [data-node-id].li:focus-within>.protyle-action svg {
+  height: 24px;
+}
+
+/* 圆点悬浮时样式 */
+.protyle-wysiwyg [data-node-id].li>.protyle-action:hover:after{
+  background-color: var(--list-bullet-hover-background) !important;
+  opacity: 0.2; /* 圆点悬浮时外圈透明度 */
+}
+
+.protyle-wysiwyg [data-node-id].li>.protyle-action:hover{
+  color:var(--b3-font-color10);
+}
+
+/* 大纲折叠时样式 */
+.protyle-wysiwyg [data-node-id].li[fold="1"]>.protyle-action:after{
+  background-color: var(--list-bullet-fold-background) !important;
+  opacity: 0.2;
+}
+.protyle-wysiwyg [data-node-id].li[fold="1"]>.protyle-action{
+  color: var(--list-bullet-fold)!important;
+  font-weight: bold; 
+}
+/* 圆点悬浮时放大效果（折叠时无效果） */
+.protyle-wysiwyg [data-node-id].li:not([fold="1"])>.protyle-action:hover svg, .protyle-wysiwyg [data-node-id].li:not([fold="1"])>.protyle-action:hover:after{
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.22);
+}
+/****子弹流笔记加强结束***/
