@@ -29,7 +29,7 @@
 @import url("Bullet-Threading.css");
 
 :root {
-    --list-border-initial:                 #74b9ff;  /*列表大纲线颜色，不要选透明色，选纯色*/
+    --list-border-initial:                 #4285f4;  /*列表大纲线颜色，不要选透明色，选纯色*/
     --list-border-focus:                   #f3722c;  /*子弹着重线颜色*/
     --list-bullet-focus:                   #4285f4;  /*bullet着重颜色*/
     --list-bullet-hover-background:        #4285f4;   /*bullet悬停背景色*/
