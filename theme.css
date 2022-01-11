@@ -696,17 +696,36 @@ background-color: var(--b3-theme-primary-lightest);
     border-bottom: 1px solid #fff0 !important;
   }
   
-  /**** 浮出工具栏 ****/
-  .protyle-toolbar{
-    background-color:var(--dialog-background);
-        border-radius: 30px;
-        padding: 1px 8px;
-        z-index: 100;
-  }
-  
-  /**** 页面标题 ****/
-  
-  /**** 头图 ****/
+/* 浮出工具栏 */
+.protyle-toolbar{
+  background-color:var(--dialog-background);
+  border-radius: 30px;
+  padding: 1px 8px;
+  z-index: 100;
+}
+
+.protyle-toolbar__divider {
+  border-color:var(--b3-theme-primary);
+}
+
+.protyle-toolbar__item>svg:hover {
+  fill:var(--b3-theme-primary);
+}
+
+/**** 头图工具栏 ****/
+.protyle-icons {
+  background-color:var(--dialog-background);
+  border-radius: 30px;
+  box-shadow: var(--b3-point-shadow);
+}
+
+.protyle-icons>span>svg {
+  fill:var(--b3-theme-on-surface);
+}
+
+.protyle-icons>span>svg :hover{
+  fill:var(--b3-theme-primary);
+}
   
   /**** 块图标 ****/
   /* 减淡块图标颜色 */
