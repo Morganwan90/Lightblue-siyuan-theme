@@ -17,7 +17,7 @@
   left: -18.5px;
   right: 20px;
   top: -12px;
-  bottom: 14.5px;
+  bottom: 15.5px;
   position: absolute;
   border-left: 3px solid var(--list-border-focus);
   border-bottom: 3px solid var(--list-border-focus);
@@ -63,9 +63,6 @@
   border-left: 3px solid var(--list-border-focus);
   left:-19.5px;
 }
-
-
-
 
 
 /**光标所在序列-圆点、序号颜色加强**/
