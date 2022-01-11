@@ -17,7 +17,7 @@
   left: -18.5px;
   right: 20px;
   top: -12px;
-  bottom: 15.5px;
+  bottom: 14.5px;
   position: absolute;
   border-left: 3px solid var(--list-border-focus);
   border-bottom: 3px solid var(--list-border-focus);
@@ -48,7 +48,7 @@
 
 
 /**列表、表格混排**/
-.protyle-wysiwyg [data-node-id].li :focus-within>[data-node-id].table:before{
+.protyle-wysiwyg [data-node-id].li :focus-within>[data-node-id].table:not(:focus-within):before{
   top: -2px ;
   height: calc(100% + 8px) ;
   border-left: 3px solid var(--list-border-focus);
@@ -63,6 +63,9 @@
   border-left: 3px solid var(--list-border-focus);
   left:-19.5px;
 }
+
+
+
 
 
 /**光标所在序列-圆点、序号颜色加强**/
