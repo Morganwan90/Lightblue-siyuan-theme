@@ -8,18 +8,8 @@
 
 之前比较懒....没有记录更新历史
 
-### 2022.1.10
-
-#### 添加了子弹流加强模式 v0.1
-
-根据logseq的主题作者pengx17的代码改造，效果如下：
-
-![截图_20222410032423](https://user-images.githubusercontent.com/61633409/148697503-4e30d537-b1c3-44be-b199-da7fe36f6f96.gif)
-
-列表中可以同一块多行，可以无序列表、有序列表、表格、嵌入块混搭
-
-但列表不和与纯文本块混带，如果有好办法可以个联系我哈~
-
+### 2022.1.12
+#### 优化子弹流加强模式 v0.11
 ##### 单独使用子弹流方式
 1.将Bullet-Threading.CSS拷贝至主题css目录下
 
@@ -35,8 +25,23 @@
     --list-bullet-hover-background:        #4285f4;   /*bullet悬停背景色*/
     --list-bullet-fold-background:         #ffa801;  /*bullet折叠背景色*/
     --list-bullet-fold:                    #f3722c;  /*bullet折叠时着重颜色*/
+    --list-bullet-padding:                 16px;     /*列表宽度，系统默认16px*/
+    
 }
 ```
+
+
+### 2022.1.10
+
+#### 添加了子弹流加强模式 v0.1
+
+根据logseq的主题作者pengx17的代码改造，效果如下：
+
+![截图_20222410032423](https://user-images.githubusercontent.com/61633409/148697503-4e30d537-b1c3-44be-b199-da7fe36f6f96.gif)
+
+列表中可以同一块多行，可以无序列表、有序列表、表格、嵌入块混搭
+
+但列表不和与纯文本块混带，如果有好办法可以个联系我哈~
 
 ### 2022.1.5
 
