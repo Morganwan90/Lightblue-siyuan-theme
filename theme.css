@@ -162,7 +162,7 @@
     --scrollbar-hover-background:          #ccc; /* 滚动条悬浮时背景色 */
     --column-scrollbar-background:         var(--b3-scroll-color); /* 边栏内滚动条通用背景色 */
     --column-scrollbar-hover-background:   var(--b3-theme-primary-lighter); /* 边栏内滚动条悬浮时背景色 */
-    --dialog-background:           rgb(237, 237, 237); /*背景栏*/
+    --dialog-background:           #ededed; /*背景栏*/
     --background2:           rgba(237, 237, 237,0.94); /*背景栏*/
     --list-border-initial:                 var(--b3-font-color10);  /*列表大纲线颜色*/
     --list-border-focus:                   var(--b3-font-color12);  /*子弹着重线颜色*/
@@ -711,6 +711,23 @@ background-color: var(--b3-theme-primary-lightest);
 .protyle-toolbar__item>svg:hover {
   fill:var(--b3-theme-primary);
 }
+
+/* 弹出工具条字体颜色选择 */
+.b3-color__square[data-type="color"]{
+  background: no-repeat round url("img/font-c.svg");
+  box-shadow: none;
+}
+
+.b3-color__square[data-type="backgroundColor"]{
+  background: no-repeat round url("img/font-b.svg") ;
+  box-shadow: none;
+}
+
+.b3-color__square[data-type="color"]:hover,.b3-color__square[data-type="backgroundColor"]:hover{
+  border:1px dashed var(--b3-theme-primary);
+}
+
+
 
 /**** 头图工具栏 ****/
 .protyle-icons {
