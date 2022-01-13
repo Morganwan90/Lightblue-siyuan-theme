@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'HarmonyOS';
+  font-style: normal;
+  src: url('fonts/HarmonyOS_Sans_SC_Regular.ttf');
+}
+
 /******* 亮色主题配色模板 **********/
 
 :root {
@@ -21,8 +27,10 @@
 
     
     /* 字体 */
-    --b3-font-family: "Pingfang SC", "quote", "Helvetica Neue", "Luxi Sans", "DejaVu Sans", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
-    --b3-font-family-code: mononoki, Consolas, "Liberation Mono", Menlo, Courier, monospace, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
+    --b3-font-family: 'HarmonyOS','Helvetica Neue', 'Luxi Sans', 'DejaVu Sans', 'Hiragino Sans GB','Microsoft Yahei', sans-serif, 
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji','Win10 Emoji', 'Segoe UI Symbol', 'Android Emoji', 'EmojiSymbols';
+    --b3-font-family-code: mononoki, Consolas, "Liberation Mono", Menlo, Courier, monospace, "Apple Color Emoji", "Segoe UI Emoji",
+    "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
     --b3-font-family-graph: mononoki;
 
     /* 线条 */
@@ -159,7 +167,7 @@
     --column-scrollbar-hover-background:   var(--b3-theme-primary-lighter); /* 边栏内滚动条悬浮时背景色 */
     --dialog-background:           #ededed; /*背景栏*/
     --background2:           rgba(237, 237, 237,0.94); /*背景栏*/
-    --list-border-initial:                 var(--b3-font-color10);  /*列表大纲线颜色*/
+    --list-border-initial:                 var(--b3-font-color9);  /*列表大纲线颜色*/
     --list-border-focus:                   var(--b3-font-color12);  /*子弹着重线颜色*/
     --list-bullet-focus:                   var(--b3-font-color10);  /*bullet着重颜色*/
     --list-bullet-hover-background:        var(--b3-font-color10);   /*bullet悬停背景色*/
@@ -1239,7 +1247,6 @@ background-position: -20px 100%;
   border-left: 1px solid var(--list-border-initial);
   top: -5px;
   left: -18px;
-
 }
 
 /**以protyle-action区域设定光标聚集时转弯部分线条**/
