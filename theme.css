@@ -37,10 +37,10 @@
     --b3-border-color: rgba(0, 0, 0, .05);
 
     /* 滚动条 */
-    --b3-scroll-color: var(--b3-theme-primary-lightest);
+    --b3-scroll-color: var(--column-scrollbar-background);
 
     /* 列表 */
-    --b3-list-hover:   rgba(0, 0, 0, .05);
+    --b3-list-hover:   rgba(66, 133, 244, 0.15);
 
     /* 页签 */
     --b3-tab-background: var(--b3-theme-background);
@@ -96,7 +96,7 @@
 
     /* 阴影 */
     --b3-point-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-    --b3-dialog-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+    --b3-dialog-shadow: 0px 0px 40px 8px rgba(0,0,0,0.2);
 
     /* diff */
     --b3-diff-add: #dfd;
@@ -162,9 +162,8 @@
     --gutters-hover-background:     var(--b3-theme-surface); /* 块图标悬浮时背景色（不要使用透明色） */
     --switch-uncheck-color:         #FFF; /* switch 开关未开启时颜色 */
 
-    --scrollbar-hover-background:          #ccc; /* 滚动条悬浮时背景色 */
-    --column-scrollbar-background:         var(--b3-scroll-color); /* 边栏内滚动条通用背景色 */
-    --column-scrollbar-hover-background:   var(--b3-theme-primary-lighter); /* 边栏内滚动条悬浮时背景色 */
+    --column-scrollbar-background:         var(--b3-border-color); /* 边栏内滚动条通用背景色 */
+    --column-scrollbar-hover-background:   var(--b3-theme-primary-lightest); /* 边栏内滚动条悬浮时背景色 */
     --dialog-background:           #ededed; /*背景栏*/
     --background2:           rgba(237, 237, 237,0.94); /*背景栏*/
     --list-border-initial:                 var(--b3-font-color9);  /*列表大纲线颜色*/
@@ -221,7 +220,6 @@ option {
   background-color: rgb(0 0 0 / 5%);
   border: transparent;
 }
-
 
 /************** 一、页面框架与控件 ***********************/  
   /**** 停靠栏 dock ****/
@@ -314,6 +312,7 @@ option {
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
 }
 /*************大纲的代码部分结束*********/
+
  /* 边栏列表项 */
  .b3-list-item, .b3-list-item__text{
   color: var(--b3-theme-on-surface);
@@ -350,7 +349,7 @@ body{
     box-shadow: var(--glass-box-shadow);
     overflow: hidden;
     box-sizing: border-box;
-    border-radius: 6px;
+    border-radius: 15px;
   }
 
   .layout__center .fn__flex-1.fn__flex [data-type='wnd']{
@@ -401,51 +400,54 @@ body{
 
 
   /**弹出窗口-正常**/
-  .b3-dialog__container {
-    background-color: var(--dialog-background)!important;
-    transition:all 0.1s linear;
-  }
+.b3-dialog__container {
+  background-color: var(--dialog-background)!important;
+  transition:all 0.1s linear;
+}
 
-  .b3-dialog__close {
-    display:none;
+.b3-dialog__close {
+  display:none;
 }
 
 
 .b3-list--background .b3-list-item--focus {
-  color:var(--b3-font-color10);
+color:var(--b3-font-color10);
 }
   /**弹出窗口-正常结束**/
 
 
-  .b3-dialog__scrim {
-    background-color: rgb(0 0 0 / 0%);
+.b3-dialog__scrim {
+background-color: rgb(0 0 0 / 0%);
 }
 
-  .layout__center .protyle-title__input{
-      background: transparent;
-  }
+.layout__center .protyle-title__input{
+  background: transparent;
+}
   
-  .b3-tab-container {
-      background-color: var(--glass-editor-background);
-  }
+.b3-tab-container {
+  background-color: var(--glass-editor-background);
+}
+
+.b3-dialog--open .fn__flex .b3-list--background,
+.b3-dialog--open .fn__flex .b3-list-item {
+  border-bottom:none;
+}
   
-  .config-account__center--text {
-      background-color: #00000000;
-      padding: 16px 24px;
-  }
+.config-account__center--text {
+  background-color: #00000000;
+  padding: 16px 24px;
+}
   
   /***搜索栏***/
-  .search__header .b3-text-filed--text {
-      background-color: var(--dialog-background);
-      border-bottom: 1px solid var(--b3-theme-primary-lighter) !important;
-  }
-
-div#searchList {
-  column-count: 2;
-background: #00000005;
+.search__header .b3-text-filed--text {
+  background-color: var(--dialog-background);
+  border-bottom: 1px solid var(--b3-theme-primary-lighter) !important;
 }
 
-
+div#searchList {
+column-count: 2;
+background: #00000005;
+}
 
 /***弹出页面***/
 .block__popover {
@@ -457,9 +459,6 @@ background-color: rgb(237, 237, 237);
   box-shadow: 0px 0px 40px 8px rgba(0,0,0,0.2);
 } 
   
-
-
-
 .protyle {
   background-color: transparent;
 }
