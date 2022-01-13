@@ -47,7 +47,7 @@
 /**加强线填充至bullet**/
 .protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2):not(:focus-within):before {
   top: 20px !important;
-  height: calc(100% - 20px) !important;
+  height: 100% !important;
   border-left: 3px solid var(--list-border-focus);
   left:-18.5px;
 }
@@ -107,5 +107,11 @@
   transition: all 0.2s ease-in-out;
   transform: scale(1.22);
 }
-/****子弹流笔记加强结束***/
 
+/* 圆点悬浮时放大效果（折叠时无效果） */
+.protyle-wysiwyg [data-node-id].li:not([fold="1"])>.protyle-action:hover svg, .protyle-wysiwyg [data-node-id].li:not([fold="1"])>.protyle-action:hover:after{
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.22);
+}
+
+/****子弹流笔记加强结束***/
