@@ -1349,7 +1349,8 @@ background-position: -20px 100%;
 /**Dark Blue & Light Blue 标题块列表线特定**/
 .protyle-wysiwyg [data-node-id].li>[data-node-id].h1:before,
 .protyle-wysiwyg [data-node-id].li>[data-node-id].h2:before,
-.protyle-wysiwyg [data-node-id].li>[data-node-id].h3:before {
+.protyle-wysiwyg [data-node-id].li>[data-node-id].h3:before,
+.protyle-wysiwyg [data-node-id].li>[data-node-id].h4:before {
   height:100% !important;
 }
 /****子弹流笔记加强结束***/
