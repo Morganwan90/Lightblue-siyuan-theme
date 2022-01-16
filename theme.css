@@ -1089,14 +1089,10 @@ background-position: -20px 100%;
   }
   
   /**** 超级块、横排 ****/
-  /*** 调整超级块中元素间距 ***/
   .protyle-wysiwyg .sb div[data-node-id]{
-    margin: 4px;
     border-radius: 3px;
   }
-  .protyle-wysiwyg [data-node-id].sb[data-sb-layout="col"] .sb,.protyle-wysiwyg [data-node-id].sb[data-sb-layout="row"] .sb{
-    margin:4px;
-  }
+
   /**** 嵌入块 ****/
   .protyle-wysiwyg [data-node-id].render-node[data-type="NodeBlockQueryEmbed"] {
     background-color: var(--b3-theme-primary-lightest);
