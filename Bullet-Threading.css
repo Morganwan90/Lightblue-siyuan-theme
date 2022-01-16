@@ -4,30 +4,28 @@
   padding-left: var(--list-bullet-padding);
 }
 
-
-
 /***基础线条***/
 .protyle-wysiwyg [data-node-id].li>[data-node-id]:before {
   content: "";
   position: absolute;
-  height: calc(100% + 4px);
   border-left: 1px solid var(--list-border-initial);
-  top: -5px;
+  background-color: transparent;
   left: -18px;
 }
 
 /**以protyle-action区域设定光标聚集时转弯部分线条**/
-.protyle-wysiwyg [data-node-id].li [data-node-id].li:focus-within > .protyle-action:before {
+.protyle-wysiwyg [data-node-id].li [data-node-id].li:focus-within> .protyle-action:before {
   content: "";
-  left: calc(var(--list-bullet-padding) *-1 - 2.5px);
-  right: 24px;
-  top: -10px;
-  bottom: 15.5px;
+  left: calc(var(--list-bullet-padding) *-1 - 3px);
+  right: calc(20px + 0.25em);
+  top: calc(2px - 12em / 16);
+  bottom: calc(0.5px + 14em / 16 );
   position: absolute;
   border-left: 3px solid var(--list-border-focus);
   border-bottom: 3px solid var(--list-border-focus);
   border-bottom-left-radius: 10px;
 }
+
 
 /**设定focus时直线部分线条**/
 .protyle-wysiwyg [data-node-id].li [data-node-id].list:focus-within>[data-node-id]:not(:focus-within):before {
@@ -36,28 +34,31 @@
   top: -4px;
   bottom: 0;
   border-left: 3px solid var(--list-border-focus);
-  left: calc(var(--list-bullet-padding) *-1 - 2.5px);
+  left: calc(var(--list-bullet-padding) *-1 - 3px);
 }
 
 .protyle-wysiwyg [data-node-id].li [data-node-id].list:focus-within > [data-node-id]:focus-within ~ [data-node-id]:before {
   border-color: transparent;
 }
 
+.protyle-wysiwyg [data-node-id].li>div:nth-child(2):before {
+  top: calc(1em + 12px) !important;
+  border-color:transparent;
+}
+
 /**加强线填充至bullet**/
 .protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2):not(:focus-within):before {
-  top: 26px !important;
-  height: calc(100%-26px) !important;
+  top: calc(6px + 18em / 16) !important;
   border-left: 3px solid var(--list-border-focus);
-  left:-18.5px;
+  height:calc(100% - 1em) !important;
+  left:-19px;
 }
 
 
 /**列表、表格混排**/
-.protyle-wysiwyg [data-node-id].li :focus-within>[data-node-id].table:not(:focus-within):before{
-  top: -2px ;
-  height: calc(100% + 8px) ;
+.protyle-wysiwyg [data-node-id].li:focus-within>[data-node-id].table:before{
   border-left: 3px solid var(--list-border-focus);
-  left:-18.5px;
+  left:-19px;
 }
 
 /**列表、嵌入块时混排**/
@@ -74,6 +75,7 @@
   color:inherit;
 }
 
+
 /**光标所在序列-圆点、序号颜色加强**/
 .protyle-wysiwyg [data-node-id].li:focus-within>.protyle-action {
   color:var(--list-bullet-focus) !important;
@@ -85,7 +87,7 @@
   height: 24px;
 }
 
-/* 圆点悬浮时样式 */
+/* 大纲悬浮时样式 */
 .protyle-wysiwyg [data-node-id].li>.protyle-action:hover:after{
   background-color: var(--list-bullet-hover-background) !important;
   opacity: 0.2; /* 圆点悬浮时外圈透明度 */
@@ -103,12 +105,6 @@
 .protyle-wysiwyg [data-node-id].li[fold="1"]>.protyle-action{
   color: var(--list-bullet-fold)!important;
   font-weight: bold; 
-}
-
-/* 圆点悬浮时放大效果（折叠时无效果） */
-.protyle-wysiwyg [data-node-id].li:not([fold="1"])>.protyle-action:hover svg, .protyle-wysiwyg [data-node-id].li:not([fold="1"])>.protyle-action:hover:after{
-  transition: all 0.2s ease-in-out;
-  transform: scale(1.22);
 }
 
 /* 圆点悬浮时放大效果（折叠时无效果） */
