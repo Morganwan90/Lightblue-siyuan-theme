@@ -10,9 +10,9 @@
     /* 主色 */
     --b3-theme-primary:       rgb(66, 133, 244); /* 主色调，一般用在按钮等其他需要醒目的地方 */
     --b3-theme-primary-light: rgba(4, 66, 165, 0.871);
-    --b3-theme-primary-lighter: rgba(66, 133, 244, 0.35);
-    --b3-theme-primary-lightest: rgba(66, 133, 244, 0.2);
-    --b3-theme-secondary: #f3a92f;
+    --b3-theme-primary-lighter: rgba(66, 133, 244, 0.2);
+    --b3-theme-primary-lightest: rgba(66, 133, 244, 0.1);
+    --b3-theme-secondary: #f3722c;
     --b3-theme-background: #FFFFFF; /* 背景色，主要用于编辑器背景 */
     --b3-theme-surface: rgba(0, 0, 0, 0.20); /* 主要用于分栏背景 */
     --b3-theme-surface-light: rgba(41, 42, 45, .86);
@@ -143,7 +143,7 @@
     --b3-protyle-inline-mark-background: #ffe68d; /* 高亮背景 */
     --b3-protyle-inline-mark-color:        inherit; /* 高亮文字 */
     --b3-protyle-inline-tag-color:       #5f6368; /* 标签 */
-    --b3-protyle-inline-blockref-color:    var(--b3-font-color12); /* 双向链接 */
+    --b3-protyle-inline-blockref-color:    var(--b3-theme-secondary); /* 双向链接 */
 
     /************** Theme *********************/
     /**** 配色 ****/
@@ -243,10 +243,10 @@ option {
   background-color: var(--b3-theme-primary-lightest);
 }
 
-.file-tree .b3-list--background .b3-list-item--focus .b3-list-item__text,
-.file-tree .b3-list--background .b3-list-item--focus .b3-list-item__toggle,
-.file-tree .b3-list--background .b3-list-item--focus .b3-list-item__icon svg,
-.file-tree .b3-list--background .b3-list-item--focus{
+.file-tree .b3-list--background .b3-list-item--focus:not([data-treetype="outline"]) .b3-list-item__text,
+.file-tree .b3-list--background .b3-list-item--focus:not([data-treetype="outline"]) .b3-list-item__toggle,
+.file-tree .b3-list--background .b3-list-item--focus:not([data-treetype="outline"]) .b3-list-item__icon svg,
+.file-tree .b3-list--background .b3-list-item--focus:not([data-treetype="outline"]){
   color:rgb(231, 97, 24) !important;
 }
 
@@ -289,7 +289,7 @@ option {
 .file-tree ul.b3-list.b3-list--background [data-subtype="h2"] .b3-list-item__text,
 .file-tree ul.b3-list.b3-list--background [data-subtype="h2"] .b3-list-item__toggle,
 .file-tree ul.b3-list.b3-list--background [data-subtype="h2"]{
-    color:var(--b3-font-color12);
+    color:var(--b3-theme-secondary);
 }
 .file-tree ul.b3-list.b3-list--background [data-subtype="h3"] .b3-list-item__text,
 .file-tree ul.b3-list.b3-list--background [data-subtype="h3"] .b3-list-item__toggle,
@@ -410,8 +410,8 @@ body{
 }
 
 
-.b3-list--background .b3-list-item--focus {
-color:var(--b3-font-color10);
+.b3-list--background .b3-list-item--focus:not([data-treetype="outline"]) {
+color:var(--b3-theme-primary);
 }
   /**弹出窗口-正常结束**/
 
@@ -522,7 +522,7 @@ background-color: rgb(237, 237, 237);
   .b3-menu__separator{
     height: 1px;
     margin: 6px 0;
-    background-color:var(--b3-font-color10);
+    background-color:var(--b3-theme-primary);
   }
   
 
@@ -676,18 +676,18 @@ background-color: var(--b3-theme-primary-lightest);
   
 .layout-tab-bar .item--focus .item__text{
   opacity: 1;
-  color: var(--b3-font-color10);
+  color: var(--b3-theme-primary);
 }
 
 /**钉住的样式**/
 .layout-tab-bar .item--pin{
   flex:0.2;
-  border-bottom: 3px solid var(--b3-font-color12);
+  border-bottom: 3px solid var(--b3-theme-secondary);
 
 }
 
 .layout-tab-bar .item--pin .item__close svg{
-  color:var(--b3-font-color12);
+  color:var(--b3-theme-secondary);
 }
 
 
@@ -875,7 +875,7 @@ background-position: -20px 100%;
 
 .protyle-wysiwyg [data-node-id] [spellcheck="false"] mark:hover{
   background-color: transparent;
-  color: var(--b3-font-color12);
+  color: var(--b3-theme-secondary);
   font-weight: bold;
 }
 
@@ -1022,7 +1022,7 @@ background-position: -20px 100%;
   /* 段落折叠后添加三角形标识 */
   .protyle-wysiwyg [data-type="NodeParagraph"][fold="1"]:after{
     content: "";
-    background-color: var(--b3-font-color12);
+    background-color: var(--b3-theme-secondary);
     width:  12px;
     height: var(--line-height) ;
     position: absolute;
@@ -1112,7 +1112,7 @@ background-position: -20px 100%;
   text-align: center;
   padding: 2px 0px 0px 7px;
   margin:20px 0px;
-  border-bottom: 4px double var(--b3-font-color10) !important;
+  border-bottom: 4px double var(--b3-theme-primary) !important;
   font-size: 1.75em;
   color: var(--b3-theme-primary);
 }
@@ -1124,8 +1124,8 @@ background-position: -20px 100%;
   text-align: justify;
   padding: 2px 0px 0px 7px;
   margin:15px 0px;
-  border-bottom: 2px solid var(--b3-font-color12) !important;
-  color:var(--b3-font-color12);
+  border-bottom: 2px solid var(--b3-theme-secondary) !important;
+  color:var(--b3-theme-secondary);
   }
 
 .protyle-wysiwyg [data-node-id].h3 ,.b3-typography h3{
@@ -1183,6 +1183,7 @@ background-position: -20px 100%;
   /* 消除待办事项图标背景色 */
   .protyle-wysiwyg [data-node-id].li[fold="1"]>.protyle-action--task:after, .protyle-wysiwyg [data-node-id].li>.protyle-action--task:hover:after{
     background: transparent !important;
+
   }
   
   /* 待办事项已完成的样式 */
@@ -1252,8 +1253,8 @@ background-position: -20px 100%;
 .protyle-wysiwyg [data-node-id].li [data-node-id].li:focus-within > .protyle-action:before {
   content: "";
   left: calc(var(--list-bullet-padding) *-1 - 2.5px);
-  right: 20px;
-  top: -12px;
+  right: 24px;
+  top: -10px;
   bottom: 15.5px;
   position: absolute;
   border-left: 3px solid var(--list-border-focus);
@@ -1277,8 +1278,8 @@ background-position: -20px 100%;
 
 /**加强线填充至bullet**/
 .protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2):not(:focus-within):before {
-  top: 20px !important;
-  height: 100% !important;
+  top: 26px !important;
+  height: calc(100%-26px) !important;
   border-left: 3px solid var(--list-border-focus);
   left:-18.5px;
 }
@@ -1301,6 +1302,10 @@ background-position: -20px 100%;
   left:-19.5px;
 }
 
+/**大纲颜色与卡片背景色统一**/
+.protyle-wysiwyg [data-node-id].li>.protyle-action{
+  color:inherit;
+}
 
 /**光标所在序列-圆点、序号颜色加强**/
 .protyle-wysiwyg [data-node-id].li:focus-within>.protyle-action {
