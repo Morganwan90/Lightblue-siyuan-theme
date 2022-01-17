@@ -1273,9 +1273,9 @@ background-position: -20px 100%;
 
 /**加强线填充至bullet**/
 .protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2):not(:focus-within):before {
-  top: calc(6px + 18em / 16) !important;
+  top: calc(6px + 18em / 16) ;
   border-left: 3px solid var(--list-border-focus);
-  height:calc(100% - 1em) !important;
+  height:calc(100% - 0.5em) !important;
   left:-19px;
 }
 
@@ -1345,5 +1345,21 @@ background-position: -20px 100%;
 .protyle-wysiwyg [data-node-id].li>[data-node-id].h3:before，
 .protyle-wysiwyg [data-node-id].li>[data-node-id].h4:before {
   height:100% !important;
+}
+
+.protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2)[data-subtype="h2"]:not(:focus-within):before {
+  top: calc(10px + 18em / 16 - 0.5em) !important;
+}
+
+.protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2)[data-subtype="h3"]:not(:focus-within):before {
+  top: calc(12px + 18em / 16 - 0.5em) !important;
+}
+
+.protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2)[data-subtype="h4"]:not(:focus-within):before {
+  top: calc(14px + 18em / 16 - 0.5em) !important;
+}
+
+.protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2)[data-subtype="h4"]:not(:focus-within):before {
+  top: calc(14px + 18em / 16 - 0.5em) !important;
 }
 /****子弹流笔记加强结束***/
