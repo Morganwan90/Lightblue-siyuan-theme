@@ -1270,10 +1270,6 @@ background-position: -20px 100%;
   border-color: transparent;
 }
 
-.protyle-wysiwyg [data-node-id].li>div:nth-child(2):before {
-  top: calc(1em + 12px) !important;
-  border-color:transparent;
-}
 
 /**加强线填充至bullet**/
 .protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2):not(:focus-within):before {
@@ -1285,7 +1281,7 @@ background-position: -20px 100%;
 
 
 /**列表、表格混排**/
-.protyle-wysiwyg [data-node-id].li:focus-within>[data-node-id].table:before{
+.protyle-wysiwyg [data-node-id].li:focus-within>[data-node-id].table:not(:focus-within):before{
   border-left: 3px solid var(--list-border-focus);
   left:-19px;
 }
@@ -1342,4 +1338,12 @@ background-position: -20px 100%;
   transform: scale(1.22);
 }
 
+
+/**Dark Blue & Light Blue 标题块列表线特定**/
+.protyle-wysiwyg [data-node-id].li>[data-node-id].h1:before,
+.protyle-wysiwyg [data-node-id].li>[data-node-id].h2:before,
+.protyle-wysiwyg [data-node-id].li>[data-node-id].h3:before，
+.protyle-wysiwyg [data-node-id].li>[data-node-id].h4:before {
+  height:100% !important;
+}
 /****子弹流笔记加强结束***/
