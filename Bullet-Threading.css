@@ -42,14 +42,18 @@
 }
 
 
-/**加强线填充至bullet**/
+/**辅助线**/
 .protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2):not(:focus-within):before {
-  top: calc(6px + 18em / 16) ;
   border-left: 3px solid var(--list-border-focus);
-  height:calc(100% - 0.5em) !important;
   left:-19px;
 }
 
+/**表格子弹线**/
+.protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2)[data-type="NodeTable"]:not(:focus-within):before {
+  top: calc(6px + 18em / 16) !important;
+  height:calc(100% - 28px) !important;
+  height:calc(100% - 18px) !important;
+}
 
 /**列表、表格混排**/
 .protyle-wysiwyg [data-node-id].li:focus-within>[data-node-id].table:not(:focus-within):before{
