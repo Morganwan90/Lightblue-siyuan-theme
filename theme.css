@@ -1336,5 +1336,20 @@ background-position: -20px 100%;
   height:calc(100% - 20px) !important;
 }
 
+/**标题子弹线上移**/
+.protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2)[data-subtype="h1"]:not(:focus-within):before{
+  top: calc(1em - 2px) !important;
+}
 
+.protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2)[data-subtype="h2"]:not(:focus-within):before{
+  top: calc(1em + 1px) !important;
+}
+
+.protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2)[data-subtype="h3"]:not(:focus-within):before{
+  top: calc(1em + 3px) !important;
+}
+
+.protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2)[data-subtype="h4"]:not(:focus-within):before{
+  top: calc(1em + 5px) !important;
+}
 /****子弹流笔记加强结束***/
