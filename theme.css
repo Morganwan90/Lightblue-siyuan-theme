@@ -1076,7 +1076,6 @@ background-position: -20px 100%;
 .protyle-wysiwyg [data-node-id].h1,.b3-typography h1{
   text-align: center;
   padding: 2px 0px 0px 7px;
-  margin:20px 0px;
   border-bottom: 4px double var(--b3-theme-primary) !important;
   font-size: 1.75em;
   color: var(--b3-theme-primary);
@@ -1088,7 +1087,6 @@ background-position: -20px 100%;
   line-height: 1.25em;
   text-align: justify;
   padding: 2px 0px 0px 7px;
-  margin:15px 0px;
   border-bottom: 2px solid var(--b3-theme-secondary) !important;
   color:var(--b3-theme-secondary);
   }
@@ -1099,7 +1097,6 @@ background-position: -20px 100%;
   line-height: 1.25em;
   text-align: justify;
   padding: 2px 0px 0px 7px;
-  margin:10px 0px;
   border-bottom: 2px solid var(--b3-font-color10) !important;
   color:var(--b3-font-color10);
 }
@@ -1110,7 +1107,6 @@ background-position: -20px 100%;
   line-height: 1.25em;
   text-align: justify;
   padding: 2px 0px 0px 7px;
-  margin:5px 0px;
   border-bottom: 2px solid var(--b3-font-color3) !important;
   color:var(--b3-font-color3);
 }
@@ -1216,7 +1212,7 @@ background-position: -20px 100%;
   content: "";
   left: calc(var(--list-bullet-padding) *-1 - 3px);
   right: calc(20px + 0.25em);
-  top: calc(2px - 12em / 16);
+  top: calc(4px - 12em / 16);
   bottom: calc(0.5px + 14em / 16 );
   position: absolute;
   border-left: 3px solid var(--list-border-focus);
@@ -1324,16 +1320,16 @@ background-position: -20px 100%;
 }
 
 .protyle-wysiwyg [data-node-id].li>div:nth-child(2)[data-subtype="h2"]:before{
-  height:calc(100% - 12px) !important;
+  height:calc(100% - 8px) !important;
 }
 
 .protyle-wysiwyg [data-node-id].li>div:nth-child(2)[data-subtype="h3"]:before{
 
-  height:calc(100% - 18px) !important;
+  height:calc(100% - 10px) !important;
 }
 
 .protyle-wysiwyg [data-node-id].li>div:nth-child(2)[data-subtype="h4"]:before{
-  height:calc(100% - 20px) !important;
+  height:calc(100% - 12px) !important;
 }
 
 /**标题子弹线上移**/
@@ -1352,4 +1348,6 @@ background-position: -20px 100%;
 .protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2)[data-subtype="h4"]:not(:focus-within):before{
   top: calc(1em + 5px) !important;
 }
+
+
 /****子弹流笔记加强结束***/
