@@ -951,37 +951,6 @@ background-position: -20px 100%;
     border-radius: 4px;
   }
   
-  /**** 标签 ****/
-  /* 红色标签 */
-  span[data-type="tag"][data-content="紧急"],span[data-type="tag"][data-content="高优先级"],span[data-type="tag"][data-content="待办"],span[data-type="tag"][data-content="重要"],span[data-type="tag"][data-content="高"],span[data-type="tag"][data-content="注意"],span[data-type="tag"][data-content="问题"]{
-    background-color: var(--b3-card-error-background);
-    color: var(--b3-card-error-color) !important;
-    border: none !important;
-    font-size: 90%;
-    padding: 0 4px;
-    margin:  0 2px;
-    border-radius: 2px;
-  }
-  /* 橙色标签 */
-  span[data-type="tag"][data-content="TODO"],span[data-type="tag"][data-content="todo"],span[data-type="tag"][data-content="待办"],span[data-type="tag"][data-content="中"],span[data-type="tag"][data-content="中优先级"],span[data-type="tag"][data-content="NOTE"],span[data-type="tag"][data-content="提示"]{
-    background-color: var(--b3-card-warning-background);
-    color: var(--b3-card-warning-color) !important;
-    border: none !important;
-    font-size: 90%;
-    padding: 0 4px;
-    margin:  0 2px;
-    border-radius: 2px;
-  }
-  /* 绿色标签 */
-  span[data-type="tag"][data-content="完成"],span[data-type="tag"][data-content="低"],span[data-type="tag"][data-content="低优先级"]{
-    background-color: var(--b3-card-success-background);
-    color: var(--b3-card-success-color) !important;
-    border: none !important;
-    font-size: 90%;
-    padding: 0 4px;
-    margin:  0 2px;
-    border-radius: 2px;
-  }
   
   /**** 颜色卡片 ****/
   /* 超级块内颜色卡片增加padding */
@@ -1277,10 +1246,13 @@ background-position: -20px 100%;
   left:-19px;
 }
 
+.protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2):not([data-type="NodeHeading"]):not(:focus-within):before {
+  top: calc(6px + 18em / 16) !important;
+}
+
+
 /**表格子弹线**/
 .protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2)[data-type="NodeTable"]:not(:focus-within):before {
-  top: calc(6px + 18em / 16) !important;
-  height:calc(100% - 28px) !important;
   height:calc(100% - 18px) !important;
 }
 
@@ -1363,5 +1335,6 @@ background-position: -20px 100%;
 .protyle-wysiwyg [data-node-id].li>div:nth-child(2)[data-subtype="h4"]:before{
   height:calc(100% - 20px) !important;
 }
+
 
 /****子弹流笔记加强结束***/

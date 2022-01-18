@@ -48,10 +48,13 @@
   left:-19px;
 }
 
+.protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2):not([data-type="NodeHeading"]):not(:focus-within):before {
+  top: calc(6px + 18em / 16) !important;
+}
+
+
 /**表格子弹线**/
 .protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2)[data-type="NodeTable"]:not(:focus-within):before {
-  top: calc(6px + 18em / 16) !important;
-  height:calc(100% - 28px) !important;
   height:calc(100% - 18px) !important;
 }
 
