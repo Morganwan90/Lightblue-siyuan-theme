@@ -8,6 +8,12 @@
 
 之前比较懒....没有记录更新历史
 
+### 2022.1.19
+
+移动端背景色
+
+表格混排子弹线
+
 ### 2022.1.16
 
 有序列表、待办事项优化
@@ -26,26 +32,6 @@
 调节页签
 #### 优化子弹流加强模式 v0.11
 优化子弹线，根据不同列表宽度进行调节
-
-##### 单独使用子弹流方式
-1.将Bullet-Threading.CSS拷贝至主题css目录下
-
-在css 首行 中添加：
-
-```css
-@import url("Bullet-Threading.css");
-
-:root {
-    --list-border-initial:                 #4285f4;  /*列表大纲线颜色，不要选透明色，选纯色*/
-    --list-border-focus:                   #f3722c;  /*子弹着重线颜色*/
-    --list-bullet-focus:                   #4285f4;  /*bullet着重颜色*/
-    --list-bullet-hover-background:        #4285f4;   /*bullet悬停背景色*/
-    --list-bullet-fold-background:         #ffa801;  /*bullet折叠背景色*/
-    --list-bullet-fold:                    #f3722c;  /*bullet折叠时着重颜色*/
-    --list-bullet-padding:                 16px;     /*列表宽度，系统默认16px*/
-    
-}
-```
 
 
 ### 2022.1.10

@@ -459,9 +459,7 @@ background-color: rgb(237, 237, 237);
   box-shadow: 0px 0px 40px 8px rgba(0,0,0,0.2);
 } 
   
-.protyle {
-  background-color: transparent;
-}
+
 
 .b3-card {
   box-shadow: var(--b3-point-shadow);
@@ -1256,6 +1254,7 @@ background-position: -20px 100%;
 .protyle-wysiwyg [data-node-id].li:focus-within>[data-node-id].table:not(:focus-within):before{
   border-left: 3px solid var(--list-border-focus);
   left:-19px;
+  top:-4px;
 }
 
 /**列表、嵌入块时混排**/
@@ -1351,3 +1350,13 @@ background-position: -20px 100%;
 
 
 /****子弹流笔记加强结束***/
+
+
+/***移动端****/
+.side-panel {
+  background-color: var(--dialog-background);
+}
+
+.protyle {
+  background-color: rgba(237, 237, 237,0.70);
+}
