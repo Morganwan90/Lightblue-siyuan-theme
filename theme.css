@@ -1245,25 +1245,19 @@ background-position: -20px 100%;
 }
 
 
-/**表格子弹线**/
-.protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2)[data-type="NodeTable"]:not(:focus-within):before {
-  height:calc(100% - 18px) !important;
-}
-
-/**列表、表格混排**/
-.protyle-wysiwyg [data-node-id].li:focus-within>[data-node-id].table:not(:focus-within):before{
+.protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2):not(:focus-within) ~ :not(.list):before {
   border-left: 3px solid var(--list-border-focus);
+  top: -4px;
+  height:calc(100% + 10px) ;
   left:-19px;
-  top:-4px;
 }
 
-/**列表、嵌入块时混排**/
+/**嵌入块左移**/
 .protyle-wysiwyg [data-node-id].li>[data-node-id].render-node:before {
   left:-19px;
 }
-.protyle-wysiwyg [data-node-id].li :focus-within>[data-node-id].render-node:not(:focus-within):before{
-  border-left: 3px solid var(--list-border-focus);
-  left:-19.5px;
+.protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2):not(:focus-within) ~ .render-node:before {
+  left:-20px !important;
 }
 
 /**大纲颜色与卡片背景色统一**/
