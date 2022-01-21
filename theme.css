@@ -170,7 +170,7 @@
     --list-border-focus:                   var(--b3-font-color12);  /*子弹着重线颜色*/
     --list-bullet-focus:                   var(--b3-font-color10);  /*bullet着重颜色*/
     --list-bullet-hover-background:        var(--b3-font-color10);   /*bullet悬停背景色*/
-    --list-bullet-fold-background:         var(--b3-font-color11);  /*bullet折叠背景色*/
+    --list-bullet-fold-background:         var(--b3-font-color12);  /*bullet折叠背景色*/
     --list-bullet-fold:                    var(--b3-font-color12);  /*bullet折叠时着重颜色*/
     --list-bullet-padding:                  16px;
 
@@ -863,20 +863,19 @@ background-position: -20px 100%;
   padding: 2px 0;
 }
 
-/* 利用mark作为挖空处理 */
+/* 利用mark作为挖空处理**/
 .protyle-wysiwyg mark{
   background-color: var(--b3-theme-primary-lighter) ;
   color: transparent;
-  transition: all .2s linear 0ms;
+  padding:0px 5px;
+  transition: all 1s cubic-bezier(0.7, -0.5, 0.2, 2);
 }
 
-
-.protyle-wysiwyg [data-node-id] [spellcheck="false"] mark:hover{
+.protyle-wysiwyg mark:hover{
   background-color: transparent;
   color: var(--b3-theme-secondary);
   font-weight: bold;
 }
-
 /**利用mark作为挖空处理结束 **/
 
 /***标签样式***/
@@ -1074,6 +1073,7 @@ background-position: -20px 100%;
 .protyle-wysiwyg [data-node-id].h1,.b3-typography h1{
   text-align: center;
   padding: 2px 0px 0px 7px;
+  margin-bottom:15px;
   border-bottom: 4px double var(--b3-theme-primary) !important;
   font-size: 1.75em;
   color: var(--b3-theme-primary);
@@ -1085,6 +1085,7 @@ background-position: -20px 100%;
   line-height: 1.25em;
   text-align: justify;
   padding: 2px 0px 0px 7px;
+  margin-bottom:10px;
   border-bottom: 2px solid var(--b3-theme-secondary) !important;
   color:var(--b3-theme-secondary);
   }
@@ -1095,6 +1096,7 @@ background-position: -20px 100%;
   line-height: 1.25em;
   text-align: justify;
   padding: 2px 0px 0px 7px;
+  margin-bottom:10px;
   border-bottom: 2px solid var(--b3-font-color10) !important;
   color:var(--b3-font-color10);
 }
@@ -1105,6 +1107,7 @@ background-position: -20px 100%;
   line-height: 1.25em;
   text-align: justify;
   padding: 2px 0px 0px 7px;
+  margin-bottom:5px;
   border-bottom: 2px solid var(--b3-font-color3) !important;
   color:var(--b3-font-color3);
 }
@@ -1112,6 +1115,7 @@ background-position: -20px 100%;
 .protyle-wysiwyg [data-node-id].h5 ,.b3-typography h5{
   font-size: 1.1em;
   padding: 2px 0px 0px 7px;
+  margin-bottom:5px;
   border-bottom: 2px solid var(--b3-font-color9) !important;
   color:var(--b3-font-color9);
 }
@@ -1119,7 +1123,19 @@ background-position: -20px 100%;
 .protyle-wysiwyg [data-node-id].h6,.b3-typography h6 {
   font-size: 1.1em;
   padding: 2px 0px 0px 7px;
+  margin-bottom:5px;
 }
+
+
+.protyle-wysiwyg [data-node-id].li>div:nth-child(2):before{
+  height:100% !important;   
+}
+
+/* 标题折叠时样式 */
+.protyle-wysiwyg [data-node-id][fold="1"]:not(.li){
+  background-color: var(--b3-theme-primary-lighter);
+}
+
 
 /****标题格式end****/
 
@@ -1169,13 +1185,7 @@ background-position: -20px 100%;
     padding: var(--allen-block-padding);
   }
   
-  /**** 代码块 ****/
-  .b3-typography .code-block, .protyle-wysiwyg .code-block{
-    padding: 0;
-    margin: 1em 0;
-    line-height: 1.625 !important;
-  }
-  
+
   /**** 表格 ****/
 /* 去除默认背景色 */
 .b3-typography table tbody tr:nth-child(n),.protyle-wysiwyg table tbody tr:nth-child(n) {
@@ -1190,11 +1200,8 @@ background-position: -20px 100%;
   background-color: rgba(66, 133, 244, 0.2) !important;
 }
 
-/******子弹流加强，根据logseq的主题作者pengx17的代码改造*******/
 
-.protyle-wysiwyg [data-node-id].li>.list {
-  padding-left: var(--list-bullet-padding);
-}
+/***大纲***/
 
 /***基础线条***/
 .protyle-wysiwyg [data-node-id].li>[data-node-id]:before {
@@ -1205,76 +1212,9 @@ background-position: -20px 100%;
   left: -18px;
 }
 
-/**以protyle-action区域设定光标聚集时转弯部分线条**/
-.protyle-wysiwyg [data-node-id].li [data-node-id].li:focus-within> .protyle-action:before {
-  content: "";
-  left: calc(var(--list-bullet-padding) *-1 - 3px);
-  right: calc(20px + 0.25em);
-  top: calc(4px - 12em / 16);
-  bottom: calc(0.5px + 14em / 16 );
-  position: absolute;
-  border-left: 3px solid var(--list-border-focus);
-  border-bottom: 3px solid var(--list-border-focus);
-  border-bottom-left-radius: 10px;
-}
-
-
-/**设定focus时直线部分线条**/
-.protyle-wysiwyg [data-node-id].li [data-node-id].list:focus-within>[data-node-id]:not(:focus-within):before {
-  content: "";
-  position: absolute;
-  top: -4px;
-  bottom: 0;
-  border-left: 3px solid var(--list-border-focus);
-  left: calc(var(--list-bullet-padding) *-1 - 3px);
-}
-
-.protyle-wysiwyg [data-node-id].li [data-node-id].list:focus-within > [data-node-id]:focus-within ~ [data-node-id]:before {
-  border-color: transparent;
-}
-
-
-/**辅助线**/
-.protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2):not(:focus-within):before {
-  border-left: 3px solid var(--list-border-focus);
-  left:-19px;
-}
-
-.protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2):not([data-type="NodeHeading"]):not(:focus-within):before {
-  top: calc(6px + 18em / 16) !important;
-}
-
-
-.protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2):not(:focus-within) ~ :not(.list):before {
-  border-left: 3px solid var(--list-border-focus);
-  top: -4px;
-  height:calc(100% + 10px) ;
-  left:-19px;
-}
-
-/**嵌入块左移**/
-.protyle-wysiwyg [data-node-id].li>[data-node-id].render-node:before {
-  left:-19px;
-}
-.protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2):not(:focus-within) ~ .render-node:before {
-  left:-20px !important;
-}
-
-/**大纲颜色与卡片背景色统一**/
+  /**大纲颜色与卡片背景色统一**/
 .protyle-wysiwyg [data-node-id].li>.protyle-action{
   color:inherit;
-}
-
-
-/**光标所在序列-圆点、序号颜色加强**/
-.protyle-wysiwyg [data-node-id].li:focus-within>.protyle-action {
-  color:var(--list-bullet-focus) !important;
-  font-weight: bold;
-}
-
-/***无序列表bullet变大***/
-.protyle-wysiwyg [data-subtype="u"]:focus-within>.protyle-action svg {
-  height: 24px;
 }
 
 /* 大纲悬浮时样式 */
@@ -1303,10 +1243,77 @@ background-position: -20px 100%;
   transform: scale(1.22);
 }
 
+/**嵌入块左移**/
+.protyle-wysiwyg [data-node-id].li>[data-node-id].render-node:before {
+  left:-19px;
+}
 
-/**Dark Blue & Light Blue 标题块列表线特定**/
+/******子弹流加强，根据logseq的主题作者pengx17的代码改造*******
 
-/***标题基础线延伸***/
+.protyle-wysiwyg [data-node-id].li>.list {
+  padding-left: var(--list-bullet-padding);
+}
+
+/**以protyle-action区域设定光标聚集时转弯部分线条**
+.protyle-wysiwyg [data-node-id].li [data-node-id].li:focus-within> .protyle-action:before {
+  content: "";
+  left: calc(var(--list-bullet-padding) *-1 - 3px);
+  right: calc(20px + 0.25em);
+  top: calc(4px - 12em / 16);
+  bottom: calc(0.5px + 14em / 16 );
+  position: absolute;
+  border-left: 3px solid var(--list-border-focus);
+  border-bottom: 3px solid var(--list-border-focus);
+  border-bottom-left-radius: 10px;
+}
+
+/**设定focus时直线部分线条**
+.protyle-wysiwyg [data-node-id].li [data-node-id].list:focus-within>[data-node-id]:not(:focus-within):before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  bottom: 0;
+  border-left: 3px solid var(--list-border-focus);
+  left: calc(var(--list-bullet-padding) *-1 - 3px);
+}
+
+.protyle-wysiwyg [data-node-id].li [data-node-id].list:focus-within > [data-node-id]:focus-within ~ [data-node-id]:before {
+  border-color: transparent;
+}
+
+/**辅助线**
+.protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2):not(:focus-within):before {
+  border-left: 3px solid var(--list-border-focus);
+  left:-19px;
+}
+
+.protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2):not([data-type="NodeHeading"]):not(:focus-within):before {
+  top: calc(6px + 18em / 16) !important;
+}
+
+.protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2):not(:focus-within) ~ :not(.list):before {
+  border-left: 3px solid var(--list-border-focus);
+  top: -4px;
+  height:calc(100% + 10px) ;
+  left:-19px;
+}
+
+.protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2):not(:focus-within) ~ .render-node:before {
+  left:-20px !important;
+}
+
+/**光标所在序列-圆点、序号颜色加强**
+.protyle-wysiwyg [data-node-id].li:focus-within>.protyle-action {
+  color:var(--list-bullet-focus) !important;
+  font-weight: bold;
+}
+
+/***无序列表bullet变大***
+.protyle-wysiwyg [data-subtype="u"]:focus-within>.protyle-action svg {
+  height: 24px;
+}
+
+/**Dark Blue & Light Blue 标题块列表线特定**
 
 .protyle-wysiwyg [data-node-id].li>div:nth-child(2)[data-subtype="h1"]:before{
   height:calc(100% - 6px) !important;
@@ -1325,7 +1332,7 @@ background-position: -20px 100%;
   height:calc(100% - 12px) !important;
 }
 
-/**标题子弹线上移**/
+/**标题子弹线上移**
 .protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2)[data-subtype="h1"]:not(:focus-within):before{
   top: calc(1em - 2px) !important;
 }
@@ -1341,7 +1348,6 @@ background-position: -20px 100%;
 .protyle-wysiwyg [data-node-id].li:focus-within>div:nth-child(2)[data-subtype="h4"]:not(:focus-within):before{
   top: calc(1em + 5px) !important;
 }
-
 
 /****子弹流笔记加强结束***/
 
