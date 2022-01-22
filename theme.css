@@ -1097,7 +1097,7 @@ background-position: -20px 100%;
   text-align: justify;
   padding: 2px 0px 0px 7px;
   margin-bottom:10px;
-  border-bottom: 2px solid var(--b3-font-color10) !important;
+  border-left: 6px solid var(--b3-font-color10) !important;
   color:var(--b3-font-color10);
 }
 
@@ -1108,7 +1108,7 @@ background-position: -20px 100%;
   text-align: justify;
   padding: 2px 0px 0px 7px;
   margin-bottom:5px;
-  border-bottom: 2px solid var(--b3-font-color3) !important;
+  border-left: 4px solid var(--b3-font-color3) !important;
   color:var(--b3-font-color3);
 }
 
@@ -1116,7 +1116,7 @@ background-position: -20px 100%;
   font-size: 1.1em;
   padding: 2px 0px 0px 7px;
   margin-bottom:5px;
-  border-bottom: 2px solid var(--b3-font-color9) !important;
+  border-left: 2px solid var(--b3-font-color9) !important;
   color:var(--b3-font-color9);
 }
 
@@ -1126,9 +1126,22 @@ background-position: -20px 100%;
   margin-bottom:5px;
 }
 
-
 .protyle-wysiwyg [data-node-id].li>div:nth-child(2):before{
   height:100% !important;   
+}
+
+/**标题线**/
+
+.protyle-wysiwyg [data-node-id].li>[data-node-id][data-subtype="h3"]::before {
+  left:calc(18px * -1 - 6px);
+}
+
+.protyle-wysiwyg [data-node-id].li>[data-node-id][data-subtype="h4"]::before {
+  left:calc(18px * -1 - 4px);
+}
+
+.protyle-wysiwyg [data-node-id].li>[data-node-id][data-subtype="h5"]::before {
+  left:calc(18px * -1 - 2px);
 }
 
 /* 标题折叠时样式 */
@@ -1359,4 +1372,17 @@ background-position: -20px 100%;
 
 .protyle {
   background-color: rgba(237, 237, 237,0.75);
+}
+
+/**以protyle-action区域设定光标聚集时转弯部分线条**/
+.protyle-wysiwyg [data-subtype="u"]>.li>.p:nth-of-type(2)> .protyle-action:before {
+  content: "";
+  left: calc(var(--list-bullet-padding) *-1 - 3px);
+  right: calc(20px + 0.25em);
+  top: calc(4px - 12em / 16);
+  bottom: calc(0.5px + 14em / 16 );
+  position: absolute;
+  border-left: 3px solid var(--list-border-focus);
+  border-bottom: 3px solid var(--list-border-focus);
+  border-bottom-left-radius: 10px;
 }
