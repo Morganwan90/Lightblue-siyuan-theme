@@ -1373,16 +1373,3 @@ background-position: -20px 100%;
 .protyle {
   background-color: rgba(237, 237, 237,0.75);
 }
-
-/**以protyle-action区域设定光标聚集时转弯部分线条**/
-.protyle-wysiwyg [data-subtype="u"]>.li>.p:nth-of-type(2)> .protyle-action:before {
-  content: "";
-  left: calc(var(--list-bullet-padding) *-1 - 3px);
-  right: calc(20px + 0.25em);
-  top: calc(4px - 12em / 16);
-  bottom: calc(0.5px + 14em / 16 );
-  position: absolute;
-  border-left: 3px solid var(--list-border-focus);
-  border-bottom: 3px solid var(--list-border-focus);
-  border-bottom-left-radius: 10px;
-}
