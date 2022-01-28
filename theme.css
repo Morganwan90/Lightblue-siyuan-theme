@@ -425,6 +425,9 @@ body {
 	background-color:#00000000;
 	padding:16px 24px;
 }
+.layout-tab-bar {
+	background-color: transparent;
+}
 /***搜索栏***/
 .search__header .b3-text-filed--text {
 	background-color:var(--dialog-background);
