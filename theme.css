@@ -445,8 +445,11 @@ body {
 .b3-card {
 	box-shadow:var(--b3-point-shadow);
 	border:1px solid rgb(0 0 0 / 33%);
-	background-color:#FFF;
+	background-color:transparent;
 	transition:var(--common-transition);
+}
+.b3-card:hover{
+	background-color: var(--b3-theme-primary-lightest);
 }
 /**修改结束**/
   .protyle-icons>span {
