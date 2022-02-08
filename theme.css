@@ -428,12 +428,17 @@ body {
 .layout-tab-bar {
 	background-color: transparent;
 }
-/***搜索栏***/
-.search__header .b3-text-filed--text {
+/***搜索栏\替换栏***/
+.search__header{
 	background-color:var(--dialog-background);
-	border-bottom:1px solid var(--b3-theme-primary-lighter) !important;
+	border-bottom:1px solid var(--b3-theme-primary) !important;
 }
-
+.search__header .b3-text-filed--text {
+	background-color: transparent;
+}
+.spread-search__preview {
+	border-top: 1px solid var(--b3-theme-primary);
+}
 /***弹出页面***/
 .block__popover {
 	background-color:rgb(237,237,237);
