@@ -9,7 +9,7 @@
 	/* 主色 */
     --b3-theme-primary:rgb(66,133,244);
 	/* 主色调，一般用在按钮等其他需要醒目的地方 */
-    --b3-theme-primary-light:rgba(4,66,165,0.871);
+    --b3-theme-primary-light:rgba(66,133,244,0.871);
 	--b3-theme-primary-lighter:rgba(66,133,244,0.2);
 	--b3-theme-primary-lightest:rgba(66,133,244,0.1);
 	--b3-theme-secondary:#f3722c;
@@ -23,7 +23,7 @@
     --b3-theme-on-primary:#fff;
 	/* 主色调上的文字颜色 */
     --b3-theme-on-secondary:#fff;
-	--b3-theme-on-background:#444444;
+	--b3-theme-on-background:#212526;
 	/* 编辑器上的文字颜色 */
     --b3-theme-on-surface:#666666;
 	/* 分栏、面板上的文字颜色 */
@@ -33,7 +33,7 @@
 	--b3-font-family-code:mononoki,Consolas,"Liberation Mono",Menlo,Courier,monospace,"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji","Segoe UI Symbol","Android Emoji","EmojiSymbols";
 	--b3-font-family-graph:mononoki;
 	/* 线条 */
-    --b3-border-color:rgba(0,0,0,.05);
+    --b3-border-color:rgba(0,0,0,.1);
 	/* 滚动条 */
     --b3-scroll-color:var(--column-scrollbar-background);
 	/* 列表 */
@@ -47,13 +47,13 @@
     --b3-tooltips-color:var(--b3-theme-primary-lighter);
 	/* 卡片背景 */
     --b3-card-error-color:#611a15;
-	--b3-card-error-background:#fdecea;
+	--b3-card-error-background:#fbd5d0;
 	--b3-card-warning-color:#663c00;
-	--b3-card-warning-background:#fff4e5;
+	--b3-card-warning-background:#ffeacc;
 	--b3-card-info-color:#0d3c61;
-	--b3-card-info-background:#e8f4fd;
+	--b3-card-info-background:#d0e8fb;
 	--b3-card-success-color:#1e4620;
-	--b3-card-success-background:#edf7ed;
+	--b3-card-success-background:#dcefdc;
 	/* 自定义文字 */
     --b3-font-color1:#81ecec;
 	--b3-font-color2:#00cec9;
@@ -73,14 +73,14 @@
 	--b3-font-background3:#74b9ff;
 	--b3-font-background4:#a29bfe;
 	--b3-font-background5:#dfe6e9;
-	--b3-font-background6:#ffeaa7;
+	--b3-font-background6:#ffe89b;
 	--b3-font-background7:#fab1a0;
 	--b3-font-background8:#ff7675;
 	--b3-font-background9:#a0beff;
 	--b3-font-background10:#82ccdd;
 	--b3-font-background11:#f8a5c2;
 	--b3-font-background12:#ea8685;
-	--b3-font-background13:#edf7ed;
+	--b3-font-background13:#797a797e;
 	/* 动画效果 */
     --b3-transition:all .15s cubic-bezier(0,0,.2,1) 0ms;
 	--b3-width-transition:width .15s cubic-bezier(0,0,.2,1) 0ms;
@@ -166,10 +166,9 @@
 	/* 块图标悬浮时背景色（不要使用透明色） */
     --switch-uncheck-color:#FFF;
 	/* switch 开关未开启时颜色 */
-
-    --column-scrollbar-background:var(--b3-border-color);
+    --column-scrollbar-background:rgba(0,0,0,0.1);
 	/* 边栏内滚动条通用背景色 */
-    --column-scrollbar-hover-background:var(--b3-theme-primary-lightest);
+    --column-scrollbar-hover-background:var(--b3-theme-primary-lighter);
 	/* 边栏内滚动条悬浮时背景色 */
     --dialog-background:#ededed;
 	/*背景栏*/
@@ -364,7 +363,7 @@ body {
 .layout__center .fn__flex-1.fn__flex [data-type='wnd'] {
 	margin:5px auto;
 	padding:5px 5px;
-	max-width:1300px;
+	max-width:1400px;
 }
 .protyle-background {
 	margin:10px;
@@ -620,10 +619,13 @@ body.body--win32 {
 	border:none;
 }
 .layout__center .layout-tab-bar .item:hover {
-	background-color:var(--b3-theme-primary-lightest);
+	background-color:transparent;
 }
-/** 页签样式-下划线**/
-  
+.layout__center .layout-tab-bar .item__text:hover {
+	color:var(--b3-font-color10);
+	opacity: 0.8;
+}
+/** 页签样式-下划线**/ 
  .layout-tab-bar .item {
 	margin:0 3px;
 	padding:0 2px;
@@ -814,6 +816,7 @@ to {
 	color:transparent;
 	padding:2px 6px;
 	transition:all 1s cubic-bezier(0.7,-0.5,0.2,2);
+	font-weight: normal !important;
 }
 
 .protyle-wysiwyg mark:hover {
@@ -850,23 +853,13 @@ to {
 	background-size:20px auto;
 }
 /**** 粗体、斜体 ****/
-  /* 颜色卡片内的粗体继承卡片颜色 */
-  [style*="background-color"] strong,[style*="background-color"] em {
+  /* 颜色、背景色中的文字不加粗 */
+.protyle-wysiwyg [style*="background-color"],.protyle-wysiwyg [style*="color"]{
 	color:inherit;
+	font-weight: normal;
 }
-/**** 下划线、删除线 ****/
-  [style*="background-color"] s {
-	color:inherit;
-}
-.protyle-wysiwyg u,.b3-typography u {
-	text-decoration:none;
-	border-bottom:1px solid var(--b3-theme-on-background) !important;
-	border-color:inherit;
-	padding:2px 0;
-}
-
 /**** 行内代码 ****/
-  .b3-typography code:not(.hljs),.protyle-wysiwyg code:not(.hljs) {
+.b3-typography code:not(.hljs),.protyle-wysiwyg code:not(.hljs) {
 	font-size:90%;
 	margin:0 1px;
 	color:var(--inline-code-color);
@@ -1112,6 +1105,8 @@ to {
 	/* 预览样式 */
   color:inherit;
 }
+
+
 /* 消除待办事项图标背景色 */
   .protyle-wysiwyg [data-node-id].li[fold="1"]>.protyle-action--task:after,.protyle-wysiwyg [data-node-id].li>.protyle-action--task:hover:after {
 	background:transparent !important;
