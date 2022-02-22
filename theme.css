@@ -55,32 +55,32 @@
 	--b3-card-success-color:#1e4620;
 	--b3-card-success-background:#dcefdc;
 	/* 自定义文字 */
-    --b3-font-color1:#81ecec;
-	--b3-font-color2:#00cec9;
-	--b3-font-color3:#00b894;
-	--b3-font-color4:#2dc653;
-	--b3-font-color5:#ffdd59;
-	--b3-font-color6:#ffd32a;
-	--b3-font-color7:#ff7675;
-	--b3-font-color8:#e55039;
-	--b3-font-color9:#74b9ff;
+    --b3-font-color1:#26c6da;
+	--b3-font-color2:#4dd0e1;
+	--b3-font-color3:#28e476;
+	--b3-font-color4:#00c853;
+	--b3-font-color5:#ffd32a;
+	--b3-font-color6:#fbc02d;
+	--b3-font-color7:#e57373;
+	--b3-font-color8:#ef5350;
+	--b3-font-color9:#64b5f6;
 	--b3-font-color10:#4285f4;
-	--b3-font-color11:#ffa801;
-	--b3-font-color12:#f3722c;
-	--b3-font-color13:#576574;
-	--b3-font-background1:#55efc4;
-	--b3-font-background2:#81ecec;
-	--b3-font-background3:#74b9ff;
-	--b3-font-background4:#a29bfe;
-	--b3-font-background5:#dfe6e9;
-	--b3-font-background6:#ffe89b;
-	--b3-font-background7:#fab1a0;
-	--b3-font-background8:#ff7675;
-	--b3-font-background9:#a0beff;
-	--b3-font-background10:#82ccdd;
-	--b3-font-background11:#f8a5c2;
-	--b3-font-background12:#ea8685;
-	--b3-font-background13:#797a797e;
+	--b3-font-color11:#ffa000;
+	--b3-font-color12:#ff6f00;
+	--b3-font-color13:#746f6f;
+	--b3-font-background1:#b2ebf2;
+	--b3-font-background2:#b2dfdb;
+	--b3-font-background3:#a5d6a7;
+	--b3-font-background4:#A2D1BC;
+	--b3-font-background5:#ffe082;
+	--b3-font-background6:#ffb74d;
+	--b3-font-background7:#ffab91;
+	--b3-font-background8:#ef9a9a;
+	--b3-font-background9:#b3e5fc;
+	--b3-font-background10:#90caf9;
+	--b3-font-background11:#f48fb1;
+	--b3-font-background12:#b39ddb;
+	--b3-font-background13:#b0bec5;
 	/* 动画效果 */
     --b3-transition:all .15s cubic-bezier(0,0,.2,1) 0ms;
 	--b3-width-transition:width .15s cubic-bezier(0,0,.2,1) 0ms;
@@ -684,6 +684,46 @@ body.body--win32 {
 }
 .b3-color__square[data-type="color"]:hover,.b3-color__square[data-type="backgroundColor"]:hover {
 	border:1px dashed var(--b3-theme-primary);
+}
+/* 背景颜色字体设置为彩虹色 */
+strong[style="background-color: var(--b3-font-background1);"] {
+	color:#006064 !important;
+}
+strong[style="background-color: var(--b3-font-background2);"] {
+	color: #004d40 !important;
+}
+strong[style="background-color: var(--b3-font-background3);"] {
+	color: #1b5e20 !important;
+}
+strong[style="background-color: var(--b3-font-background4);"] {
+	color: #122c08 !important;
+}
+strong[style="background-color: var(--b3-font-background5);"] {
+	color: #816104 !important;
+}
+strong[style="background-color: var(--b3-font-background6);"] {
+	color: #5c3b09 !important;
+}
+strong[style="background-color: var(--b3-font-background7);"] {
+	color: #7c2b12 !important;
+}
+strong[style="background-color: var(--b3-font-background8);"] {
+	color: #881d1d !important;
+}
+strong[style="background-color: var(--b3-font-background9);"] {
+	color: #3f728a !important;
+}
+strong[style="background-color: var(--b3-font-background10);"] {
+	color: #38668b !important;
+}
+strong[style="background-color: var(--b3-font-background11);"] {
+	color: #350d1a !important;
+}
+strong[style="background-color: var(--b3-font-background12);"] {
+	color: #402d63 !important;
+}
+strong[style="background-color: var(--b3-font-background13);"] {
+	color: #324853 !important;
 }
 /**** 头图工具栏 ****/
 .protyle-icons {
