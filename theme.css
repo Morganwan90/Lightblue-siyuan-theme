@@ -332,6 +332,9 @@ option {
  .b3-list-item,.b3-list-item__text {
 	color:var(--b3-theme-on-surface);
 }
+.b3-list-item{
+	height: 32px;
+}
 /* 边栏搜索 */
   .search__label .b3-form__icon-input {
 	background-color:var(--b3-theme-surface);
