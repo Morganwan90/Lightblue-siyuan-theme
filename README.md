@@ -10,7 +10,11 @@
 
 ### 2022.2.22
 
-优化颜色样式
+优化颜色样式，添加回毛玻璃效果。
+如需取消毛玻璃，在工作目录下`Siyuan-note\conf\appearance\themes\Dark-Blue\theme.css`中注释对应代码
+![截图_20221424021457](https://user-images.githubusercontent.com/61633409/155468593-87456432-949e-4673-98f7-3c79e562ff18.png)
+![截图_20221524021529](https://user-images.githubusercontent.com/61633409/155468638-58854ab4-3d13-4cbf-a767-2ba071559bd2.png)
+
 
 ### 2022.2.16
 
