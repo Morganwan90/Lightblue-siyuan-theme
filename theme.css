@@ -13,7 +13,7 @@
 	--b3-theme-primary-lighter:rgba(66,133,244,0.2);
 	--b3-theme-primary-lightest:rgba(66,133,244,0.1);
 	--b3-theme-secondary:#f3722c;
-	--b3-theme-background:#FFFFFF;
+	--b3-theme-background:var(--dialog-background);
 	/* 背景色，主要用于编辑器背景 */
     --b3-theme-surface:rgba(0,0,0,0.20);
 	/* 主要用于分栏背景 */
@@ -58,7 +58,7 @@
     --b3-font-color1:#26c6da;
 	--b3-font-color2:#4dd0e1;
 	--b3-font-color3:#28e476;
-	--b3-font-color4:#00c853;
+	--b3-font-color4:#30d675;
 	--b3-font-color5:#ffd32a;
 	--b3-font-color6:#fbc02d;
 	--b3-font-color7:#e57373;
@@ -216,9 +216,9 @@
     --background-image:url("img/bg.jpg");
 	/* 背景图 */
     --blur-value:10px;
-	/* 背景图片模糊程度 因性能原因已暂时取消*/
-    --glass-editor-background:rgb(255,255,255,10%);
-	/* 毛玻璃效果：背景色 因性能原因已暂时取消*/
+	/* 背景图片模糊程度*/
+    --glass-editor-background:rgb(255,255,255,20%);
+	/* 毛玻璃效果*/
     --glass-box-shadow:0 4px 12px rgba(120,120,120,0.25);
 	/* 毛玻璃效果：阴影 */
 
@@ -318,7 +318,7 @@ option {
 	color:var(--b3-font-color10);
 }
 .file-tree ul.b3-list.b3-list--background [data-subtype="h4"] .b3-list-item__text,.file-tree ul.b3-list.b3-list--background [data-subtype="h4"] .b3-list-item__toggle,.file-tree ul.b3-list.b3-list--background [data-subtype="h4"] {
-	color:var(--b3-font-color3);
+	color:var(--b3-font-color4);
 }
 .file-tree ul.b3-list.b3-list--background [data-subtype="h5"] .b3-list-item__text,.file-tree ul.b3-list.b3-list--background [data-subtype="h5"] .b3-list-item__toggle,.file-tree ul.b3-list.b3-list--background [data-subtype="h5"] {
 	color:var(--b3-font-color9);
@@ -349,9 +349,9 @@ body {
 	background-position:center top;
 	background-size:cover;
 }
+/*****************************************正常特效，和毛玻璃只能选一个注释*********************
 .fn__flex-1.fn__flex [data-type='wnd'] {
 	background:var(--background2);
-	/* background: transparent; */
 	min-height:90% !important;
 	margin:5px;
 	padding:5px;
@@ -361,15 +361,48 @@ body {
 	box-sizing:border-box;
 	border-radius:15px;
 }
-/* 毛玻璃特效
-.fn__flex-1.fn__flex [data-type='wnd']:before {
+.b3-menu,.protyle-util {
+	padding:10px 0px;
+	background-color:var(--dialog-background);
+}
+/*****************************************正常特效结束*****************************************/
+
+/*****************************************毛玻璃特效部分*****************************************/
+.fn__flex-1.fn__flex [data-type='wnd'] {
+	background:transparent;
+	min-height:90% !important;
+	margin:5px;
+	padding:5px;
+	position:relative;
+	box-shadow:var(--glass-box-shadow);
+	overflow:hidden;
+	box-sizing:border-box;
+	border-radius:15px;
+}
+.block__popover,.protyle[data-index="0"]  {
+	background:transparent;
+}
+.block__popover:before,.fn__flex-1.fn__flex [data-type='wnd']:before {
 	content: "";
 	position: absolute;
 	top: 0;	left: 0; right: 0;	bottom: 0;
 	z-index: -3;
-	background-color: rgba(255,255,255,0.15);
-	backdrop-filter: blur(20px);
-} */
+	background-color: var(--glass-editor-background);
+	backdrop-filter: blur(var(--blur-value));
+}
+.b3-menu,.protyle-util {
+	padding:10px 0px;
+	background-color: var(--glass-editor-background);
+	backdrop-filter: blur(var(--blur-value));
+}
+/*****************************************毛玻璃特效结束*****************************************/
+.block__popover.block__popover--move.block__popover--open {
+	border-radius:15px;
+	box-shadow:0px 0px 40px 8px rgba(0,0,0,0.2);
+}
+.fullscreen {
+	background-color:var(--dialog-background) !important;
+}
 .layout__center .fn__flex-1.fn__flex [data-type='wnd'] {
 	margin:5px auto;
 	padding:5px 5px;
@@ -418,8 +451,6 @@ body {
 	color:var(--b3-theme-primary);
 }
 /**弹出窗口-正常结束**/
-
-
 .b3-dialog__scrim {
 	background-color:rgb(0 0 0 / 0%);
 }
@@ -434,9 +465,6 @@ body {
 	background-color:#00000000;
 	padding:16px 24px;
 }
-.layout-tab-bar {
-	background-color: transparent;
-}
 /***搜索栏\替换栏***/
 .search__header{
 	background-color:var(--dialog-background);
@@ -448,13 +476,9 @@ body {
 .spread-search__preview {
 	border-top: 1px solid var(--b3-theme-primary);
 }
-/***弹出页面***/
-.block__popover {
-	background-color:rgb(237,237,237);
-}
-.block__popover.block__popover--move.block__popover--open {
-	border-radius:15px;
-	box-shadow:0px 0px 40px 8px rgba(0,0,0,0.2);
+.protyle-background {
+	margin:10px;
+	border-radius:8px;
 }
 .b3-card {
 	box-shadow:var(--b3-point-shadow);
@@ -465,7 +489,6 @@ body {
 .b3-card:hover{
 	background-color: var(--b3-theme-primary-lightest);
 }
-/**修改结束**/
   .protyle-icons>span {
 	background-color:#00000000;
 	color:var(--b3-theme-primary);
@@ -486,15 +509,8 @@ body {
 }
 body.body--win32 {
 	border:0px solid var(--b3-border-color);
-}
-/******** 毛玻璃效果实验功能代码结束 ***************/
- 
+} 
   /**** 菜单 ****/
-
-  .b3-menu,.protyle-util {
-	padding:10px 0px;
-	background-color:var(--dialog-background);
-}
 /* 菜单项 */
   .b3-menu__item {
 	padding:2px 16px 2px 16px;
@@ -776,9 +792,7 @@ strong[style="background-color: var(--b3-font-background13);"] {
 	background-color:var(--b3-theme-primary);
 	color:var(--b3-theme-surface);
 }
-.fullscreen {
-	background-color:var(--dialog-background) !important;
-}
+
 /**** 其他 ****/
   /* 大文件分页加载条 */
   .protyle-scroll {
@@ -803,8 +817,9 @@ strong[style="background-color: var(--b3-font-background13);"] {
 	background-color:transparent;
 }
 /* 隐藏空白行的提示文字 */
-  .protyle-wysiwyg [data-node-id] [spellcheck="false"]:focus:empty:after {
-	content:'';
+.protyle-wysiwyg [data-node-id] [spellcheck="false"]:empty:after {
+	content:' •';
+	opacity: 0.3;
 }
 /************** 三、编辑器行内样式 ***********************/
 
@@ -1085,7 +1100,7 @@ to {
 	min-height:1.75em;
 	padding:2px 0px 0px 10px;
 	margin-bottom:5px;
-	color:var(--b3-font-color3);
+	color:var(--b3-font-color4);
 }
 .protyle-wysiwyg [data-node-id].h4:before{
 	position:absolute;
@@ -1094,7 +1109,7 @@ to {
 	height: 100%;
 	top: 0;
 	left: -1.5px;
-	background-color: var(--b3-font-color3);
+	background-color: var(--b3-font-color4);
 	border-radius: 10px;
 }
 .protyle-wysiwyg [data-node-id].h5,.b3-typography h5 {
@@ -1364,6 +1379,7 @@ to {
 .side-panel {
 	background-color:var(--dialog-background);
 }
-.protyle {
-	background-color:rgba(237,237,237,0.75);
+
+#editor {
+	background:var(--background2);
 }
