@@ -411,6 +411,9 @@ body {
 	padding:5px 5px;
 	max-width:1400px;
 }
+.spread-search__preview {
+	background-color:var(--dialog-background);
+}
 .protyle-background {
 	margin:10px;
 	border-radius:8px;
