@@ -1041,12 +1041,6 @@ to {
     word-break:normal;
 	word-wrap:break-word;
 }
-/* 段落及通用块 */
-  .b3-typography p,.b3-typography [data-node-id],.protyle-wysiwyg p,.protyle-wysiwyg [data-node-id] {
-	margin:var(--block-margin);
-	padding:var(--block-padding);
-	line-height:var(--line-height) !important;
-}
 /**** 超级块、横排 ****/
   .protyle-wysiwyg .sb div[data-node-id] {
 	border-radius:3px;
@@ -1064,9 +1058,8 @@ to {
 	position:relative;
 	text-align:center;
 	font-size:1.75em;
-	min-height: 1.75em;
 	padding:2px 0px 0px 7px;
-	margin-bottom:15px;
+	margin-bottom:10px;
 	border-bottom:4px double var(--b3-theme-primary) !important;
 	color:var(--b3-theme-primary);
 }
@@ -1074,7 +1067,6 @@ to {
 	position:relative;
 	text-align:justify;
 	font-size:1.5em;
-	min-height: 1.75em;
 	padding:2px 0px 0px 7px;
 	margin-bottom:10px;
 	border-bottom:3px solid var(--b3-theme-secondary) !important;
@@ -1084,7 +1076,6 @@ to {
 	position:relative;
 	text-align:justify;
 	font-size:1.35em;
-	min-height: 1.75em;
 	padding:2px 0px 0px 10px;
 	margin-bottom:10px;
 	color:var(--b3-font-color10);
@@ -1103,7 +1094,7 @@ to {
 	position:relative;
 	text-align:justify;
 	font-size:1.2em;
-	min-height:1.75em;
+	min-height:1.25em;
 	padding:2px 0px 0px 10px;
 	margin-bottom:5px;
 	color:var(--b3-font-color4);
@@ -1122,7 +1113,7 @@ to {
 	position:relative;
 	text-align:justify;
 	font-size:1.1em;
-	min-height:1.75em;
+	min-height:1.25em;
 	padding:2px 0px 0px 10px;
 	margin-bottom:5px;
 	color:var(--b3-font-color9);
@@ -1141,7 +1132,7 @@ to {
 	position:relative;
 	text-align:justify;
 	font-size:1.1em;
-	min-height:1.75em;
+	min-height:1.25em;
 	padding:2px 0px 0px 7px;
 	margin-bottom:5px;
 }
