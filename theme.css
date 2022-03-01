@@ -7,17 +7,17 @@
 
 :root {
 	/* 主色 */
-    --b3-theme-primary:rgb(66,133,244);
+    --b3-theme-primary:#4285f4;
 	/* 主色调，一般用在按钮等其他需要醒目的地方 */
-    --b3-theme-primary-light:rgba(66,133,244,0.871);
-	--b3-theme-primary-lighter:rgba(66,133,244,0.2);
-	--b3-theme-primary-lightest:rgba(66,133,244,0.1);
+    --b3-theme-primary-light:#4285f4de;
+	--b3-theme-primary-lighter:#4285f433;
+	--b3-theme-primary-lightest:#4285f41a;
 	--b3-theme-secondary:#f3722c;
 	--b3-theme-background:var(--dialog-background);
 	/* 背景色，主要用于编辑器背景 */
-    --b3-theme-surface:rgba(0,0,0,0.20);
+    --b3-theme-surface:#00000033;
 	/* 主要用于分栏背景 */
-    --b3-theme-surface-light:rgba(41,42,45,.86);
+    --b3-theme-surface-light:#292a2ddb;
 	--b3-theme-error:#d23f31;
 	/* 文字颜色 */
     --b3-theme-on-primary:#fff;
@@ -33,11 +33,11 @@
 	--b3-font-family-code:mononoki,Consolas,"Liberation Mono",Menlo,Courier,monospace,"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji","Segoe UI Symbol","Android Emoji","EmojiSymbols";
 	--b3-font-family-graph:mononoki;
 	/* 线条 */
-    --b3-border-color:rgba(0,0,0,.1);
+    --b3-border-color:#0000001a;
 	/* 滚动条 */
     --b3-scroll-color:var(--column-scrollbar-background);
 	/* 列表 */
-    --b3-list-hover:rgba(66,133,244,0.15);
+    --b3-list-hover:#4285f426;
 	/* 页签 */
     --b3-tab-background:var(--b3-theme-background);
 	--b3-tab-background-hover:var(--b3-theme-primary-lightest);
@@ -85,8 +85,8 @@
     --b3-transition:all .15s cubic-bezier(0,0,.2,1) 0ms;
 	--b3-width-transition:width .15s cubic-bezier(0,0,.2,1) 0ms;
 	/* 阴影 */
-    --b3-point-shadow:0 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12);
-	--b3-dialog-shadow:0px 0px 40px 8px rgba(0,0,0,0.2);
+    --b3-point-shadow:0 3px 1px -2px #00000033,0px 2px 2px 0px #00000024,0px 1px 5px 0px #0000001f;
+	--b3-dialog-shadow:0px 0px 40px 8px #00000033;
 	/* diff */
     --b3-diff-add:#dfd;
 	--b3-diff-add-surface:#97f295;
@@ -119,7 +119,7 @@
 	--b3-protyle-search-border-color:#f2e680;
 	--b3-protyle-search-current-background:#a5d3fe;
 	/* 代码片段背景 */
-    --b3-protyle-code-background:rgba(66,133,244,0.05);
+    --b3-protyle-code-background:#4285f40d;
 	/* 所见即所得行内元素颜色 */
     --b3-protyle-inline-strong-color:inherit;
 	/* 粗体 */
@@ -166,15 +166,15 @@
 	/* 块图标悬浮时背景色（不要使用透明色） */
     --switch-uncheck-color:#FFF;
 	/* switch 开关未开启时颜色 */
-    --column-scrollbar-background:rgba(0,0,0,0.1);
+    --column-scrollbar-background:#0000001a;
 	/* 边栏内滚动条通用背景色 */
     --column-scrollbar-hover-background:var(--b3-theme-primary-lighter);
 	/* 边栏内滚动条悬浮时背景色 */
-    --dialog-background:rgb(237, 237, 237);
+    --dialog-background:#ededed;
 	/*背景栏*/
-    --background2:rgba(237,237,237,0.94);
+    --background2:#edededf0;
 	/*背景栏*/
-    --list-border-initial:rgb(169, 207, 245);
+    --list-border-initial:#a9cff5;
 	/*列表大纲线颜色*/
     --list-border-focus:var(--b3-font-color12);
 	/*子弹着重线颜色*/
@@ -217,9 +217,9 @@
 	/* 背景图 */
     --blur-value:10px;
 	/* 背景图片模糊程度*/
-    --glass-editor-background:rgb(255,255,255,20%);
+    --glass-editor-background:#ffffff33;
 	/* 毛玻璃效果*/
-    --glass-box-shadow:0 4px 12px rgba(120,120,120,0.25);
+    --glass-box-shadow:0 4px 12px #78787840;
 	/* 毛玻璃效果：阴影 */
 
     /**** 动画 ****/
@@ -230,17 +230,17 @@
 }
 /* 选择框颜色 */
 .b3-select {
-	background-color:rgb(0 0 0 / 5%);
+	background-color:#0000000d;
 	/*更改*/
 }
 /*下拉栏背景*/
 option {
-	background-color:rgb(0 0 0 / 5%);
+	background-color:#0000000d;
 }
 /*输入框颜色*/
 .b3-text-filed {
 	color:var(--b3-theme-on-surface);
-	background-color:rgb(0 0 0 / 5%);
+	background-color:#0000000d;
 	border:transparent;
 }
 /************** 一、页面框架与控件 ***********************/  
@@ -285,7 +285,7 @@ option {
 	background-color:var(--b3-theme-primary-lightest);
 }
 .file-tree .b3-list--background .b3-list-item--focus:not([data-treetype="outline"]) .b3-list-item__text,.file-tree .b3-list--background .b3-list-item--focus:not([data-treetype="outline"]) .b3-list-item__toggle,.file-tree .b3-list--background .b3-list-item--focus:not([data-treetype="outline"]) .b3-list-item__icon svg,.file-tree .b3-list--background .b3-list-item--focus:not([data-treetype="outline"]) {
-	color:rgb(231,97,24) !important;
+	color:#e76118 !important;
 }
 /**字体清晰**/
 .file-tree [data-type="navigation-file"] .b3-list-item__text {
@@ -298,7 +298,7 @@ option {
 /**笔记文档下划线**/
 .b3-list-item,
 .b3-dialog--open .fn__flex .b3-list--background,.b3-dialog--open .fn__flex .b3-list-item {
-	border-bottom:0.5px solid rgba(0,0,0,0.2);
+	border-bottom:0.5px solid #00000033;
 }
 /**笔记本名称加强**/
  .b3-list--background [data-type="navigation-root"] .b3-list-item__text,.b3-list--background [data-type="navigation-root"] .b3-list-item__toggle,.b3-list--background [data-type="navigation-root"] .b3-list-item__icon svg {
@@ -324,7 +324,7 @@ option {
 	color:var(--b3-font-color9);
 }
 .file-tree ul.b3-list.b3-list--background  [data-treetype="outline"] {
-	border-bottom:0.5px solid rgba(0,0,0,0.2);
+	border-bottom:0.5px solid #00000033;
 }
 /*************大纲的代码部分结束*********/
 
@@ -333,7 +333,10 @@ option {
 	color:var(--b3-theme-on-surface);
 }
 .b3-list-item{
-	height: 32px;
+	min-height: 32px;
+}
+.b3-list-item__meta{
+	color:var(--b3-font-color10);
 }
 /* 边栏搜索 */
   .search__label .b3-form__icon-input {
@@ -401,7 +404,7 @@ body {
 /*****************************************毛玻璃特效结束*****************************************/
 .block__popover.block__popover--move.block__popover--open {
 	border-radius:15px;
-	box-shadow:0px 0px 40px 8px rgba(0,0,0,0.2);
+	box-shadow:0px 0px 40px 8px #00000033;
 }
 .fullscreen {
 	background-color:var(--dialog-background) !important;
@@ -458,7 +461,7 @@ body {
 }
 /**弹出窗口-正常结束**/
 .b3-dialog__scrim {
-	background-color:rgb(0 0 0 / 0%);
+	background-color:#00000000;
 }
 .layout__center .protyle-title__input {
 	background:transparent;
@@ -488,7 +491,7 @@ body {
 }
 .b3-card {
 	box-shadow:var(--b3-point-shadow);
-	border:1px solid rgb(0 0 0 / 33%);
+	border:1px solid #00000054;
 	background-color:transparent;
 	transition:var(--common-transition);
 }
@@ -773,7 +776,7 @@ strong[style="background-color: var(--b3-font-background13);"] {
 /**** 块图标 ****/
   /* 减淡块图标颜色 */
   .protyle-gutters svg {
-	color:rgba(66,133,244,0.7);
+	color:#4285f4b3;
 }
 /* 增加块图标悬浮时背景色 */
   .protyle-gutters button:hover svg {
@@ -1239,7 +1242,7 @@ to {
 }
 /* 首行背景色 */
 .protyle table thead tr {
-	background-color:rgba(66,133,244,0.06) !important;
+	background-color:#4285f40f !important;
 }
 /* 添加行悬浮时背景色 */
 .b3-typography table tr:hover,.protyle-wysiwyg table tr:hover {
