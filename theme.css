@@ -155,7 +155,7 @@
 	/* 行内代码文字颜色 */
     --quote-border-width:3px;
 	/* 引述左边框宽度 */
-    --quote-border-color:var(--b3-theme-primary);
+    --quote-border-color:var(--b3-font-color10);
 	/* 引述左边框颜色 */
     --quote-color:var(--b3-theme-on-surface);
 	/* 引述文字颜色 */
@@ -1183,19 +1183,11 @@ to {
 }
 /**** 引述 ****/
   .b3-typography blockquote,.b3-typography .bq,.protyle-wysiwyg blockquote,.protyle-wysiwyg .bq {
-	border-left:var(--quote-border-width) solid var(--b3-theme-primary);
-	border-color:var(--quote-border-color);
-	color:var(--quote-color);
-	background-color:var(--quote-background);
+	border-left:var(--quote-border-width) solid var(--quote-border-color);
+	color:var(--b3-theme-on-surface);
+	background-color:#e8eaf3;
 	margin:1em 2em 1em 2em;
-	padding:0px 4px;
-	padding-left:1em;
-}
-/* 调整引述在超级块中的样式 */
-  .protyle-wysiwyg .sb blockquote,.protyle-wysiwyg .sb .bq {
-	border-left:3px solid var(--b3-border-color);
-	margin:var(--allen-block-margin);
-	padding:var(--allen-block-padding);
+	padding:0px 4px 0px 1em;
 }
 /**** 代码块 ****/
 .b3-typography .code-block,.protyle-wysiwyg .code-block {
@@ -1250,7 +1242,7 @@ to {
 }
 .protyle-wysiwyg table, .b3-typography table{
 	display: table;
-    width: 100%;
+	width: 100%;
 }
 /***大纲***/
 /***基础线条***/
