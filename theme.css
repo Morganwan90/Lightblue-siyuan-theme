@@ -442,6 +442,9 @@ body {
 [data-type='wnd'] .layout-tab-container,[data-type='wnd'] .protyle,[data-type='wnd'] .protyle-content,[data-type='wnd'] .protyle-wysiwyg,.block__icons {
 	background:transparent;
 }
+.fn__flex-1{
+	z-index:1;
+}
 .search__label .b3-form__icon-input {
 	background:transparent;
 }
