@@ -354,6 +354,7 @@ body {
 	background-image:var(--background-image);
 	background-position:center top;
 	background-size:cover;
+	z-index: -1;
 }
 /*****************************************正常特效，和毛玻璃只能选一个注释*********************
 .fn__flex-1.fn__flex [data-type='wnd'] {
@@ -384,6 +385,7 @@ body {
 	overflow:hidden;
 	box-sizing:border-box;
 	border-radius:15px;
+	z-index: 2;
 }
 .block__popover,.protyle[data-index="0"]  {
 	background:transparent;
@@ -405,6 +407,7 @@ body {
 .block__popover.block__popover--move.block__popover--open {
 	border-radius:15px;
 	box-shadow:0px 0px 40px 8px #00000033;
+	z-index: 2;
 }
 .fullscreen {
 	background-color:var(--dialog-background) !important;
@@ -439,11 +442,17 @@ body {
 .graph {
 	background:transparent;
 }
+.graph__panel {
+	z-index: 2;
+}
 [data-type='wnd'] .layout-tab-container,[data-type='wnd'] .protyle,[data-type='wnd'] .protyle-content,[data-type='wnd'] .protyle-wysiwyg,.block__icons {
 	background:transparent;
 }
 .fn__flex-1{
 	z-index:1;
+}
+#configBazaarReadme.config-bazaar__readme{
+	z-index:3;
 }
 .search__label .b3-form__icon-input {
 	background:transparent;
