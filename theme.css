@@ -217,7 +217,7 @@
 	/* 背景图 */
     --blur-value:10px;
 	/* 背景图片模糊程度*/
-    --glass-editor-background:#ffffff33;
+    --glass-editor-background:var(--dialog-background);
 	/* 毛玻璃效果*/
     --glass-box-shadow:0 4px 12px #78787840;
 	/* 毛玻璃效果：阴影 */
@@ -396,7 +396,6 @@ body {
 	top: 0;	left: 0; right: 0;	bottom: 0;
 	z-index: -3;
 	background-color: var(--glass-editor-background);
-	backdrop-filter: blur(var(--blur-value));
 }
 .b3-menu,.protyle-util {
 	padding:10px 0px;
@@ -408,6 +407,7 @@ body {
 	border-radius:15px;
 	box-shadow:0px 0px 40px 8px #00000033;
 	z-index: 2;
+	background-color: var(--dialog-background);
 }
 .fullscreen {
 	background-color:var(--dialog-background) !important;
