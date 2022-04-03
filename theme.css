@@ -284,7 +284,7 @@ option {
 }
 /* 边栏分割线 */
   .layout__resize--lr {
-	margin:12px;
+	margin:14px;
 }
 .layout__resize--lr:after {
 	background-color:var(--column-border);
@@ -355,7 +355,7 @@ body {
 .layout__center .fn__flex-1.fn__flex [data-type='wnd'] {
 	margin:5px auto;
 	padding:5px 5px;
-	max-width:1400px;
+	/* max-width:1400px; */
 }
 .spread-search__preview {
 	background-color:var(--dialog-background);
