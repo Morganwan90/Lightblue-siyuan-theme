@@ -138,10 +138,6 @@
     --b3-protyle-inline-blockref-color:var(--b3-theme-secondary);
 
     /************** Theme *********************/
-    --text-selection-background:var(--b3-theme-primary-lightest);
-	/* 文本选中背景色 */
-    --text-selection-color:inherit;
-	/* 文本选中颜色 */
     --inline-code-color:inherit;
 	/* 行内代码文字颜色 */
     --quote-border-width:3px;
@@ -289,12 +285,14 @@ option {
 .layout__resize--lr:after {
 	background-color:var(--column-border);
 }
-body {
-	background-color:var(--dialog-background);
-	background-image:var(--background-image);
-	background-position:center top;
-	background-size:cover;
-	z-index: -1;
+body.fn__flex-column {
+    background-image: var(--background-image);
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    background-color: transparent;
+    border: none;
 }
 /*****************************************正常特效，和毛玻璃只能选一个注释*********************
 .fn__flex-1.fn__flex [data-type='wnd'] {
@@ -347,7 +345,7 @@ body {
 .block__popover.block__popover--move.block__popover--open {
 	border-radius:15px;
 	box-shadow:0px 0px 40px 8px #00000033;
-	z-index: 2;
+	z-index: 201;
 }
 .fullscreen {
 	background-color:var(--dialog-background) !important;
@@ -397,7 +395,7 @@ body {
 .fn__loading {
 	background-color:transparent !important;
 }
-.b3-dialog__container {
+div.b3-dialog__container {
 	background-color:var(--dialog-background)!important;
 	transition:all 0.1s linear;
 }
@@ -605,7 +603,7 @@ body.body--win32 {
 	border-bottom:3px solid var(--b3-theme-primary)!important;
 	box-shadow: none !important;
 }
-.layout-tab-bar .item--focus .item__text {
+.layout__wnd--active .layout-tab-bar .item--focus>.item__text {
 	opacity:1;
 	color:var(--b3-theme-primary);
 }
@@ -732,14 +730,14 @@ strong[style="background-color: var(--b3-font-background13);"] {
 }
 .protyle-preview__action button.protyle-preview__action--current {
 	background-color:transparent;
-	color:var(--b3-theme-surface);
+	color:var(--b3-theme-secondary);
 }
 .protyle-preview__action button:hover{
 	background-color: var(--b3-theme-primary-lightest);
 }
 /**** 其他 ****/
   /* 大文件分页加载条 */
-  .protyle-scroll {
+.protyle-scroll {
 	opacity:0;
 	transition:var(--page-scrollbar-transition);
 }
@@ -748,13 +746,12 @@ strong[style="background-color: var(--b3-font-background13);"] {
 	opacity:1;
 }
 /* 编辑器光标颜色 */
-  .protyle-wysiwyg {
+.protyle-wysiwyg {
 	caret-color:var(--b3-theme-primary);
 }
 /* 文本选中样式 */
-  .protyle-wysiwyg::selection {
-	background-color:var(--text-selection-background);
-	color:var(--text-selection-color);
+.protyle-wysiwyg--select, .protyle-wysiwyg--select .hljs, .protyle-wysiwyg--select .protyle-linenumber__rows {
+	background-color:#4286f40d !important;
 }
 /* 隐藏空白行的提示文字 */
 .protyle-wysiwyg [data-node-id] [spellcheck="false"]:empty:after {
@@ -1096,7 +1093,7 @@ to {
 }
 /* 添加行悬浮时背景色 */
 .b3-typography table tr:hover,.protyle-wysiwyg table tr:hover {
-	background-color:var(--b3-theme-primary-lightest) !important;
+	background-color:#4286f40d !important;
 }
 .protyle-wysiwyg table, .b3-typography table{
 	max-width:100%;
@@ -1208,10 +1205,45 @@ to {
 
 
 /***移动端****/
-.side-panel {
+#sidebar {
 	background-color:var(--dialog-background);
 }
 
 #editor {
 	background:var(--background2);
 }
+/*---------ctrl+p窗口改造 from ZHANG-Light -------------*/
+/*放大ctrl+p窗口尺寸*/
+/*不添加[data-key]属性选择器将会同时影响alt+p窗口*/
+div[data-key] .b3-dialog__container {
+	width: 90vw !important;
+}
+div[data-key] .b3-dialog__container .fn__flex-column {
+	height:90vh !important;
+	width: 90vw !important;
+}
+
+/*ctrl+p改造成左右排列*/
+/*先把容器改成左右排列并自动换行*/
+div[data-key] .b3-dialog__container .fn__flex-column {
+	flex-direction: row !important;
+	flex-wrap: wrap;
+}
+/*设置需要占满一行的项目*/
+div[data-key] .b3-dialog__container .fn__flex-column .search__header,
+div[data-key] .b3-dialog__container .fn__flex-column .b3-form__space--small {
+	width:100vw;
+}
+
+/*搜索结果列表占一半宽度，靠左排列*/
+div[data-key] .b3-dialog__container .fn__flex-column #searchList {
+	float:left;
+	width:calc(50%);
+	height:calc(100%) !important;
+	border-top:1px solid var(--b3-theme-primary);
+	border-right:1px solid var(--b3-theme-primary);
+}
+.b3-list-item__meta {
+	color:var(--b3-theme-primary-light);
+}
+/*---------ctrl+p窗口改造 end -------------*/
