@@ -1,8 +1,18 @@
 # 介绍
 
-该主题参考了集市中前期包括[langzhou](https://github.com/langzhou/siyuan-note)、[VIWZ](https://github.com/VIWZ)、[Achuan-2](https://github.com/Achuan-2)、[Seven Chor](https://github.com/zqhjl)、[Roy](https://github.com/royc01)、[Zuoqiu-Yingyi](https://github.com/Zuoqiu-Yingyi)、[UserZYF](https://github.com/UserZYF)各位大大的样式，各位主题作者同样细心解答了我的问题，万分感谢
+该主题参考了集市中前期包括[langzhou](https://github.com/langzhou/siyuan-note)、[VIWZ](https://github.com/VIWZ)、[Achuan-2](https://github.com/Achuan-2)、[Zuoqiu-Yingyi](https://github.com/Zuoqiu-Yingyi)、[Roy](https://github.com/royc01)、[Zuoqiu-Yingyi](https://github.com/Zuoqiu-Yingyi)、[UserZYF](https://github.com/UserZYF)各位大大的样式，各位主题作者同样细心解答了我的问题，万分感谢
 
 推荐码：ildAxIu，欢迎上车~
+
+## 功能挂件原作者
+
+|   作者   |     主题     |           具体内容           |
+| :------: | :----------: | :--------------------------: |
+| langzhou |      -       |         评论注释功能         |
+|   Roy    | Notion-theme |     无序列表转脑图、表格     |
+| UserZYF  | Zhang-Light  | '/'后分4栏；<br />搜索栏改造 |
+
+
 
 ## 更新历史
 
@@ -77,7 +87,7 @@
 
 ### 2022.1.10
 
-#### ~~添加了子弹流加强模式 v0.1~~
+~~添加了子弹流加强模式 v0.1~~
 
 ~~根据logseq的主题作者pengx17的代码改造，效果如下：~~
 

@@ -468,9 +468,6 @@ div.b3-dialog__container {
 	background-color:#00000073;
 	color:#ff8f00;
 }
-.b3-typography table td,.b3-typography table th,.protyle-wysiwyg table td,.protyle-wysiwyg table th {
-	color:var(--b3-theme-on-surface);
-}
 body.body--win32 {
 	border:0px solid var(--b3-border-color);
 } 
@@ -1107,9 +1104,16 @@ to {
 .b3-typography table tr:hover,.protyle-wysiwyg table tr:hover {
 	background-color:#4286f40d !important;
 }
-.protyle-wysiwyg table, .b3-typography table{
-	max-width:100%;
+.protyle-wysiwyg div.table[data-node-id][custom-f~=auto] {
+    width: 100%;
 }
+.protyle-wysiwyg div.table[data-node-id][custom-f~=auto] table {
+    width: auto;
+}
+.b3-typography table td,.b3-typography table th,.protyle-wysiwyg table td,.protyle-wysiwyg table th {
+	color:inherit;
+}
+
 /***大纲***/
 /***基础线条***/
 .protyle-wysiwyg [data-node-id].li>[data-node-id]:before {
@@ -1264,7 +1268,7 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchList {
 }
 /*---------ctrl+p窗口改造 end -------------*/
 
-/*————————————————————————列表转导图 From Notion like———————————————————————*/
+/*————————————————————————列表转导图 From Notion-theme———————————————————————*/
 
 /*整个导图取消缩进*/
 .protyle-wysiwyg *[custom-f="dt"][data-subtype="u"] .li .list{
@@ -1405,7 +1409,7 @@ div[data-node-index]>[data-type="NodeListItem"][data-subtype="u"]:before{
 	border-bottom: none !important;
 }
 
-/* -----------------------------------------------列表转化为表格------------------------------------------- */
+/* -----------------------------------------------列表转化为表格 From Notion-theme------------------------------------------- */
 /* 设置整个列表表格的缩进 */
 .list[data-node-id][data-type="NodeList"][custom-f="bg"] {
     padding: 4px;
