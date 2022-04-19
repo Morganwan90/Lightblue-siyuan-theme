@@ -1,16 +1,16 @@
 # 介绍
 
-该主题参考了集市中前期包括langzhou、VIWZ、Achuan2各位大大的样式，各位主题作者同样细心解答了我的问题，万分感谢
+该主题参考了集市中前期包括[langzhou](https://github.com/langzhou/siyuan-note)、[VIWZ](https://github.com/VIWZ)、[Achuan-2](https://github.com/Achuan-2)、[Seven Chor](https://github.com/zqhjl)、[Roy](https://github.com/royc01)、[Zuoqiu-Yingyi](https://github.com/Zuoqiu-Yingyi)、[UserZYF](https://github.com/UserZYF)各位大大的样式，各位主题作者同样细心解答了我的问题，万分感谢
 
 推荐码：ildAxIu，欢迎上车~
-
-如需取消毛玻璃，在工作目录下`Siyuan-note\conf\appearance\themes\Dark-Blue\theme.css`中注释对应代码
-![截图_20221424021457](https://user-images.githubusercontent.com/61633409/155468593-87456432-949e-4673-98f7-3c79e562ff18.png)
-![截图_20221524021529](https://user-images.githubusercontent.com/61633409/155468638-58854ab4-3d13-4cbf-a767-2ba071559bd2.png)
 
 ## 更新历史
 
 之前比较懒....没有记录更新历史
+
+### 2020.4.17
+
+调整代码块样式，复制了[Roy](https://github.com/royc01)的无序列表转脑图、[UserZYF](https://github.com/UserZYF)的无序列表转表格
 
 ### 2022.4.15
 
