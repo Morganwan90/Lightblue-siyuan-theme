@@ -1406,14 +1406,16 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchList {
 	border-bottom: none !important;
 }
 
-/* -----------------------------------------------列表转化为表格 From Zhang Light、Dark+------------------------------------------- */
+/* -----------------------------------------------列表转表格 From Zhang Light、Dark+------------------------------------------- */
 .protyle-content *[custom-type~=table] [data-node-id].list,
 .protyle-content *[custom-type~=table] [data-node-id].li {
     padding: 0px;
     margin: 0px !important;
     outline:1px solid var(--list-border-initial);
 }
-
+.protyle-content *[custom-type~=table] [data-node-id].list{
+    width: 100%;
+}
 /* 列表项 */
 .protyle-content *[custom-type~=table] [data-node-id].li{
     width: auto;
