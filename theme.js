@@ -174,26 +174,19 @@ const  添加视图菜单监听器 =  function(){
   window.addEventListener("mouseup",判定目标并添加菜单项目)
 
 }
-var 全局菜单定时器={}
+
 判定目标并添加菜单项目 = function(event){
   let 父元素 =event.target.parentElement
-  if(父元素.getAttribute("draggable")=="true")
-  {
-    扩展菜单(父元素)
+  if(父元素.getAttribute("data-type")=="NodeList" ||"NodeTable"){
+    setTimeout(()=>生成列表菜单项目(), 0);
   }
-  else if(
-    父元素.parentElement.getAttribute("draggable")=="true"
-  ){
-    扩展菜单(父元素.parentElement)
-  }
-}
-
 扩展菜单=function(父元素){
   if(父元素.getAttribute("data-type")=="NodeList" ||"NodeTable"){
-    全局菜单定时器= setTimeout(()=>生成列表菜单项目(), 0);
+    setTimeout(()=>生成列表菜单项目(), 0);
+    }
   }
-
 }
+
 添加视图菜单监听器()
 视图菜单监听器=function(event){
   // console.log(event.currentTarget)
