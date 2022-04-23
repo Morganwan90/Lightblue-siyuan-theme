@@ -182,15 +182,10 @@ var 全局菜单定时器={}
   {
     扩展菜单(父元素)
   }
-  else if(
-    父元素.parentElement.getAttribute("draggable")=="true"
-  ){
-    扩展菜单(父元素.parentElement)
-  }
 }
 
 扩展菜单=function(父元素){
-  if(父元素.getAttribute("data-type")=="NodeList" ||父元素.getAttribute("data-type")=="NodeTable"||父元素.getAttribute("data-type")==null){
+  if(父元素.getAttribute("data-type")=="NodeList"||父元素.getAttribute("data-type")=="NodeListItem"||父元素.getAttribute("data-type")=="NodeTable"||父元素.getAttribute("data-type")==null){
     全局菜单定时器= setTimeout(()=>生成列表菜单项目(), 0);
   }
 
