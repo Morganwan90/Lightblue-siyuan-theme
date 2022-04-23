@@ -57,8 +57,7 @@ async function 解析响应体(response) {
 生成列表菜单项目=function(){
   let 块标菜单 = document.getElementById("commonMenu")
   let  最后项 = 块标菜单.querySelector(".b3-menu__item--readonly")
-  let viewitem = 块标菜单.querySelector('[id="viewselect"]')
-  if(!viewitem){
+  if(最后项){
     块标菜单.insertBefore(选择视图按钮(),最后项)
     块标菜单.insertBefore(菜单分隔项(),最后项)
   }
