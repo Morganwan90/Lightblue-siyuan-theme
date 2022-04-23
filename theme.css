@@ -1217,7 +1217,6 @@ to {
 }
 /****子弹流笔记加强结束***/
 
-
 /***移动端****/
 #sidebar {
 	background-color:var(--dialog-background);
@@ -1225,6 +1224,12 @@ to {
 #editor {
 	background:var(--background2);
 }
+
+/***云端收集箱***/
+.inbox__details{
+	background-color: var(--dialog-background);
+}
+
 
 /*---------ctrl+p窗口改造 from ZHANG-Light -------------*/
 /*放大ctrl+p窗口尺寸*/

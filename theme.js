@@ -1,4 +1,3 @@
-
 /* inject local script */
 /*****************************评论功能 From langzhou**********************************/
 function inject(){
@@ -58,7 +57,8 @@ async function 解析响应体(response) {
 生成列表菜单项目=function(){
   let 块标菜单 = document.getElementById("commonMenu")
   let  最后项 = 块标菜单.querySelector(".b3-menu__item--readonly")
-  if(最后项){
+  let viewitem = 块标菜单.querySelector('[id="viewselect"]')
+  if(!viewitem){
     块标菜单.insertBefore(选择视图按钮(),最后项)
     块标菜单.insertBefore(菜单分隔项(),最后项)
   }
@@ -76,18 +76,20 @@ async function 解析响应体(response) {
 子菜单栏=function(className = 'b3-menu__submenu') {
   let node = document.createElement('div');
   node.className = className;
-  selectid = getBlockSelected()
-  id = selectid.id
-  if(selectid.type=="NodeList"){
+  let selectblock = getBlockSelected()
+  if(selectblock){
+  let id = selectblock.id
+  if(selectblock.type=="NodeList" || selectblock.type=="NodeListItem"){
     node.appendChild(列表转换导图按钮(id))
     node.appendChild(列表转换表格按钮(id))
     node.appendChild(列表恢复默认按钮(id))
   }
-  if(selectid.type=="NodeTable"){
+  if(selectblock.type=="NodeTable"){
     node.appendChild(页面宽度视图按钮(id))
     node.appendChild(自动宽度视图按钮(id))
   }
-  return node;
+}
+return node;
 }
 
 列表转换导图按钮=function(id){
@@ -172,22 +174,30 @@ function getBlockSelected() {
 
 const  添加视图菜单监听器 =  function(){
   window.addEventListener("mouseup",判定目标并添加菜单项目)
-
 }
 
+var 全局菜单定时器={}
 判定目标并添加菜单项目 = function(event){
   let 父元素 =event.target.parentElement
-  if(父元素.getAttribute("data-type")=="NodeList" ||"NodeTable"){
-    setTimeout(()=>生成列表菜单项目(), 0);
+  if(父元素.getAttribute("draggable")=="true")
+  {
+    扩展菜单(父元素)
   }
-扩展菜单=function(父元素){
-  if(父元素.getAttribute("data-type")=="NodeList" ||"NodeTable"){
-    setTimeout(()=>生成列表菜单项目(), 0);
-    }
+  else if(
+    父元素.parentElement.getAttribute("draggable")=="true"
+  ){
+    扩展菜单(父元素.parentElement)
   }
 }
 
+扩展菜单=function(父元素){
+  if(父元素.getAttribute("data-type")=="NodeList" ||父元素.getAttribute("data-type")=="NodeTable"||父元素.getAttribute("data-type")==null){
+    全局菜单定时器= setTimeout(()=>生成列表菜单项目(), 0);
+  }
+
+}
 添加视图菜单监听器()
+
 视图菜单监听器=function(event){
   // console.log(event.currentTarget)
   let id = event.currentTarget.getAttribute("data-node-id")
