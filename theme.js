@@ -57,9 +57,12 @@ async function 解析响应体(response) {
 生成列表菜单项目=function(){
   let 块标菜单 = document.getElementById("commonMenu")
   let  最后项 = 块标菜单.querySelector(".b3-menu__item--readonly")
+  let  selectview = 块标菜单.querySelector('[id="viewselect"]')
   if(最后项){
+    if(!selectview){
     块标菜单.insertBefore(选择视图按钮(),最后项)
     块标菜单.insertBefore(菜单分隔项(),最后项)
+    }
   }
 }
 
@@ -175,21 +178,16 @@ const  添加视图菜单监听器 =  function(){
   window.addEventListener("mouseup",判定目标并添加菜单项目)
 }
 
-var 全局菜单定时器={}
+
 判定目标并添加菜单项目 = function(event){
   let 父元素 =event.target.parentElement
-  if(父元素.getAttribute("draggable")=="true")
-  {
-    扩展菜单(父元素)
+  // console.log(父元素.getAttribute("data-type"))
+  if(父元素.getAttribute("data-type")=="NodeList"||父元素.getAttribute("data-type")=="NodeListItem"||父元素.getAttribute("data-type")=="NodeTable"){
+  setTimeout(()=>生成列表菜单项目(), 0)
   }
 }
 
-扩展菜单=function(父元素){
-  if(父元素.getAttribute("data-type")=="NodeList"||父元素.getAttribute("data-type")=="NodeListItem"||父元素.getAttribute("data-type")=="NodeTable"||父元素.getAttribute("data-type")==null){
-    全局菜单定时器= setTimeout(()=>生成列表菜单项目(), 0);
-  }
 
-}
 添加视图菜单监听器()
 
 视图菜单监听器=function(event){
