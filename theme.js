@@ -52,103 +52,86 @@ async function 解析响应体(response) {
 
 
 /******************************表格转换导图、表格，页面宽度设定 From Roy、Zuoqiu-Yingyi、Zhang-Light,做了一定修改********************************/
-
 /****UI****/
-生成列表菜单项目=function(){
-  let 块标菜单 = document.getElementById("commonMenu")
-  let  最后项 = 块标菜单.querySelector(".b3-menu__item--readonly")
-  let  selectview = 块标菜单.querySelector('[id="viewselect"]')
-  if(最后项){
-    if(!selectview){
-    块标菜单.insertBefore(选择视图按钮(),最后项)
-    块标菜单.insertBefore(菜单分隔项(),最后项)
-    }
-  }
-}
-
-选择视图按钮=function(){
+function ViewSelect(selectid,selecttype){
   let button = document.createElement("button")
   button.id="viewselect"
   button.className="b3-menu__item"
-  button.innerHTML='<svg class="b3-menu__icon" style="null"><use xlink:href="#iconGraph"></use></svg><span class="b3-menu__label" style="">选择视图</span><svg class="b3-menu__icon b3-menu__icon--arrow" style="null"><use xlink:href="#iconRight"></use></svg></button>'
-  button.appendChild(子菜单栏())
+  button.innerHTML='<svg class="b3-menu__icon" style="null"><use xlink:href="#iconGlobalGraph"></use></svg><span class="b3-menu__label" style="">视图选择</span><svg class="b3-menu__icon b3-menu__icon--arrow" style="null"><use xlink:href="#iconRight"></use></svg></button>'
+  button.appendChild(SubMenu(selectid,selecttype))
   return button
 }
 
-子菜单栏=function(className = 'b3-menu__submenu') {
+function SubMenu(selectid,selecttype,className = 'b3-menu__submenu') {
   let node = document.createElement('div');
   node.className = className;
-  let selectblock = getBlockSelected()
-  if(selectblock){
-  let id = selectblock.id
-  if(selectblock.type=="NodeList" || selectblock.type=="NodeListItem"){
-    node.appendChild(列表转换导图按钮(id))
-    node.appendChild(列表转换表格按钮(id))
-    node.appendChild(列表恢复默认按钮(id))
+  if(selecttype=="NodeList" || selecttype=="NodeListItem"){
+    node.appendChild(GraphView(selectid))
+    node.appendChild(TableView(selectid))
+    node.appendChild(DefaultView(selectid))
   }
-  if(selectblock.type=="NodeTable"){
-    node.appendChild(页面宽度视图按钮(id))
-    node.appendChild(自动宽度视图按钮(id))
+  if(selecttype=="NodeTable"){
+    node.appendChild(FixWidth(selectid))
+    node.appendChild(AutoWidth(selectid))
   }
-}
 return node;
 }
 
-列表转换导图按钮=function(id){
+function GraphView(selectid){
   let button = document.createElement("button")
   button.className="b3-menu__item"
-  button.setAttribute("data-node-id",id)
+  button.setAttribute("data-node-id",selectid)
   button.setAttribute("custom-attr-name","type")
   button.setAttribute("custom-attr-value","graph")
 
-  button.innerHTML=`<svg class="b3-menu__icon" style=""><use xlink:href="#iconFiles"></use></svg><span class="b3-menu__label">转换为导图</span>`
-  button.onclick=视图菜单监听器
+  button.innerHTML=`<svg class="b3-menu__icon" style=""><use xlink:href="#iconGraph"></use></svg><span class="b3-menu__label">转换为导图</span>`
+  button.onclick=ViewMonitor
   return button
 }
-列表转换表格按钮=function(id){
+function TableView(selectid){
   let button = document.createElement("button")
   button.className="b3-menu__item"
-  button.setAttribute("data-node-id",id)
+  button.setAttribute("data-node-id",selectid)
   button.setAttribute("custom-attr-name","type")
   button.setAttribute("custom-attr-value","table")
 
   button.innerHTML=`<svg class="b3-menu__icon" style=""><use xlink:href="#iconTable"></use></svg><span class="b3-menu__label">转换为表格</span>`
-  button.onclick=视图菜单监听器
+  button.onclick=ViewMonitor
   return button
 }
-列表恢复默认按钮=function(id){
+function DefaultView(selectid){
   let button = document.createElement("button")
   button.className="b3-menu__item"
-  button.onclick=视图菜单监听器
-  button.setAttribute("data-node-id",id)
+  button.onclick=ViewMonitor
+  button.setAttribute("data-node-id",selectid)
   button.setAttribute("custom-attr-name","type")
   button.setAttribute("custom-attr-value",'')
 
   button.innerHTML=`<svg class="b3-menu__icon" style=""><use xlink:href="#iconList"></use></svg><span class="b3-menu__label">恢复为列表</span>`
   return button
 }
-页面宽度视图按钮=function(id){
+function FixWidth(selectid){
   let button = document.createElement("button")
   button.className="b3-menu__item"
-  button.onclick=视图菜单监听器
-  button.setAttribute("data-node-id",id)
+  button.onclick=ViewMonitor
+  button.setAttribute("data-node-id",selectid)
   button.setAttribute("custom-attr-name","table-width")
   button.setAttribute("custom-attr-value","auto")
 
   button.innerHTML=`<svg class="b3-menu__icon" style=""><use xlink:href="#iconTable"></use></svg><span class="b3-menu__label">页面宽度</span>`
   return button
 }
-自动宽度视图按钮=function(id){
+function AutoWidth(selectid){
   let button = document.createElement("button")
   button.className="b3-menu__item"
-  button.setAttribute("data-node-id",id)
+  button.setAttribute("data-node-id",selectid)
   button.setAttribute("custom-attr-name","table-width")
   button.setAttribute("custom-attr-value","")
   button.innerHTML=`<svg class="b3-menu__icon" style=""><use xlink:href="#iconTable"></use></svg><span class="b3-menu__label">自动宽度</span>`
-  button.onclick=视图菜单监听器
+  button.onclick=ViewMonitor
   return button
 }
-菜单分隔项=function(className = 'b3-menu__separator') {
+function MenuSeparator(className = 'b3-menu__separator') {
   let node = document.createElement('button');
   node.className = className;
   return node;
@@ -174,24 +157,36 @@ function getBlockSelected() {
     return null;
 }
 
-const  添加视图菜单监听器 =  function(){
-  window.addEventListener("mouseup",判定目标并添加菜单项目)
+
+function ClickMonitor() {
+  let icon = document.querySelector('.protyle-gutters')
+  icon.addEventListener('click', MenuShow)
+}
+
+function MenuShow() {
+  selectinfo = getBlockSelected()
+  var selecttype = selectinfo.type
+  var selectid = selectinfo.id
+  if(selecttype=="NodeList"||selecttype=="NodeListItem"||selecttype=="NodeTable"){
+    setTimeout(()=>InsertMenuItem(selectid,selecttype), 0)
+}
+return selectid;
 }
 
 
-判定目标并添加菜单项目 = function(event){
-  let 父元素 =event.target.parentElement
-  // console.log(父元素.getAttribute("data-type"))
-  if(父元素.getAttribute("data-type")=="NodeList"||父元素.getAttribute("data-type")=="NodeListItem"||父元素.getAttribute("data-type")=="NodeTable"){
-  setTimeout(()=>生成列表菜单项目(), 0)
+function InsertMenuItem(selectid,selecttype){
+  let commonMenu = document.getElementById("commonMenu")
+  let  readonly = commonMenu.querySelector(".b3-menu__item--readonly")
+  let  selectview = commonMenu.querySelector('[id="viewselect"]')
+  if(readonly){
+    if(!selectview){
+    commonMenu.insertBefore(ViewSelect(selectid,selecttype),readonly)
+    commonMenu.insertBefore(MenuSeparator(),readonly)
+    }
   }
 }
 
-
-添加视图菜单监听器()
-
-视图菜单监听器=function(event){
-  // console.log(event.currentTarget)
+function ViewMonitor(event){
   let id = event.currentTarget.getAttribute("data-node-id")
   let attrName = 'custom-'+event.currentTarget.getAttribute("custom-attr-name")
   let attrValue = event.currentTarget.getAttribute("custom-attr-value")
@@ -201,6 +196,7 @@ const  添加视图菜单监听器 =  function(){
   }
   let attrs={}
     attrs[attrName] =attrValue
-  // console.log(attrs)
   设置思源块属性(id,attrs)
 }
+
+ClickMonitor()
