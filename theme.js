@@ -138,6 +138,7 @@ function MenuSeparator(className = 'b3-menu__separator') {
 }
 
 /* 操作 */ 
+
 /**
  * 获得所选择的块对应的块 ID
  * @returns {string} 块 ID
@@ -201,4 +202,4 @@ function ViewMonitor(event){
   设置思源块属性(id,attrs)
 }
 
-ClickMonitor()
+window.onload = ClickMonitor()
