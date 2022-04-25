@@ -3,6 +3,13 @@
 	font-style:normal;
 	src:url('fonts/HarmonyOS_Sans_SC_Regular.ttf');
 }
+@keyframes menu {
+	0% {opacity: 0;}
+	50% { transform: scale(1.01);
+          opacity: 0.5;	}
+	100% { transform: scale(1); 
+	 }
+}
 /******* 亮色主题配色模板 **********/
 
 :root {
@@ -408,7 +415,7 @@ body.fn__flex-column {
 }
 div.b3-dialog__container {
 	background-color:var(--dialog-background)!important;
-	transition:menu 0.2s ease-in-out;
+	animation:menu 0.2s ease-in-out;
 }
 .b3-dialog__close {
 	display:none;
@@ -472,13 +479,6 @@ body.body--win32 {
 	border:0px solid var(--b3-border-color);
 } 
 /**** 菜单 ****/
-@keyframes menu {
-	0% {opacity: 0;}
-	50% { transform: scale(1.01);
-          opacity: 0.5;	}
-	100% { transform: scale(1); 
-	 }
-}
 .b3-menu{
 	animation: menu 0.2s ease-in-out;
 }
