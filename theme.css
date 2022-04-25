@@ -155,7 +155,7 @@
 	/* 边栏内滚动条通用背景色 */
     --column-scrollbar-hover-background:var(--b3-theme-primary-light);
 	/* 边栏内滚动条悬浮时背景色 */
-    --dialog-background:#edededd9;
+    --dialog-background:#ededed;
 	/*背景栏*/
     --background2:#edededf0;
     --list-border-initial:#a9cff5;
@@ -314,7 +314,7 @@ body.fn__flex-column {
 }
 /*****************************************正常特效，和毛玻璃只能选一个注释*********************/
 .fn__flex-1.fn__flex [data-type='wnd'] {
-	background:var(--dialog-background);
+	background:rgb(237, 237, 237,0.9);
 	min-height:90% !important;
 	margin:5px;
 	padding:5px;
@@ -326,7 +326,7 @@ body.fn__flex-column {
 }
 .b3-menu,.protyle-util {
 	padding:10px 0px;
-	background-color:var(--dialog-background);
+	background-color:rgb(237, 237, 237,0.9);
 }
 /*****************************************正常特效结束*****************************************/
 
