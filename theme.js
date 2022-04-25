@@ -158,22 +158,21 @@ function getBlockSelected() {
     return null;
 }
 
-
-function ClickMonitor() {
-  let icon = document.querySelector('.protyle-gutters')
-  icon.addEventListener('click', MenuShow)
-  icon.addEventListener('contextmenu', MenuShow)
+function ClickMonitor () {
+  window.addEventListener('mouseup', MenuShow)
 }
 
 function MenuShow() {
-  let selectinfo = getBlockSelected()
-    if(selectinfo){
-    let selecttype = selectinfo.type
-    let selectid = selectinfo.id
-    if(selecttype=="NodeList"||selecttype=="NodeListItem"||selecttype=="NodeTable"){
-      setTimeout(()=>InsertMenuItem(selectid,selecttype), 0)
+  setTimeout(() => {
+    let selectinfo = getBlockSelected()
+      if(selectinfo){
+      let selecttype = selectinfo.type
+      let selectid = selectinfo.id
+      if(selecttype=="NodeList"||selecttype=="NodeListItem"||selecttype=="NodeTable"){
+        setTimeout(()=>InsertMenuItem(selectid,selecttype), 0)
+      }
     }
-  }
+  }, 0);
 }
 
 
@@ -202,4 +201,5 @@ function ViewMonitor(event){
   设置思源块属性(id,attrs)
 }
 
-window.onload = ClickMonitor()
+setTimeout(()=>ClickMonitor(),1000)
+

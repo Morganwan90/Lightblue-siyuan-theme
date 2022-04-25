@@ -148,7 +148,7 @@
 	/* 边栏内滚动条通用背景色 */
     --column-scrollbar-hover-background:var(--b3-theme-primary-light);
 	/* 边栏内滚动条悬浮时背景色 */
-    --dialog-background:#ededed;
+    --dialog-background:#edededd9;
 	/*背景栏*/
     --background2:#edededf0;
     --list-border-initial:#a9cff5;
@@ -305,7 +305,7 @@ body.fn__flex-column {
     background-color: transparent;
     border: none;
 }
-/*****************************************正常特效，和毛玻璃只能选一个注释*********************
+/*****************************************正常特效，和毛玻璃只能选一个注释*********************/
 .fn__flex-1.fn__flex [data-type='wnd'] {
 	background:var(--dialog-background);
 	min-height:90% !important;
@@ -323,7 +323,7 @@ body.fn__flex-column {
 }
 /*****************************************正常特效结束*****************************************/
 
-/*****************************************毛玻璃特效部分*****************************************/
+/*****************************************毛玻璃特效部分*****************************************
 .fn__flex-1.fn__flex [data-type='wnd'] {
 	background:transparent;
 	min-height:90% !important;
@@ -408,7 +408,7 @@ body.fn__flex-column {
 }
 div.b3-dialog__container {
 	background-color:var(--dialog-background)!important;
-	transition:all 0.1s linear;
+	transition:menu 0.2s ease-in-out;
 }
 .b3-dialog__close {
 	display:none;
@@ -472,6 +472,16 @@ body.body--win32 {
 	border:0px solid var(--b3-border-color);
 } 
 /**** 菜单 ****/
+@keyframes menu {
+	0% {opacity: 0;}
+	50% { transform: scale(1.01);
+          opacity: 0.5;	}
+	100% { transform: scale(1); 
+	 }
+}
+.b3-menu{
+	animation: menu 0.2s ease-in-out;
+}
 /* 菜单项 */
   .b3-menu__item {
 	padding:2px 16px 2px 16px;
