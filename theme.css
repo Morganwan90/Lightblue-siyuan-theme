@@ -247,8 +247,7 @@ option {
 	border-bottom:1px solid var(--b3-font-color9);
 }
 /**笔记文档下划线**/
-.b3-list-item,
-.b3-dialog--open .fn__flex .b3-list--background,.b3-dialog--open .fn__flex .b3-list-item {
+.b3-list-item,.b3-dialog--open .fn__flex .b3-list--background,.b3-dialog--open .fn__flex .b3-list-item {
 	border-bottom:0.5px solid #00000033;
 }
 /**笔记本名称加强**/
@@ -1483,7 +1482,7 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchList {
 /* ---------------------------------------------------------列表转化为表格 END-------------------------------------------------- */
 
 /* --------------------------------将'/'弹出的选择窗口分为4栏 From Zhang-Light---------------------------------------- */
-.b3-menu.b3-list.b3-list--background {
+.b3-menu.b3-list.b3-list--background.hint--menu {
     column-count: auto;
     column-width: 148px !important;
     column-gap: 5px;
