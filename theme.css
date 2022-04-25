@@ -1112,14 +1112,12 @@ to {
 .b3-typography table tr:hover,.protyle-wysiwyg table tr:hover {
 	background-color:#4286f40d !important;
 }
-.protyle-wysiwyg div.table[data-node-id][custom-table-width~=auto] {
-    width: 100%;
-}
-.protyle-wysiwyg div.table[data-node-id][custom-table-width~=auto] table {
-    width: auto;
-}
 .b3-typography table td,.b3-typography table th,.protyle-wysiwyg table td,.protyle-wysiwyg table th {
 	color:inherit;
+}
+.protyle-wysiwyg [data-node-id][custom-table-width~=auto] table {
+	display:table;
+    width:100%;
 }
 /***大纲***/
 /***基础线条***/
