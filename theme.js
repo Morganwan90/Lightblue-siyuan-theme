@@ -161,16 +161,18 @@ function getBlockSelected() {
 function ClickMonitor() {
   let icon = document.querySelector('.protyle-gutters')
   icon.addEventListener('click', MenuShow)
+  icon.addEventListener('contextmenu', MenuShow)
 }
 
 function MenuShow() {
-  selectinfo = getBlockSelected()
-  var selecttype = selectinfo.type
-  var selectid = selectinfo.id
-  if(selecttype=="NodeList"||selecttype=="NodeListItem"||selecttype=="NodeTable"){
-    setTimeout(()=>InsertMenuItem(selectid,selecttype), 0)
-}
-return selectid;
+  let selectinfo = getBlockSelected()
+    if(selectinfo){
+    let selecttype = selectinfo.type
+    let selectid = selectinfo.id
+    if(selecttype=="NodeList"||selecttype=="NodeListItem"||selecttype=="NodeTable"){
+      setTimeout(()=>InsertMenuItem(selectid,selecttype), 0)
+    }
+  }
 }
 
 
