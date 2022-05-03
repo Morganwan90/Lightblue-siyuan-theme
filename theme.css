@@ -313,19 +313,19 @@ body.fn__flex-column {
 }
 /*****************************************正常特效，和毛玻璃只能选一个注释*********************/
 .fn__flex-1.fn__flex [data-type='wnd'] {
-	background:rgb(237, 237, 237,0.9);
+	background:#ededede6;
 	min-height:90% !important;
 	margin:5px;
 	padding:5px;
 	position:relative;
-	box-shadow:0px 0px 40px 8px #4286F31a;
+	box-shadow:var(--glass-box-shadow);
 	overflow:hidden;
 	box-sizing:border-box;
 	border-radius:15px;
 }
 .b3-menu,.protyle-util {
 	padding:10px 0px;
-	background-color:rgb(237, 237, 237,0.9);
+	background-color:#edededf2;
 }
 /*****************************************正常特效结束*****************************************/
 
@@ -342,6 +342,7 @@ body.fn__flex-column {
 	border-radius:15px;
 	z-index: 2;
 }
+
 .block__popover,.protyle[data-index="0"]  {
 	background:transparent;
 }
@@ -766,8 +767,10 @@ strong[style="background-color: var(--b3-font-background13);"] {
 	caret-color:var(--b3-theme-primary);
 }
 /* 文本选中样式 */
-.protyle-wysiwyg--select, .protyle-wysiwyg--select .hljs, .protyle-wysiwyg--select .protyle-linenumber__rows {
-	background-color:var(--b3-theme-primary-lightest) !important;
+.protyle-wysiwyg--select, .protyle-wysiwyg--select .hljs, .protyle-wysiwyg--select .protyle-linenumber__rows, .protyle-wysiwyg--hl {
+	/* background-color:var(--b3-theme-primary-lightest) !important; */
+	background:none !important;
+	outline:1px dashed var(--b3-theme-primary);
 }
 /* 隐藏空白行的提示文字 */
 .protyle-wysiwyg [data-node-id] [spellcheck="false"]:empty:after {
@@ -914,15 +917,15 @@ to {
 	word-wrap:break-word;
 }
 /**** 超级块、横排 ****/
-  .protyle-wysiwyg .sb div[data-node-id] {
+.protyle-wysiwyg .sb div[data-node-id] {
 	border-radius:3px;
 }
 /**** 嵌入块 ****/
-  .protyle-wysiwyg [data-node-id].render-node[data-type="NodeBlockQueryEmbed"] {
+.protyle-wysiwyg [data-node-id].render-node[data-type="NodeBlockQueryEmbed"] {
 	background-color:var(--b3-theme-primary-lightest);
 }
 /* iframe */
-  .b3-typography iframe,.protyle-wysiwyg iframe {
+.b3-typography iframe,.protyle-wysiwyg iframe {
 	border-color:transparent;
 }
 /****标题格式****/
@@ -1091,7 +1094,7 @@ to {
 	color:var(--b3-theme-secondary) !important;
 }
 .hljs-addition, .hljs-code, .hljs-string, .hljs-title.class_.inherited__{
-	color:var(--b3-font-color3) !important;
+	color:var(--b3-font-color7) !important;
 }
 .hljs-built_in, .hljs-doctag, .hljs-keyword.hljs-atrule, .hljs-quote, .hljs-regexp{
 	color:var(--b3-font-color8) !important;
@@ -1275,6 +1278,9 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchList {
 .b3-list-item__meta {
 	color:var(--b3-theme-primary-light);
 	text-align: justify;
+	white-space: nowrap;
+	overflow: hidden;
+    text-overflow: ellipsis;
 }
 /*---------ctrl+p窗口改造 end -------------*/
 
@@ -1349,14 +1355,13 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchList {
 }
 /*上直线*/
 .protyle-wysiwyg *[custom-type="graph"] [data-node-id].li:before{   
-    top: 50%;
+    top: calc(50% - 1px);
     border-top: 2px solid var(--b3-theme-primary);
-	bottom:1%;
 }
 /*下直线*/
 .protyle-wysiwyg *[custom-type="graph"] [data-node-id].li:after{   
     border-bottom: 2px solid var(--b3-theme-primary);
-	top:0;
+	top:-0.5px;
 }
 /* 后继承线 */
 .protyle-content *[custom-type="graph"] [data-node-id].list:after{
@@ -1412,7 +1417,22 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchList {
 .protyle-wysiwyg *[custom-type="graph"][data-node-id] .li :hover +.list:after,      
 .protyle-wysiwyg *[custom-type="graph"][data-node-id] .li :hover +.list .list:after{   
     border-color:var(--b3-theme-secondary) !important;
-}  
+}
+.protyle-wysiwyg *[custom-type="graph"] [data-node-id].li div>div[spellcheck="false"]:hover{
+	outline: 2px solid var(--b3-theme-secondary);
+}
+/**高亮位置修正**/
+.protyle-wysiwyg *[custom-type="graph"][data-node-id] .li :hover +.list .li:before {
+    top: calc(50% - 1.5px);
+}
+.protyle-wysiwyg *[custom-type="graph"][data-node-id] .li :hover +.list .li:after {
+	top:-1px;
+}
+.protyle-wysiwyg *[custom-type="graph"][data-node-id] .li :hover +.list:after,      
+.protyle-wysiwyg *[custom-type="graph"][data-node-id] .li :hover +.list .list:after{
+	top: calc(50% - 1px);
+}
+
 
 .b3-typography, .protyle-wysiwyg *[custom-type="graph"] [data-node-id]{
 	border-bottom: none !important;
@@ -1459,7 +1479,7 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchList {
 /* 列表项标志居中 */
 .protyle-content *[custom-type~=table] [data-node-id].li>div.protyle-action{
     position: absolute;
-    top: calc(50% - 0.25em);
+    top: 50%;
     transform: translate(0, -50%);
 	color: var(--b3-theme-primary)
 }
@@ -1494,3 +1514,75 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchList {
 .b3-menu.b3-list.b3-list--background .b3-menu__separator {
 display:none;
 }
+
+/* ————————————————————将每个项目的文字和图标大小设置更小点———————————————————— */
+/* 设置单个项目 */
+button.b3-list-item.b3-list-item--two.fn__block {
+    font-size: 90%;
+    border: var(--b3-border-column-item);
+    box-sizing: border-box;
+    vertical-align: middle;
+    padding: 2px 8px !important;
+    margin-bottom: 0.1em;
+	border-bottom: 0.5px solid #00000033;
+}
+
+/* 设置图标颜色 */
+button.b3-list-item.b3-list-item--two.fn__block .b3-list-item__graphic {
+    color: gray;
+    position: absolute;
+    top: 8px;
+}
+
+/* 鼠标悬浮时更改图标颜色 */
+button.b3-list-item.b3-list-item--two.fn__block:hover .b3-list-item__graphic {
+    color: var(--b3-theme-primary);
+}
+
+/* 设置文本颜色 */
+button.b3-list-item.b3-list-item--two.fn__block .b3-list-item__text {
+    vertical-align: middle;
+    padding-left: 18px;
+}
+
+/* ————————————————————调整挂件和模板窗口的分栏效果，仍旧分为4栏—————————————————————————————— */
+.b3-list.fn__flex-1.b3-list--background:not(ul.b3-list.b3-list--background.fn__flex-1, div#globalSearchList) {
+    column-count: 4;
+    column-gap: 5px;
+    min-width: 50vw !important;
+    font-size: 90%;
+    border: var(--b3-border-column-item);
+}
+
+
+/* ————————————————————设置挂件和模板窗口每个项目的宽度———————————————————— */
+.b3-list.fn__flex-1.b3-list--background:not(ul.b3-list.b3-list--background.fn__flex-1, div#globalSearchList) .b3-list-item {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ————————————————————调整emoji窗口的选择效果，向右拉动滚动条查看所有emoji———————————————————— */
+/* 控制整个表情面板是左右滑动而不是上下滑动 */
+.b3-menu.b3-list.b3-list--background .emojis__panel {
+    overflow: inherit !important;
+}
+
+/* 控制表情的内容能够正常显示而不是折叠 */
+.b3-menu.b3-list.b3-list--background .emojis__content {
+    display: block !important;
+}
+
+/* 去掉模板搜索中的空隙，修复bug */
+.protyle-util .b3-list-item {
+    padding: 0px;
+	min-height: auto !important;
+	border-bottom: none !important;
+}
+
+.b3-list.fn__flex-1.b3-list--background {
+    padding: 4px 8px;
+}
+
+/* --------------------------------将'/'弹出的选择窗口分为4栏 END-------------------------------------------------- */

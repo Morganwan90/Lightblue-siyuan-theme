@@ -202,4 +202,3 @@ function ViewMonitor(event){
 }
 
 setTimeout(()=>ClickMonitor(),1000)
-
