@@ -244,7 +244,10 @@ option {
 .b3-list--background .b3-list-item:hover:not(.b3-list-item--focus) {
 	background-color:var(--b3-theme-primary-lightest);
 }
-.file-tree .b3-list--background .b3-list-item--focus:not([data-treetype="outline"]) .b3-list-item__text,.file-tree .b3-list--background .b3-list-item--focus:not([data-treetype="outline"]) .b3-list-item__toggle,.file-tree .b3-list--background .b3-list-item--focus:not([data-treetype="outline"]) .b3-list-item__icon svg,.file-tree .b3-list--background .b3-list-item--focus:not([data-treetype="outline"]) {
+.file-tree .b3-list--background .b3-list-item--focus:not([data-treetype="outline"]) .b3-list-item__text,
+.file-tree .b3-list--background .b3-list-item--focus:not([data-treetype="outline"]) .b3-list-item__toggle,
+.file-tree .b3-list--background .b3-list-item--focus:not([data-treetype="outline"]) .b3-list-item__icon svg,
+.file-tree .b3-list--background .b3-list-item--focus:not([data-treetype="outline"]) {
 	color:var(--b3-theme-secondary) !important;
 	transition: all 0.2s ease-in;
 }
@@ -261,26 +264,40 @@ option {
 	border-bottom:0.5px solid #00000033;
 }
 /**笔记本名称加强**/
- .b3-list--background [data-type="navigation-root"] .b3-list-item__text,.b3-list--background [data-type="navigation-root"] .b3-list-item__toggle,.b3-list--background [data-type="navigation-root"] .b3-list-item__icon svg {
+ .b3-list--background [data-type="navigation-root"] .b3-list-item__text,
+ .b3-list--background [data-type="navigation-root"] .b3-list-item__toggle,
+ .b3-list--background [data-type="navigation-root"] .b3-list-item__icon svg {
 	color:var(--b3-theme-primary) !important;
 }
 /*************大纲代码部分********/
-.file-tree ul.b3-list.b3-list--background [data-type="NodeDocument"][data-treetype="outline"] .b3-list-item__text,.file-tree ul.b3-list.b3-list--background [data-type="NodeDocument"][data-treetype="outline"] .b3-list-item__toggle,.file-tree ul.b3-list.b3-list--background [data-type="NodeDocument"][data-treetype="outline"] {
+.file-tree ul.b3-list.b3-list--background [data-type="NodeDocument"][data-treetype="outline"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-type="NodeDocument"][data-treetype="outline"] .b3-list-item__toggle,
+.file-tree ul.b3-list.b3-list--background [data-type="NodeDocument"][data-treetype="outline"] {
 	color:var(--b3-theme-primary) !important;
 }
-.file-tree ul.b3-list.b3-list--background [data-subtype="h1"] .b3-list-item__text,.file-tree ul.b3-list.b3-list--background [data-subtype="h1"] .b3-list-item__toggle,.file-tree ul.b3-list.b3-list--background [data-subtype="h1"] {
+.file-tree ul.b3-list.b3-list--background [data-subtype="h1"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h1"] .b3-list-item__toggle,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h1"] {
 	color:var(--b3-font-color8);
 }
-.file-tree ul.b3-list.b3-list--background [data-subtype="h2"] .b3-list-item__text,.file-tree ul.b3-list.b3-list--background [data-subtype="h2"] .b3-list-item__toggle,.file-tree ul.b3-list.b3-list--background [data-subtype="h2"] {
+.file-tree ul.b3-list.b3-list--background [data-subtype="h2"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h2"] .b3-list-item__toggle,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h2"] {
 	color:var(--b3-theme-secondary);
 }
-.file-tree ul.b3-list.b3-list--background [data-subtype="h3"] .b3-list-item__text,.file-tree ul.b3-list.b3-list--background [data-subtype="h3"] .b3-list-item__toggle,.file-tree ul.b3-list.b3-list--background [data-subtype="h3"] {
+.file-tree ul.b3-list.b3-list--background [data-subtype="h3"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h3"] .b3-list-item__toggle,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h3"] {
 	color:var(--b3-font-color10);
 }
-.file-tree ul.b3-list.b3-list--background [data-subtype="h4"] .b3-list-item__text,.file-tree ul.b3-list.b3-list--background [data-subtype="h4"] .b3-list-item__toggle,.file-tree ul.b3-list.b3-list--background [data-subtype="h4"] {
+.file-tree ul.b3-list.b3-list--background [data-subtype="h4"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h4"] .b3-list-item__toggle,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h4"] {
 	color:var(--b3-font-color7);
 }
-.file-tree ul.b3-list.b3-list--background [data-subtype="h5"] .b3-list-item__text,.file-tree ul.b3-list.b3-list--background [data-subtype="h5"] .b3-list-item__toggle,.file-tree ul.b3-list.b3-list--background [data-subtype="h5"] {
+.file-tree ul.b3-list.b3-list--background [data-subtype="h5"] .b3-list-item__text,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h5"] .b3-list-item__toggle,
+.file-tree ul.b3-list.b3-list--background [data-subtype="h5"] {
 	color:var(--b3-font-color9);
 }
 .file-tree ul.b3-list.b3-list--background  [data-treetype="outline"] {
@@ -784,10 +801,8 @@ strong[style="background-color: var(--b3-font-background13);"] {
 }
 /* 文本选中样式 */
 .protyle-wysiwyg--select, .protyle-wysiwyg--select .hljs, .protyle-wysiwyg--select .protyle-linenumber__rows, .protyle-wysiwyg--hl {
-	/* background-color:var(--b3-theme-primary-lightest) !important; */
-	background:none !important;
-	outline:1.5px dashed var(--b3-theme-primary);
-	transition:all 0.3s ease-out;
+	background-color:var(--b3-theme-primary-lighter) !important;
+	transition:all 0.3s ease-in-out;
 }
 /* 隐藏空白行的提示文字 */
 .protyle-wysiwyg [data-node-id] [spellcheck="false"]:empty:after {
@@ -877,7 +892,7 @@ to {
 	color:#fff;
 	border-radius:4px;
 	padding:2px 6px;
-	transition:all 0.3s linear;
+	transition:all 0.3s ease-in-out;
 }
 .protyle-wysiwyg [data-node-id] span[data-type="tag"]:before {
 	content:'';
@@ -1255,12 +1270,16 @@ to {
 #editor {
 	background:var(--background2);
 }
-
+.scrim {
+	background: transparent;
+}
+.side-panel {
+	background-color: var(--dialog-background);
+}
 /***云端收集箱***/
 .inbox__details{
 	background-color: var(--dialog-background);
 }
-
 
 /*---------ctrl+p窗口改造 from ZHANG-Light -------------*/
 /*放大ctrl+p窗口尺寸*/
@@ -1521,7 +1540,7 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchList {
 
 /* --------------------------------将'/'弹出的选择窗口分为4栏 From Zhang-Light---------------------------------------- */
 .b3-menu.b3-list.b3-list--background.hint--menu {
-    column-count: auto;
+    column-count: 4;
     column-width: 148px !important;
     column-gap: 5px;
     min-width: 50vw !important;
@@ -1563,6 +1582,14 @@ button.b3-list-item.b3-list-item--two.fn__block:hover .b3-list-item__graphic {
 button.b3-list-item.b3-list-item--two.fn__block .b3-list-item__text {
     vertical-align: middle;
     padding-left: 18px;
+}
+button.b3-list-item.b3-list-item--two.fn__block .b3-list-item__meta{
+	color:var(--b3-theme-on-background);
+}
+button.b3-list-item.b3-list-item--two.fn__block.b3-list-item--focus .b3-list-item__text,
+button.b3-list-item.b3-list-item--two.fn__block.b3-list-item--focus .b3-list-item__graphic,
+button.b3-list-item.b3-list-item--two.fn__block.b3-list-item--focus .b3-menu__accelerator{
+	color:var(--b3-theme-primary);
 }
 
 /* ————————————————————调整挂件和模板窗口的分栏效果，仍旧分为4栏—————————————————————————————— */
