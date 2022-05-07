@@ -1485,7 +1485,7 @@ div[data-key] .b3-dialog__container .fn__flex-column #searchList {
 	margin:0 0.5em 0 0;
     align-items: center;
     display: flex;
-    min-width: 120px;
+    min-width: 160px;
     text-align: justify;
     flex-shrink: 0;
 }
