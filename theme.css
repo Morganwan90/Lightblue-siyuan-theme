@@ -237,7 +237,7 @@ option {
 .fn__flex-1 .b3-list--background .b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) {
 	background:none !important;
 }
-.layout-tab-container .fn__flex-1 .b3-list--background .b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) {
+.fn__flex-1 .fn__flex-column .file-tree .b3-list--background .b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) {
 	outline:1px solid var(--b3-theme-secondary);
 	transition: all 0.2s ease-in;
 }
