@@ -426,7 +426,7 @@ body.fn__flex-column {
 }
 div.b3-dialog__container {
 	background-color:var(--dialog-background)!important;
-	animation:menu 0.2s ease-in-out;
+	animation:menu 0.3s ease-in-out;
 }
 .b3-dialog__close {
 	display:none;
@@ -491,7 +491,7 @@ body.body--win32 {
 } 
 /**** 菜单 ****/
 .b3-menu{
-	animation: menu 0.2s ease-in-out;
+	animation: menu 0.3s ease-in-out;
 }
 /* 菜单项 */
   .b3-menu__item {
@@ -521,7 +521,7 @@ body.body--win32 {
 	margin:2px;
 	border:none !important;
 	border-radius:4px !important;
-	animation:menu 0.2s ease-in-out;
+	animation:menu 0.3s ease-in-out;
 }
 .b3-menu__item--show .b3-menu__submenu {
 	background-color:var(--dialog-background);
