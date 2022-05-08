@@ -393,6 +393,17 @@ body.fn__flex-column {
 	z-index: 201;
 	animation: menu 0.5s;
 }
+/*引述快查看界面优化*/
+.block__popover .block__content .block__edit {
+    min-height: 150px;
+}
+.block__popover .block__content .block__edit .protyle-content {
+    min-height: 80px;
+}
+.protyle-wysiwyg [data-node-id] .def--mark{
+	background:none;
+}
+
 .fullscreen {
 	background-color:var(--dialog-background) !important;
 }
