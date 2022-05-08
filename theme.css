@@ -622,10 +622,6 @@ body.body--win32 {
 #layouts>.fn__flex-1>.fn__flex-column::-webkit-scrollbar-thumb:hover {
 	background-color:var(--column-scrollbar-hover-background);
 }
-/**去除右侧标签滚动条***/
-.fn__flex-1 {
-	min-height:0px;
-}
 /************** 二、文档编辑区 **************************/
 /** 页签样式**/ 
 .layout__center .layout-tab-bar {
