@@ -176,7 +176,6 @@
 	/* 边栏内滚动条悬浮时背景色 */
 	--dialog-background: #ededed;
 	/*背景栏*/
-	--background2: #edededf0;
 	--list-border-initial: #a9cff5;
 	/*列表大纲线颜色*/
 	--list-border-focus: var(--b3-font-color12);
@@ -286,14 +285,17 @@ option {
 
 /**笔记本下划线**/
 .b3-list--background {
-	border-bottom: 1px solid var(--b3-font-color9);
+	outline: 1px solid var(--b3-font-color9);
 }
 
 /**笔记文档下划线**/
 .b3-list-item,
 .b3-dialog--open .fn__flex .b3-list--background,
 .b3-dialog--open .fn__flex .b3-list-item {
-	border-bottom: 0.5px solid #00000033;
+	outline: 0.5px solid #00000020;
+}
+.b3-dialog--open .fn__flex .b3-list-item .b3-list-item:last-child{
+	border-bottom: 4px solid red;
 }
 
 /**笔记本名称加强**/
@@ -338,10 +340,6 @@ option {
 .file-tree ul.b3-list.b3-list--background [data-subtype="h5"] .b3-list-item__toggle,
 .file-tree ul.b3-list.b3-list--background [data-subtype="h5"] {
 	color: var(--b3-font-color9);
-}
-
-.file-tree ul.b3-list.b3-list--background [data-treetype="outline"] {
-	border-bottom: 0.5px solid #00000033;
 }
 
 /*************大纲的代码部分结束*********/
@@ -624,8 +622,11 @@ body.body--win32 {
 	background-color: transparent;
 }
 
-.b3-menu__item:hover {
-	background-color: var(--b3-theme-primary-lighter);
+.b3-menu__item:hover,
+.b3-list-item__toggle--hl:hover,
+.b3-list-item__icon:hover,
+.b3-list-item__action:hover{
+	background: var(--b3-theme-primary-lighter);
 }
 
 /* 菜单分割线 */
@@ -679,7 +680,7 @@ body.body--win32 {
 	width: 22px;
 	line-height: 22px;
 	border-radius: 2px;
-	box-shadow:0 0 0 1px var(--b3-theme-primary-lighter);
+	box-shadow: 0 0 0 1px var(--b3-theme-primary-lighter);
 }
 
 /**字体选择边框**/
@@ -752,16 +753,16 @@ body.body--win32 {
 
 /************** 二、文档编辑区 **************************/
 /** 页签样式**/
-.layout__center .layout-tab-bar {
+.layout-tab-bar {
 	padding: 0 4px;
 	border: none;
 }
 
-.layout__center .layout-tab-bar .item:hover {
+.layout-tab-bar .item:hover:not(.item--focus) {
 	background-color: transparent;
 }
 
-.layout__center .layout-tab-bar .item__text:hover {
+.layout-tab-bar .item__text:hover {
 	color: var(--b3-font-color10);
 	opacity: 0.8;
 }
@@ -779,17 +780,20 @@ body.body--win32 {
 .layout-tab-bar .item__text {
 	padding: 2px;
 	text-overflow: ellipsis;
-	opacity: 0.6;
-	color: #666666;
+	opacity: 0.7;
+	color: var(--b3-theme-on-surface);
 	font-size: 16px;
 }
-
+.layout-tab-bar .item:not(:last-child),.layout__wnd--active .layout-tab-bar .item--focus{
+	box-shadow:none !important;
+}
 .layout-tab-bar .item--focus {
 	box-shadow: none !important;
 	background-color: transparent;
 	border-bottom: 2px solid var(--b3-theme-primary);
 }
 
+.layout-tab-bar .item--focus>.item__text,
 .layout__wnd--active .layout-tab-bar .item--focus>.item__text {
 	opacity: 1;
 	color: var(--b3-theme-primary);
@@ -855,16 +859,18 @@ body.body--win32 {
 
 .b3-color__square[data-type="color"]:hover,
 .b3-color__square[data-type="backgroundColor"]:hover {
-	border: 1px dashed var(--b3-theme-primary);
+	outline: 1.5px solid var(--b3-theme-primary);
 }
 
 /**菜单栏文字颜色变更**/
-.b3-color__square[style="background-color:var(--b3-font-background1);"]{
+.b3-color__square[style="background-color:var(--b3-font-background1);"] {
 	color: #006064 !important;
 }
+
 .b3-color__square[style="background-color:var(--b3-font-background2);"] {
 	color: #004d40 !important;
 }
+
 .b3-color__square[style="background-color:var(--b3-font-background3);"] {
 	color: #1b5e20 !important;
 }
@@ -910,56 +916,56 @@ body.body--win32 {
 }
 
 /* 背景颜色字体设置为彩虹色 */
-strong[style="background-color: var(--b3-font-background1);"] {
-	color: #006064 !important;
+.protyle-wysiwyg [style="background-color: var(--b3-font-background1);"] {
+	color: #006064;
 }
 
-strong[style="background-color: var(--b3-font-background2);"] {
-	color: #004d40 !important;
+.protyle-wysiwyg [style="background-color: var(--b3-font-background2);"] {
+	color: #004d40;
 }
 
-strong[style="background-color: var(--b3-font-background3);"] {
-	color: #1b5e20 !important;
+.protyle-wysiwyg [style="background-color: var(--b3-font-background3);"] {
+	color: #1b5e20;
 }
 
-strong[style="background-color: var(--b3-font-background4);"] {
-	color: #1e4620 !important;
+.protyle-wysiwyg [style="background-color: var(--b3-font-background4);"] {
+	color: #1e4620;
 }
 
-strong[style="background-color: var(--b3-font-background5);"] {
-	color: #816104 !important;
+.protyle-wysiwyg [style="background-color: var(--b3-font-background5);"] {
+	color: #816104;
 }
 
-strong[style="background-color: var(--b3-font-background6);"] {
-	color: #5c3b09 !important;
+.protyle-wysiwyg [style="background-color: var(--b3-font-background6);"] {
+	color: #5c3b09;
 }
 
-strong[style="background-color: var(--b3-font-background7);"] {
-	color: #6D360B !important;
+.protyle-wysiwyg [style="background-color: var(--b3-font-background7);"] {
+	color: #6D360B;
 }
 
-strong[style="background-color: var(--b3-font-background8);"] {
-	color: #611a15 !important;
+.protyle-wysiwyg [style="background-color: var(--b3-font-background8);"] {
+	color: #611a15;
 }
 
-strong[style="background-color: var(--b3-font-background9);"] {
-	color: #3f728a !important;
+.protyle-wysiwyg [style="background-color: var(--b3-font-background9);"] {
+	color: #3f728a;
 }
 
-strong[style="background-color: var(--b3-font-background10);"] {
-	color: #205883 !important;
+.protyle-wysiwyg [style="background-color: var(--b3-font-background10);"] {
+	color: #205883;
 }
 
-strong[style="background-color: var(--b3-font-background11);"] {
-	color: #350d1a !important;
+.protyle-wysiwyg [style="background-color: var(--b3-font-background11);"] {
+	color: #350d1a;
 }
 
-strong[style="background-color: var(--b3-font-background12);"] {
-	color: #402d63 !important;
+.protyle-wysiwyg [style="background-color: var(--b3-font-background12);"] {
+	color: #402d63;
 }
 
-strong[style="background-color: var(--b3-font-background13);"] {
-	color: #324853 !important;
+.protyle-wysiwyg [style="background-color: var(--b3-font-background13);"] {
+	color: #324853;
 }
 
 /**** 头图工具栏 ****/
@@ -980,7 +986,7 @@ strong[style="background-color: var(--b3-font-background13);"] {
 /**** 块图标 ****/
 /* 减淡块图标颜色 */
 .protyle-gutters svg {
-	color: #4286F3b3;
+	color: var(--b3-theme-primary-light);
 }
 
 /* 增加块图标悬浮时背景色 */
@@ -1037,6 +1043,7 @@ strong[style="background-color: var(--b3-font-background13);"] {
 .protyle-wysiwyg--hl {
 	background-color: var(--b3-theme-primary-lighter) !important;
 	transition: all 0.3s ease-in-out;
+	color: var(--b3-theme-primary) !important;
 }
 
 /* 隐藏空白行的提示文字 */
@@ -1169,7 +1176,6 @@ strong[style="background-color: var(--b3-font-background13);"] {
 /* 颜色、背景色中的文字不加粗 */
 .protyle-wysiwyg [style*="background-color"],
 .protyle-wysiwyg [style*="color"] {
-	color: inherit;
 	font-weight: normal;
 }
 
@@ -1622,7 +1628,7 @@ strong[style="background-color: var(--b3-font-background13);"] {
 }
 
 #editor {
-	background: var(--background2);
+	background: var(--dialog-background);
 }
 
 .scrim {
@@ -1994,7 +2000,10 @@ button.b3-list-item.b3-list-item--two.fn__block .b3-list-item__graphic {
 }
 
 /* 鼠标悬浮时更改图标颜色 */
-button.b3-list-item.b3-list-item--two.fn__block:hover .b3-list-item__graphic {
+button.b3-list-item.b3-list-item--two.fn__block:hover .b3-list-item__text,
+button.b3-list-item.b3-list-item--two.fn__block:hover .b3-list-item__graphic,
+button.b3-list-item.b3-list-item--two.fn__block:hover .b3-menu__accelerator,
+button.b3-list-item.b3-list-item--two.fn__block:hover .b3-list-item__meta {
 	color: var(--b3-theme-primary);
 }
 
