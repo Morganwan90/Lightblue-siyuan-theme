@@ -294,7 +294,8 @@ option {
 .b3-dialog--open .fn__flex .b3-list-item {
 	outline: 0.5px solid #00000020;
 }
-.b3-dialog--open .fn__flex .b3-list-item .b3-list-item:last-child{
+
+.b3-dialog--open .fn__flex .b3-list-item .b3-list-item:last-child {
 	border-bottom: 4px solid red;
 }
 
@@ -625,7 +626,7 @@ body.body--win32 {
 .b3-menu__item:hover,
 .b3-list-item__toggle--hl:hover,
 .b3-list-item__icon:hover,
-.b3-list-item__action:hover{
+.b3-list-item__action:hover {
 	background: var(--b3-theme-primary-lighter);
 }
 
@@ -784,9 +785,12 @@ body.body--win32 {
 	color: var(--b3-theme-on-surface);
 	font-size: 16px;
 }
-.layout-tab-bar .item:not(:last-child),.layout__wnd--active .layout-tab-bar .item--focus{
-	box-shadow:none !important;
+
+.layout-tab-bar .item:not(:last-child),
+.layout__wnd--active .layout-tab-bar .item--focus {
+	box-shadow: none !important;
 }
+
 .layout-tab-bar .item--focus {
 	box-shadow: none !important;
 	background-color: transparent;
@@ -1988,15 +1992,13 @@ button.b3-list-item.b3-list-item--two.fn__block {
 	box-sizing: border-box;
 	vertical-align: middle;
 	padding: 2px 8px !important;
-	margin-bottom: 0.1em;
-	border-bottom: 0.5px solid #00000033;
+	margin-bottom: 0em;
 }
 
 /* 设置图标颜色 */
 button.b3-list-item.b3-list-item--two.fn__block .b3-list-item__graphic {
 	color: gray;
 	position: absolute;
-	top: 8px;
 }
 
 /* 鼠标悬浮时更改图标颜色 */
@@ -2029,17 +2031,18 @@ button.b3-list-item.b3-list-item--two.fn__block.b3-list-item--focus .b3-list-ite
 	column-count: 4;
 	column-gap: 5px;
 	min-width: 50vw !important;
-	font-size: 90%;
 	border: var(--b3-border-column-item);
 }
 
 
 /* ————————————————————设置挂件和模板窗口每个项目的宽度———————————————————— */
 .b3-list.fn__flex-1.b3-list--background:not(ul.b3-list.b3-list--background.fn__flex-1, div#globalSearchList) .b3-list-item {
-	max-width: 200px;
+	/* max-width: 200px; */
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	justify-content: center;
+	text-align: center;
 }
 
 /* ————————————————————调整emoji窗口的选择效果，向右拉动滚动条查看所有emoji———————————————————— */
