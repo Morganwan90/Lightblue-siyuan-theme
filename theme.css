@@ -473,12 +473,6 @@ body.fn__flex-column {
     background-color: var(--dialog-background) !important;
 }
 
-.layout__center .fn__flex-1.fn__flex [data-type='wnd'] {
-    margin: 5px auto;
-    padding: 5px 5px;
-    /* max-width:1400px; */
-}
-
 .protyle-background {
     margin: 10px;
     border-radius: 8px;
