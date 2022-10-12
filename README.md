@@ -12,12 +12,17 @@
 | Zuoqiu-Yingyi |    Dark+     |     无序列表转脑图、表格     |
 |      Roy      | Notion-theme |     无序列表转脑图、表格     |
 |    UserZYF    | Zhang-Light  | '/'后分4栏；<br />搜索栏改造 |
+|   Achuan-2    |   Tsundoku   |          超链接图标          |
 
 
 
 ## 更新历史
 
 之前比较懒....没有记录更新历史
+
+### 2022.10.12
+
+添加Tsundoku超链接图标
 
 ### 2022.10.11
 
