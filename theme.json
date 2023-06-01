@@ -5,8 +5,7 @@
   "version": "1.1.0",
   "modes": ["light"],
   "displayName": {
-    "default": "Light-Blue",
-    "zh_CN": "Light-Blue"
+    "default": "Light-Blue"
   },
   "description": {
     "default": "自用主题"
