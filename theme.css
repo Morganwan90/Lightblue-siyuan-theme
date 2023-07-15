@@ -62,7 +62,7 @@
     /* 菜单 */
     --b3-menu-background: var(--b3-theme-background);
     /* 提示 */
-    --b3-tooltips-background: var(--b3-theme-primary-lighter);
+    --b3-tooltips-background: #a9caff;
     --b3-tooltips-color: var(--b3-theme-on-background);
     /* 卡片背景 */
     --b3-card-error-color: #611a15;
