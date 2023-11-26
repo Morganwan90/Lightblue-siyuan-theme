@@ -149,9 +149,9 @@
     /* 删除线 */
     --b3-protyle-inline-link-color: var(--b3-theme-primary);
     /* 超级链接 */
-    --b3-protyle-inline-mark-background: var(--b3-font-color10);
+    /* --b3-protyle-inline-mark-background: var(--b3-font-color10); */
     /* 高亮背景 */
-    --b3-protyle-inline-mark-color: #fff;
+    /* --b3-protyle-inline-mark-color: #fff; */
     /* 高亮文字 */
     --b3-protyle-inline-tag-color: var(--b3-theme-on-primary);
     /* 标签 */
