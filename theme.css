@@ -41,9 +41,9 @@
     /* 分栏、面板上的文字颜色 */
     --b3-theme-on-error: #fff;
     /* 字体 */
-    --b3-font-family: 'HarmonyOS', 'Helvetica Neue', 'Luxi Sans', 'DejaVu Sans', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Win10 Emoji', 'Segoe UI Symbol', 'Android Emoji', 'EmojiSymbols';
+    /* --b3-font-family: 'HarmonyOS', 'Helvetica Neue', 'Luxi Sans', 'DejaVu Sans', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Win10 Emoji', 'Segoe UI Symbol', 'Android Emoji', 'EmojiSymbols';
     --b3-font-family-code: mononoki, Consolas, "Liberation Mono", Menlo, Courier, monospace, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
-    --b3-font-family-graph: mononoki;
+    --b3-font-family-graph: mononoki; */
     /* 线条 */
     --b3-border-color: #0000001a;
     /* 滚动条 */
@@ -475,7 +475,7 @@ body.fn__flex-column {
 .block__popover.block__popover--move.block__popover--open {
     border-radius: 15px;
     box-shadow: 0px 0px 40px 8px #00000033;
-    z-index: 201;
+    /* z-index: 201; */
     animation: menu 0.5s;
 }
 
@@ -494,10 +494,6 @@ body.fn__flex-column {
 
 .block__edit {
     border-color: var(--b3-theme-primary);
-}
-
-.fullscreen {
-    background-color: var(--dialog-background) !important;
 }
 
 .protyle-background {
