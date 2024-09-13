@@ -1530,8 +1530,6 @@ div.sb div.sb>div[data-type="NodeHeading"] {
 .b3-typography .code-block,
 .protyle-wysiwyg .code-block {
     padding: 0;
-    margin: 1em 0;
-    line-height: 1.625 !important;
     box-shadow: var(--glass-box-shadow);
 }
 
@@ -1559,9 +1557,9 @@ div.sb div.sb>div[data-type="NodeHeading"] {
     color: var(--b3-theme-primary);
 }
 
-.protyle-linenumber__rows {
+/* .protyle-linenumber__rows {
     background-color: var(--b3-protyle-code-background);
-}
+} */
 
 .protyle-linenumber__rows>span::before {
     text-align: center;
